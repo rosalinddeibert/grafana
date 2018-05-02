@@ -68,12 +68,15 @@ $text-shadow-strong: 1px 1px 4px $black;
 $text-shadow-faint: 1px 1px 4px rgb(45, 45, 45);
 
 // gradients
+$brand-gradient: linear-gradient(to right, #171819, #282b47, #643063, #aa2658, #d43f27);
+/*
 $brand-gradient: linear-gradient(
   to right,
   rgba(255, 213, 0, 0.7) 0%,
   rgba(255, 68, 0, 0.7) 99%,
   rgba(255, 68, 0, 0.7) 100%
 );
+*/
 $page-gradient: linear-gradient(180deg, #222426 10px, rgb(22, 23, 25) 100px);
 
 // Links
