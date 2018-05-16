@@ -1,4 +1,5 @@
-$login-border: #8daac5;
+//$login-border: #8daac5;
+$login-border: #999999;
 
 .login {
   background-position: center;
@@ -37,6 +38,14 @@ select:-webkit-autofill:focus {
   margin-bottom: 1rem;
 }
 
+.login-form-group button[type='submit']:hover {
+  background: #d43f27;
+}
+
+.login-form-group button[type='submit']:active {
+  background: #d43f27;
+}
+
 .login-form {
   margin-bottom: 1rem;
   width: 100%;
@@ -63,6 +72,10 @@ select:-webkit-autofill:focus {
 
 .login-button-forgot-password {
   padding-top: 1rem;
+}
+
+.login-button-forgot-password a {
+  color: #999999;
 }
 
 .login-text {
