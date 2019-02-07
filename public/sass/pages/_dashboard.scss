@@ -98,6 +98,9 @@ div.flot-text {
   cursor: move;
   word-wrap: break-word;
   display: block;
+  &:hover {
+    background-color: darken($gray-7, 10%);
+  }
 }
 
 .panel-title {
