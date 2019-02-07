@@ -266,6 +266,7 @@
 @include media-breakpoint-up(sm) {
   .search-container {
     left: $side-menu-width;
+    top: $side-menu-width - 10px;
   }
 
   .search-item__tags {

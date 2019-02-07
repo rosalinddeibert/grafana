@@ -32,6 +32,7 @@ $white: #fff;
 // -------------------------
 $blue: #0083b3;
 $blue-light: #00a8e6;
+$blue-highlight: #585eff;
 $green: #3aa655;
 $red: #d44939;
 $yellow: #ff851b;
@@ -197,6 +198,7 @@ $input-color-select-arrow: $gray-1;
 $side-menu-bg: $dark-2;
 $side-menu-bg-mobile: rgba(0, 0, 0, 0); //$gray-6;
 $side-menu-item-hover-bg: $gray-1;
+$side-menu-item-hover-fg: $blue;
 $side-menu-shadow: 5px 0px 10px -5px $gray-1;
 $side-menu-link-color: $gray-6;
 
