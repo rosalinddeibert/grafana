@@ -67,8 +67,8 @@
       background-color: $side-menu-item-hover-bg;
       color: $side-menu-item-hover-fg;
       // @include left-brand-border-gradient();
-      & .gicon,
-      & .fa {
+      .sidemenu-icon .gicon,
+      .sidemenu-icon .fa {
         color: $side-menu-item-hover-fg;
       }
 
@@ -92,7 +92,7 @@
 }
 
 .sidemenu-link {
-  color: $link-color;
+  color: $text-color;
   line-height: 48px;
   padding: 0px 10px 0px 10px;
   display: inline-block;

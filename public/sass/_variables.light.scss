@@ -98,7 +98,7 @@ $hr-border-color: $dark-3 !default;
 $panel-bg: $white;
 $panel-border-color: $gray-5;
 $panel-border: solid 1px $panel-border-color;
-$panel-header-hover-bg: $gray-6;
+$panel-header-hover-bg: darken($gray-7, 10%);
 
 // Page header
 $page-header-bg: linear-gradient(90deg, $white, $gray-7);
@@ -198,7 +198,7 @@ $input-color-select-arrow: $gray-1;
 $side-menu-bg: $dark-2;
 $side-menu-bg-mobile: rgba(0, 0, 0, 0); //$gray-6;
 $side-menu-item-hover-bg: $gray-1;
-$side-menu-item-hover-fg: $blue;
+$side-menu-item-hover-fg: $gray-7;
 $side-menu-shadow: 5px 0px 10px -5px $gray-1;
 $side-menu-link-color: $gray-6;
 
