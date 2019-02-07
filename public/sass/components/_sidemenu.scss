@@ -60,7 +60,8 @@ $mobile-menu-breakpoint: md;
       background-color: $side-menu-item-hover-bg;
       color: $side-menu-item-hover-fg;
       // @include left-brand-border-gradient();
-      & .gicon {
+      & .gicon,
+      & .fa {
         color: $side-menu-item-hover-fg;
       }
 
@@ -232,8 +233,9 @@ li.sidemenu-org-switcher {
       background: $side-menu-bg-mobile;
       height: auto;
       box-shadow: $side-menu-shadow;
-      position: relative;
       z-index: $zindex-sidemenu;
+      flex-flow: column;
+      flex-direction: column;
     }
 
     .sidemenu__close {
@@ -246,9 +248,16 @@ li.sidemenu-org-switcher {
     .sidemenu__top,
     .sidemenu__bottom {
       display: block;
+      position: relative;
+      flex-grow: 1;
+      width: 100%;
     }
     .sidemenu-item {
+      width: 100%;
       border-right: 2px solid transparent;
+    }
+    .sidemenu-link {
+      display: block;
     }
   }
 
