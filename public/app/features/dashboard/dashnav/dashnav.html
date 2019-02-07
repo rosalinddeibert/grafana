@@ -26,11 +26,11 @@
 		</button> -->
 
     <button class="btn navbar-button navbar-button--share" ng-show="::ctrl.dashboard.meta.canShare" ng-click="ctrl.shareDashboard(0)" bs-tooltip="'Share dashboard'" data-placement="bottom">
-			<i class="fa fa-share-square-o"></i> Share Dashboard
+			<i class="gicon gicon-share"></i> Share Dashboard
 		</button>
 
     <button class="btn navbar-button navbar-button--save" ng-show="ctrl.dashboard.meta.canSave" ng-click="ctrl.saveDashboard()" bs-tooltip="'Save dashboard <br> CTRL+S'" data-placement="bottom">
-			<i class="fa fa-save"></i> Save Dashboard
+			<i class="gicon gicon-save"></i> Save Dashboard
 		</button>
 
 		<!-- <a class="btn navbar-button navbar-button--snapshot-origin" ng-if="::ctrl.dashboard.snapshot.originalUrl" href="{{ctrl.dashboard.snapshot.originalUrl}}" bs-tooltip="'Open original dashboard'" data-placement="bottom">
@@ -38,7 +38,7 @@
 		</a> -->
 
 		<button class="btn navbar-button navbar-button--settings" ng-click="ctrl.toggleSettings()" bs-tooltip="'Settings'" data-placement="bottom" ng-show="ctrl.dashboard.meta.showSettings">
-			<i class="fa fa-cog"></i> Settings
+			<i class="gicon gicon-cog"></i> Settings
 		</button>
 	</div>
 
