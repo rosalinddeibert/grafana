@@ -13,9 +13,9 @@ export class SideMenu extends PureComponent {
 
   render() {
     return [
-      <a href={homeUrl} className="sidemenu__logo" key="logo">
-        <img src="public/img/grafana_icon.svg" alt="Grafana" />
-      </a>,
+      <div className="sidemenu__logo" key="logo">
+        <img src="public/img/pde_icon.png" alt="Grafana" />
+      </div>,
       <div className="sidemenu__logo_small_breakpoint" onClick={this.toggleSideMenuSmallBreakpoint} key="hamburger">
         <i className="fa fa-bars" />
         <span className="sidemenu__close">
