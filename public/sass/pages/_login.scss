@@ -1,4 +1,4 @@
-$login-border: #8daac5;
+$login-border: #999999;
 
 .login {
   min-height: 100vh;
@@ -10,12 +10,12 @@ $login-border: #8daac5;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url(../img/grafana-psiphon-login.png);
+  background-size: cover;
   color: #d8d9da;
-
   & a {
     color: #d8d9da !important;
   }
-
   & .btn-primary {
     @include buttonBackground(#ff6600, #bc3e06);
   }
@@ -42,6 +42,14 @@ select:-webkit-autofill:focus {
   width: 100%;
   align-items: center;
   margin-bottom: $space-md;
+}
+
+.login-form-group button[type='submit']:hover {
+  background: #d43f27;
+}
+
+.login-form-group button[type='submit']:active {
+  background: #d43f27;
 }
 
 .login-form {
@@ -89,6 +97,10 @@ select:-webkit-autofill:focus {
 
 .login-button-forgot-password {
   padding-top: $space-md;
+}
+
+.login-button-forgot-password a {
+  color: #999999 !important;
 }
 
 .login-text {
