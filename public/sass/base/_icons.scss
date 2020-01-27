@@ -47,7 +47,7 @@
 }
 
 .gicon-add-panel {
-  background-image: url('../img/pde/add_panel.svg');
+  background-image: url('../img/icons_#{$theme-name}_theme/icon_add_panel.svg');
 }
 
 .gicon-add-link {
@@ -97,7 +97,7 @@
 }
 
 .gicon-cog {
-  background-image: url('../img/pde/settings.svg');
+  background-image: url('../img/icons_#{$theme-name}_theme/icon_cog.svg');
 }
 
 .gicon-dashboard {
@@ -204,13 +204,13 @@
 
 .sidemenu {
   .gicon-dashboard {
-    background-image: url('../img/pde/dashboards.svg');
+    background-image: url('../img/icons_dark_theme/icon_dashboard.svg');
   }
   .gicon-alert {
     background-image: url('../img/icons_dark_theme/icon_alert.svg');
   }
   .gicon-cog {
-    background-image: url('../img/pde/settings.svg');
+    background-image: url('../img/icons_dark_theme/icon_cog.svg');
   }
   .gicon-question {
     background-image: url('../img/icons_dark_theme/icon_question.svg');

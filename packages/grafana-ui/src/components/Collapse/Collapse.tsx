@@ -13,7 +13,7 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => ({
   `,
   collapseBody: css`
     label: collapse__body;
-    padding: ${theme.panelPadTop}px ${theme.panelPadSide}px ${theme.panelPadBottom}px ${theme.panelPadSide}px;
+    padding: ${theme.panelPadding}px;
   `,
   loader: css`
     label: collapse__loader;

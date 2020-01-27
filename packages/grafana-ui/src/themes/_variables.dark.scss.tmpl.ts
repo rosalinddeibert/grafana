@@ -50,7 +50,6 @@ $white: ${theme.colors.white};
 // Accent colors
 // -------------------------
 $blue: ${theme.colors.blue};
-$blue-highlight: ${theme.colors.blueHighlight};
 $red: $red-base;
 $yellow: ${theme.colors.yellow};
 $orange: ${theme.colors.orange};
@@ -251,7 +250,6 @@ $navbar-button-border: #2f2f32;
 $side-menu-bg: $black;
 $side-menu-bg-mobile: $side-menu-bg;
 $side-menu-item-hover-bg: $dark-3;
-$side-menu-item-hover-fg: $blue;
 $side-menu-shadow: 0 0 20px black;
 $side-menu-link-color: $link-color;
 

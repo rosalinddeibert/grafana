@@ -3,9 +3,9 @@ $mobile-menu-breakpoint: md;
 .sidemenu {
   position: fixed;
   display: flex;
-  flex-flow: row;
-  flex-direction: row;
-  height: $side-menu-width;
+  flex-flow: column;
+  flex-direction: column;
+  width: $side-menu-width;
   z-index: $zindex-sidemenu;
   a:focus {
     text-decoration: none;
@@ -36,17 +36,12 @@ $mobile-menu-breakpoint: md;
 }
 
 .sidemenu__top {
-  flex-grow: 0;
-  display: none;
-  right: 70px;
-  position: absolute;
-  height: 48px;
+  padding-top: 40px;
+  flex-grow: 1;
 }
 
 .sidemenu__bottom {
-  display: none;
-  right: 0;
-  position: absolute;
+  padding-bottom: $spacer;
 }
 
 .sidemenu__top,
@@ -60,27 +55,22 @@ $mobile-menu-breakpoint: md;
 
 .sidemenu-item {
   position: relative;
-  justify-content: space-around;
-  //@include left-brand-border();
+  @include left-brand-border();
 
   @include media-breakpoint-up($mobile-menu-breakpoint) {
     &.active,
     &:hover {
       background-color: $side-menu-item-hover-bg;
-      color: $side-menu-item-hover-fg;
-      //@include left-brand-border-gradient();
-      & .gicon {
-        color: $side-menu-item-hover-fg;
-      }
+      @include left-brand-border-gradient();
 
       .dropdown-menu {
         margin: 0;
         display: block;
         opacity: 0;
-        top: $side-menu-width - 10px;
+        top: 0px;
         // important to overlap it otherwise it can be hidden
         // again by the mouse getting outside the hover space
-        left: 0;
+        left: $side-menu-width - 2px;
         @include animation('dropdown-anim 150ms ease-in-out 100ms forwards');
         z-index: $zindex-sidemenu;
       }
@@ -94,16 +84,13 @@ $mobile-menu-breakpoint: md;
 
 .sidemenu-link {
   color: $link-color;
-  line-height: 48px;
+  line-height: 42px;
   padding: 0px 10px 0px 10px;
-  display: inline-block;
+  display: block;
   position: relative;
   font-size: 16px;
   border: 1px solid transparent;
   text-align: center;
-  &:hover {
-    color: $side-menu-item-hover-fg;
-  }
 
   img {
     border-radius: 50%;
@@ -159,7 +146,7 @@ $mobile-menu-breakpoint: md;
   white-space: nowrap;
   background-color: $side-menu-item-hover-bg;
   font-size: 17px;
-  color: $text-color;
+  color: #ebedf2;
 }
 
 .side-menu-header-link {
@@ -212,18 +199,17 @@ li.sidemenu-org-switcher {
 
 .sidemenu__logo {
   display: block;
-  padding: 0 0.4rem;
-  padding-top: 8px;
-  min-height: 48px;
+  padding: 6px 14px 6px 9px;
+  min-height: $navbarHeight;
   position: relative;
-  height: 48px;
+  height: $navbarHeight - 1px;
 
   &:hover {
     background: $navbarButtonBackgroundHighlight;
   }
 
   img {
-    width: 242px;
+    width: 30px;
     position: relative;
     top: 5px;
     left: 4px;

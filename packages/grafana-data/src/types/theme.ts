@@ -95,10 +95,7 @@ export interface GrafanaThemeCommons {
     md: string;
     lg: string;
   };
-  panelMargin: string;
-  panelPadTop: number;
-  panelPadSide: number;
-  panelPadBottom: number;
+  panelPadding: number;
   panelHeaderHeight: number;
   zIndex: {
     dropdown: string;
@@ -169,7 +166,6 @@ export interface GrafanaTheme extends GrafanaThemeCommons {
     blueBase: string;
     blueShade: string;
     blueLight: string;
-    blueHighlight: string;
     blueFaint: string;
     redBase: string;
     redShade: string;

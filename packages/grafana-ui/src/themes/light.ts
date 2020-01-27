@@ -26,7 +26,6 @@ const basicColors = {
   blueBase: '#3274d9',
   blueShade: '#1f60c4',
   blueLight: '#5794f2',
-  blueHighlight: '#585eff',
   blueFaint: '#f5f9ff',
   redBase: '#e02f44',
   redShade: '#c4162a',

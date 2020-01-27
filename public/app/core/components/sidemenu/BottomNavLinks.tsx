@@ -11,11 +11,6 @@ export interface Props {
   user: User;
 }
 
-const rightMenuStyle = {
-  right: 0,
-  left: 'auto',
-};
-
 interface State {
   showSwitcherModal: boolean;
 }
@@ -48,14 +43,14 @@ class BottomNavLinks extends PureComponent<Props, State> {
     }
 
     return (
-      <div className="sidemenu-item dropdown">
+      <div className="sidemenu-item dropdown dropup">
         <a href={link.url} className="sidemenu-link" target={link.target}>
           <span className="icon-circle sidemenu-icon">
             {link.icon && <i className={link.icon} />}
             {link.img && <img src={link.img} />}
           </span>
         </a>
-        <ul className="dropdown-menu dropdown-menu--sidemenu" style={rightMenuStyle} role="menu">
+        <ul className="dropdown-menu dropdown-menu--sidemenu" role="menu">
           {link.subTitle && (
             <li className="sidemenu-subtitle">
               <span className="sidemenu-item-text">{link.subTitle}</span>

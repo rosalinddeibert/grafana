@@ -64,10 +64,10 @@ const theme: GrafanaThemeCommons = {
   },
   breakpoints: {
     xs: '0',
-    sm: '768px',
-    md: '992px', // 1 more than regular ipad in portrait
-    lg: '1200px',
-    xl: '1600px',
+    sm: '544px',
+    md: '769px', // 1 more than regular ipad in portrait
+    lg: '992px',
+    xl: '1200px',
   },
   spacing: {
     insetSquishMd: '4px 8px',
@@ -115,10 +115,7 @@ const theme: GrafanaThemeCommons = {
     md: '32px',
     lg: '48px',
   },
-  panelMargin: '20px',
-  panelPadTop: 0,
-  panelPadSide: 20,
-  panelPadBottom: 10,
+  panelPadding: 8,
   panelHeaderHeight: 28,
   zIndex: {
     dropdown: '1000',

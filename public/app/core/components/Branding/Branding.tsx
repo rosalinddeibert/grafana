@@ -28,7 +28,7 @@ export const LoginBackground: FC<BrandComponentProps> = ({ className, children }
 };
 
 export const MenuLogo: FC<BrandComponentProps> = ({ className }) => {
-  return <img className={className} src="public/img/pde_icon.png" alt="Psiphon Inc." />;
+  return <img className={className} src="public/img/psiphon-logo-512x512.png" alt="Psiphon Inc." />;
 };
 
 export class Branding {

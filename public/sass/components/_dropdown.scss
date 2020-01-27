@@ -6,7 +6,6 @@
 .dropup,
 .dropdown {
   position: relative;
-  display: inline-block;
 }
 
 .dropdown-toggle:active,
@@ -47,11 +46,11 @@
 // ----------------------
 .dropdown-menu {
   position: absolute;
-  top: 48px;
-  left: 20px;
+  top: 100%;
+  left: 0;
   z-index: $zindex-dropdown;
   display: none; // none by default, but block on "open" of the menu
-  //float: left;
+  float: left;
   min-width: 140px;
   margin: 2px 0 0; // override default ul
   list-style: none;
