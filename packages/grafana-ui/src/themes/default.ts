@@ -1,6 +1,20 @@
 import { GrafanaThemeCommons } from '@grafana/data';
 
 export const commonColorsPalette = {
+  dark1: '#13161d',
+  dark2: '#1e2028',
+  dark3: '#303133',
+  dark4: '#35373f',
+  dark5: '#41444b',
+  gray1: '#52545c',
+  gray2: '#767980',
+  gray3: '#acb6bf',
+  gray4: '#c7d0d9',
+  gray5: '#dde4ed',
+  gray6: '#e9edf2',
+  gray7: 'rgba(240, 240, 240, 0.89)',
+  gray8: '#9e9e9e',
+
   // New greys palette used by next-gen form elements
   gray98: '#f7f8fa',
   gray95: '#e9edf2',
@@ -64,10 +78,10 @@ const theme: GrafanaThemeCommons = {
   },
   breakpoints: {
     xs: '0',
-    sm: '544px',
-    md: '769px', // 1 more than regular ipad in portrait
-    lg: '992px',
-    xl: '1200px',
+    sm: '768px',
+    md: '992px',
+    lg: '1200px',
+    xl: '1600px',
   },
   spacing: {
     insetSquishMd: '4px 8px',
@@ -115,7 +129,9 @@ const theme: GrafanaThemeCommons = {
     md: '32px',
     lg: '48px',
   },
-  panelPadding: 8,
+  panelPadBottom: 10,
+  panelPadSide: 20,
+  panelPadTop: 0,
   panelHeaderHeight: 28,
   zIndex: {
     dropdown: '1000',

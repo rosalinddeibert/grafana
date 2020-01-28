@@ -8,7 +8,7 @@ export const darkThemeVarsTemplate = (theme: GrafanaTheme) =>
 // Global values
 // --------------------------------------------------
 
-$theme-name: dark;
+$theme-name: light;
 
 // New Colors
 // -------------------------
@@ -41,6 +41,8 @@ $gray-3: ${theme.colors.gray3};
 $gray-4: ${theme.colors.gray4};
 $gray-5: ${theme.colors.gray5};
 $gray-6: ${theme.colors.gray6};
+$gray-7: ${theme.colors.gray7};
+$gray-8: ${theme.colors.gray8};
 
 $gray-blue: ${theme.colors.grayBlue};
 $input-black: #09090b;
@@ -50,21 +52,25 @@ $white: ${theme.colors.white};
 // Accent colors
 // -------------------------
 $blue: ${theme.colors.blue};
-$red: $red-base;
+$blue-light: ${theme.colors.blueLight};
+$blue-highlight: #585eff;
+$green: #3aa655;
+$red: #ff7358;
 $yellow: ${theme.colors.yellow};
 $orange: ${theme.colors.orange};
+$pink: #e671b8;
 $purple: ${theme.colors.purple};
-$variable: ${theme.colors.variable};
+$variable: $blue;
 
-$brand-primary: ${theme.colors.brandPrimary};
-$brand-success: ${theme.colors.brandSuccess};
-$brand-warning: ${theme.colors.brandWarning};
-$brand-danger: ${theme.colors.brandDanger};
+$brand-primary: $blue;
+$brand-success: $blue;
+$brand-warning: $yellow;
+$brand-danger: $red;
 
-$query-red: ${theme.colors.queryRed};
-$query-green: ${theme.colors.queryGreen};
-$query-purple: ${theme.colors.queryPurple};
-$query-orange: ${theme.colors.orange};
+$query-red: $red;
+$query-green: $green;
+$query-purple: $purple;
+$query-orange: $orange;
 $query-keyword: ${theme.colors.queryKeyword};
 
 // Status colors
@@ -85,105 +91,118 @@ $text-color-weak: ${theme.colors.textWeak};
 $text-color-faint: ${theme.colors.textFaint};
 $text-color-emphasis: ${theme.colors.textEmphasis};
 
-$text-shadow-faint: 1px 1px 4px rgb(45, 45, 45);
+$text-shadow-strong: none;
+$text-shadow-faint: none;
 $textShadow: none;
 
 // gradients
+$brand-gradient: linear-gradient(to right, #ffd500 0%, #ff4400 99%, #ff4400 100%);
 $brand-gradient-horizontal: linear-gradient(to right, #f05a28 30%, #fbca0a 99%);
 $brand-gradient-vertical: linear-gradient(#f05a28 30%, #fbca0a 99%);
-$page-gradient: linear-gradient(180deg, $dark-5 10px, dark-2 100px);
+$page-gradient: $gray-7;
 $edit-gradient: linear-gradient(180deg, $dark-2 50%, $input-black);
 
 // Links
 // -------------------------
 $link-color: ${theme.colors.link};
-$link-color-disabled: ${theme.colors.linkDisabled};
-$link-hover-color: ${theme.colors.linkHover};
-$external-link-color: ${theme.colors.linkExternal};
+$link-color-disabled: lighten($link-color, 30%);
+$link-hover-color: darken($link-color, 20%);
+$external-link-color: $blue-light;
 
 // Typography
 // -------------------------
-$headings-color: ${theme.colors.headingColor};
+$headings-color: $text-color;
 $abbr-border-color: $gray-2 !default;
 $text-muted: $text-color-weak;
 
-$hr-border-color: $dark-9;
+// Hr border color
+$hrBorder: $gray-3;
+$hr-border-color: $dark-3! default;
 
 // Panel
 // -------------------------
 $panel-bg: ${theme.colors.panelBg};
-$panel-border: solid 1px $dark-1;
-$panel-header-hover-bg: $dark-9;
+$panel-border-color: $gray-5;
+$panel-border: none;
+$panel-header-hover-bg: darken($gray-7, 20%);
 $panel-corner: $panel-bg;
 
 // page header
-$page-header-bg: linear-gradient(90deg, $dark-7, $black);
-$page-header-shadow: inset 0px -4px 14px $dark-3;
-$page-header-border-color: $dark-9;
+$page-header-bg: transparent;
+$page-header-shadow: inset 0px -3px 10px $gray-6;
+$page-header-border-color: $gray-4;
 
-$divider-border-color: $gray-1;
+$divider-border-color: $gray-2;
 
 // Graphite Target Editor
-$tight-form-func-bg: $dark-9;
-$tight-form-func-highlight-bg: $dark-10;
+$tight-form-bg: #eaebee;
+$tight-form-func-bg: $gray-5;
+$tight-form-func-highlight-bg: $gray-6;
 
-$modal-backdrop-bg: #353c42;
-$code-tag-bg: $dark-1;
-$code-tag-border: $dark-9;
+$modal-backdrop-bg: $body-bg;
+$code-tag-bg: $gray-6;
+$code-tag-border: darken($code-tag-bg, 3%);
 
 // cards
-$card-background: linear-gradient(135deg, $dark-8, $dark-6);
-$card-background-hover: linear-gradient(135deg, $dark-9, $dark-6);
-$card-shadow: -1px -1px 0 0 hsla(0, 0%, 100%, 0.1), 1px 1px 0 0 rgba(0, 0, 0, 0.3);
+$card-background: linear-gradient(135deg, $gray-6, $gray-5);
+$card-background-hover: linear-gradient(135deg, $gray-5, $gray-6);
+$card-shadow: -1px -1px 0 0 hsla(0, 0%, 100%, 0.1), 1px 1px 0 0 rgba(0, 0, 0, 0.1);
 
 // Lists
-$list-item-bg: $card-background;
-$list-item-hover-bg: $card-background-hover;
-$list-item-link-color: $text-color;
+$list-item-bg: darken($white, 10%); // $card-background;
+$list-item-hover-bg: darken($white, 5%);
+$list-item-link-color: darken($gray-8, 20%);
 $list-item-shadow: $card-shadow;
-
-$empty-list-cta-bg: $gray-blue;
+$empty-list-cta-bg: $gray-8;
 
 // Scrollbars
-$scrollbarBackground: #404357;
-$scrollbarBackground2: $dark-10;
-$scrollbarBorder: black;
+$scrollbarBackground: $gray-5;
+$scrollbarBackground2: $gray-5;
+$scrollbarBorder: $gray-4;
 
 // Tables
 // -------------------------
-$table-bg-accent: $dark-6; // for striping
-$table-border: $dark-6; // table and cell border
+$table-bg: transparent; // overall background-color
+$table-bg-accent: $gray-5; // for striping
+$table-bg-hover: $gray-5; // for hover
+$table-bg-active: $table-bg-hover !default; // for hover
+$table-border: $gray-3; // table and cell border
 
-$table-bg-odd: $dark-3;
-$table-bg-hover: $dark-6;
+$table-bg-odd: $gray-6;
+$table-bg-hover: $gray-5;
 
 // Buttons
 // -------------------------
-$btn-secondary-bg: $blue-base;
-$btn-secondary-bg-hl: $blue-shade;
+$btn-primary-bg: $brand-primary;
+$btn-primary-bg-hl: lighten($brand-primary, 8%);
 
-$btn-primary-bg: $green-base;
-$btn-primary-bg-hl: $green-shade;
+$btn-secondary-bg: $blue;
+$btn-secondary-bg-hl: lighten($blue, 4%);
 
-$btn-success-bg: $green-base;
-$btn-success-bg-hl: $green-shade;
+$btn-success-bg: lighten($green, 3%);
+$btn-success-bg-hl: darken($green, 3%);
 
-$btn-danger-bg: $red-base;
-$btn-danger-bg-hl: $red-shade;
+$btn-warning-bg: lighten($orange, 3%);
+$btn-warning-bg-hl: darken($orange, 3%);
 
-$btn-inverse-bg: $dark-6;
-$btn-inverse-bg-hl: lighten($dark-6, 4%);
-$btn-inverse-text-color: $link-color;
-$btn-inverse-text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.1);
+$btn-danger-bg: lighten($red, 3%);
+$btn-danger-bg-hl: darken($red, 3%);
 
-$btn-link-color: $gray-3;
+$btn-inverse-bg: $white;
+$btn-inverse-bg-hl: darken($white, 5%);
+$btn-inverse-text-color: $gray-8;
+$btn-inverse-text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 
-$iconContainerBackground: $black;
+$btn-active-bg: $white;
+$btn-active-text-color: $blue-highlight;
 
-$btn-divider-left: $dark-9;
-$btn-divider-right: $dark-3;
+$btn-link-color: $gray-8;
 
-$btn-drag-image: '../img/grab_dark.svg';
+$iconContainerBackground: $white;
+
+$btn-divider-left: $gray-4;
+$btn-divider-right: $gray-7;
+$btn-drag-image: '../img/grab_light.svg';
 
 $navbar-btn-gicon-brightness: brightness(0.5);
 
@@ -191,43 +210,45 @@ $btn-active-box-shadow: 0px 0px 4px rgba(255, 120, 10, 0.5);
 
 // Forms
 // -------------------------
-$input-bg: $input-black;
-$input-bg-disabled: $dark-6;
+$input-bg: $white;
+$input-bg-disabled: $gray-5;
 
-$input-color: $gray-4;
-$input-border-color: $dark-6;
-$input-box-shadow: inset 1px 0px 4px 0px rgba(150, 150, 150, 0.1);
-$input-border-focus: $dark-6 !default;
-$input-box-shadow-focus: $blue-light !default;
-$input-color-placeholder: $gray-1 !default;
-$input-label-bg: $gray-blue;
-$input-label-border-color: $dark-6;
-$input-color-select-arrow: $white;
+$input-color: $text-color;
+$input-border-color: $gray-5;
+$input-box-shadow: none;
+$input-border-focus: $blue !default;
+$input-box-shadow-focus: $blue !default;
+$input-color-placeholder: $gray-4 !default;
+$input-label-bg: $gray-7;
+$input-label-border-color: $gray-5;
+$input-color-select-arrow: $gray-1;
 
 // Input placeholder text color
-$placeholderText: darken($text-color, 25%);
+$placeholderText: $gray-2;
 
 // Search
-$search-shadow: 0 0 30px 0 $black;
-$search-filter-box-bg: $gray-blue;
+$search-shadow: 0 5px 30px 0 $gray-4;
+$search-filter-box-bg: $gray-7;
 
 // Typeahead
-$typeahead-shadow: 0 5px 10px 0 $black;
-$typeahead-selected-bg: $dark-9;
-$typeahead-selected-color: $yellow;
+$typeahead-shadow: 0 5px 10px 0 $gray-5;
+$typeahead-selected-bg: lighten($blue, 57%);
+$typeahead-selected-color: $blue;
 
 // Dropdowns
 // -------------------------
-$dropdownBackground: $dark-6;
-$dropdownBorder: rgba(0, 0, 0, 0.2);
-$dropdownDividerTop: transparent;
-$dropdownDividerBottom: #444;
+$dropdownBackground: $white;
+$dropdownBorder: $gray-4;
+$dropdownDividerTop: $gray-6;
+$dropdownDividerBottom: $white;
+$dropdownDivider: $dropdownDividerTop;
 
-$dropdownLinkColor: $text-color;
-$dropdownLinkColorHover: $white;
-$dropdownLinkColorActive: $white;
+$dropdownLinkColor: $dark-3;
+$dropdownLinkColorHover: $link-color;
+$dropdownLinkColorActive: $link-color;
 
-$dropdownLinkBackgroundHover: $dark-9;
+$dropdownLinkBackgroundActive: darken($gray-6, 10%);
+$dropdownLinkBackgroundHover: darken($gray-6, 10%);
 
 // Horizontal forms & lists
 // -------------------------
@@ -235,120 +256,124 @@ $horizontalComponentOffset: 180px;
 
 // Navbar
 // -------------------------
-$navbarHeight: 55px;
+$navbarHeight: 52px;
+$navbarBackground: $white;
+$navbarBorder: 1px solid $gray-4;
+$navbarShadow: 0 0 3px #c1c1c1;
 
-$navbarBackground: $panel-bg;
-$navbarBorder: 1px solid $dark-6;
+$navbarLinkColor: $text-color;
+$navbarBrandColor: $navbarLinkColor;
 
-$navbarButtonBackground: $navbarBackground;
-$navbarButtonBackgroundHighlight: $body-bg;
+$navbarButtonBackground: lighten($navbarBackground, 3%);
+$navbarButtonBackgroundHighlight: lighten($navbarBackground, 5%);
 
-$navbar-button-border: #2f2f32;
+$navbar-button-border: none;
 
 // Sidemenu
 // -------------------------
-$side-menu-bg: $black;
+$side-menu-bg: $white;
 $side-menu-bg-mobile: $side-menu-bg;
-$side-menu-item-hover-bg: $dark-3;
-$side-menu-shadow: 0 0 20px black;
-$side-menu-link-color: $link-color;
+$side-menu-item-hover-bg: darken($white, 10%);
+$side-menu-item-hover-fg: $blue-highlight;
+$side-menu-shadow: 5px 0px 10px -5px $gray-1;
+$side-menu-link-color: darken($gray-8, 10%);
 
 // Menu dropdowns
 // -------------------------
-$menu-dropdown-bg: $body-bg;
-$menu-dropdown-hover-bg: $dark-3;
-$menu-dropdown-shadow: 5px 5px 20px -5px $black;
+$menu-dropdown-bg: $gray-7;
+$menu-dropdown-hover-bg: $gray-6;
+$menu-dropdown-shadow: 5px 5px 10px -5px $gray-1;
 
 // Tabs
 // -------------------------
-$tab-border-color: $dark-9;
+$tab-border-color: $gray-5;
 
 // Toolbar
 $toolbar-bg: $input-black;
 
 // Form states and alerts
 // -------------------------
-$warning-text-color: $warn;
-$error-text-color: #e84d4d;
-$success-text-color: #12d95a;
+$warning-text-color: lighten($orange, 10%);
+$error-text-color: lighten($red, 10%);
+$success-text-color: lighten($green, 10%);
+$info-text-color: $blue;
 
-$alert-error-bg: linear-gradient(90deg, $red-base, $red-shade);
-$alert-success-bg: linear-gradient(90deg, $green-base, $green-shade);
-$alert-warning-bg: linear-gradient(90deg, $red-base, $red-shade);
-$alert-info-bg: linear-gradient(100deg, $blue-base, $blue-shade);
+$alert-error-bg: linear-gradient(90deg, #d44939, #e04d3d);
+$alert-success-bg: linear-gradient(90deg, $green, #47b274);
+$alert-warning-bg: linear-gradient(90deg, #d44939, #e04d3d);
+$alert-info-bg: $blue;
 
 // popover
-$popover-bg: $dark-2;
+$popover-bg: $page-bg;
 $popover-color: $text-color;
-$popover-border-color: $dark-9;
+$popover-border-color: $gray-5;
 $popover-header-bg: $dark-9;
-$popover-shadow: 0 0 20px black;
+$popover-shadow: 0 0 20px $white;
 
-$popover-help-bg: $btn-secondary-bg;
+$popover-help-bg: $blue;
 $popover-help-color: $gray-6;
-
 $popover-error-bg: $btn-danger-bg;
 
 // Tooltips and popovers
 // -------------------------
 $tooltipColor: $popover-help-color;
+$tooltipBackground: $popover-help-bg;
 $tooltipArrowWidth: 5px;
-$tooltipLinkColor: $link-color;
-$graph-tooltip-bg: $dark-1;
-
-$tooltipBackground: $black;
-$tooltipColor: $gray-4;
 $tooltipArrowColor: $tooltipBackground;
+$tooltipLinkColor: lighten($popover-help-color, 5%);
+$graph-tooltip-bg: $gray-5;
 $tooltipBackgroundError: $brand-danger;
 
 // images
-$checkboxImageUrl: '../img/checkbox.png';
+$checkboxImageUrl: '../img/checkbox_white.png';
 
 // info box
-$info-box-border-color: $blue-base;
+$info-box-border-color: lighten($blue, 20%);
 
 // footer
-$footer-link-color: $gray-2;
-$footer-link-hover: $gray-4;
+$footer-link-color: $gray-3;
+$footer-link-hover: $dark-5;
 
 // json-explorer
-$json-explorer-default-color: $text-color;
-$json-explorer-string-color: #23d662;
-$json-explorer-number-color: $variable;
-$json-explorer-boolean-color: $variable;
-$json-explorer-null-color: #eec97d;
-$json-explorer-undefined-color: rgb(239, 143, 190);
-$json-explorer-function-color: #fd48cb;
+$json-explorer-default-color: $black;
+$json-explorer-string-color: $green;
+$json-explorer-number-color: $blue;
+$json-explorer-boolean-color: $red;
+$json-explorer-null-color: #855a00;
+$json-explorer-undefined-color: rgb(202, 11, 105);
+$json-explorer-function-color: #ff20ed;
 $json-explorer-rotate-time: 100ms;
 $json-explorer-toggler-opacity: 0.6;
-$json-explorer-bracket-color: #9494ff;
-$json-explorer-key-color: #23a0db;
-$json-explorer-url-color: #027bff;
+$json-explorer-bracket-color: $blue;
+$json-explorer-key-color: #00008b;
+$json-explorer-url-color: $blue;
 
 // Changelog and diff
 // -------------------------
-$diff-label-bg: $dark-3;
-$diff-label-fg: $white;
+$diff-label-bg: $gray-5;
+$diff-label-fg: $gray-2;
 
-$diff-group-bg: $dark-9;
-$diff-arrow-color: $white;
+$diff-switch-bg: $gray-5;
+$diff-switch-disabled: $gray-2;
 
-$diff-json-bg: $dark-9;
-$diff-json-fg: $gray-5;
+$diff-arrow-color: $dark-3;
+$diff-group-bg: $gray-7;
 
-$diff-json-added: $blue-shade;
-$diff-json-deleted: $red-shade;
+$diff-json-bg: $gray-5;
+$diff-json-fg: $gray-2;
 
-$diff-json-old: #a04338;
-$diff-json-new: #457740;
+$diff-json-added: lighten(desaturate($green, 30%), 10%);
+$diff-json-deleted: desaturate($red, 35%);
 
-$diff-json-changed-fg: $gray-5;
-$diff-json-changed-num: $text-color;
+$diff-json-old: #5a372a;
+$diff-json-new: #664e33;
 
-$diff-json-icon: $gray-5;
+$diff-json-changed-fg: $gray-6;
+$diff-json-changed-num: $gray-4;
+$diff-json-icon: $gray-4;
 
 //Submenu
-$variable-option-bg: $dropdownLinkBackgroundHover;
+$variable-option-bg: $blue-light;
 
 //Switch Slider
 // -------------------------
