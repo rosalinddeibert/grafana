@@ -10,9 +10,10 @@ interface Props {
   classSuffix: string;
   onClick?: () => void;
   href?: string;
+  text?: string;
 }
 
-export const DashNavButton: FunctionComponent<Props> = ({ icon, tooltip, classSuffix, onClick, href }) => {
+export const DashNavButton: FunctionComponent<Props> = ({ icon, tooltip, classSuffix, onClick, href, text }) => {
   if (onClick) {
     return (
       <Tooltip content={tooltip}>
@@ -21,7 +22,8 @@ export const DashNavButton: FunctionComponent<Props> = ({ icon, tooltip, classSu
           onClick={onClick}
           aria-label={e2e.pages.Dashboard.Toolbar.selectors.toolbarItems(tooltip)}
         >
-          <i className={icon} />
+          <i className={icon}></i>
+          {text}
         </button>
       </Tooltip>
     );
@@ -30,7 +32,8 @@ export const DashNavButton: FunctionComponent<Props> = ({ icon, tooltip, classSu
   return (
     <Tooltip content={tooltip}>
       <a className={`btn navbar-button navbar-button--${classSuffix}`} href={href}>
-        <i className={icon} />
+        <i className={icon}></i>
+        {text}
       </a>
     </Tooltip>
   );

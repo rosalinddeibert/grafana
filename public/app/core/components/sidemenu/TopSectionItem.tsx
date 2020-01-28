@@ -14,6 +14,7 @@ const TopSectionItem: FC<Props> = props => {
           <i className={link.icon} />
           {link.img && <img src={link.img} />}
         </span>
+        <span>{link.text}</span>
       </a>
       <SideMenuDropDown link={link} />
     </div>

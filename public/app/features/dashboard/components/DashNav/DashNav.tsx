@@ -209,17 +209,18 @@ export class DashNav extends PureComponent<Props> {
               classSuffix="add-panel"
               icon="gicon gicon-add-panel"
               onClick={onAddPanel}
+              text="Add Panel"
             />
           )}
 
-          {canStar && (
+          {/*canStar && (
             <DashNavButton
               tooltip="Mark as favorite"
               classSuffix="star"
               icon={`${isStarred ? 'fa fa-star' : 'fa fa-star-o'}`}
               onClick={this.onStarDashboard}
             />
-          )}
+          )*/}
 
           {canShare && (
             <DashNavButton
@@ -227,21 +228,28 @@ export class DashNav extends PureComponent<Props> {
               classSuffix="share"
               icon="fa fa-share-square-o"
               onClick={this.onOpenShare}
+              text="Share Dashboard"
             />
           )}
 
           {canSave && (
-            <DashNavButton tooltip="Save dashboard" classSuffix="save" icon="fa fa-save" onClick={this.onSave} />
+            <DashNavButton
+              tooltip="Save dashboard"
+              classSuffix="save"
+              icon="fa fa-save"
+              onClick={this.onSave}
+              text="Save Dashboard"
+            />
           )}
 
-          {snapshotUrl && (
+          {/*snapshotUrl && (
             <DashNavButton
               tooltip="Open original dashboard"
               classSuffix="snapshot-origin"
               icon="gicon gicon-link"
               href={snapshotUrl}
             />
-          )}
+          )*/}
 
           {showSettings && (
             <DashNavButton
@@ -249,11 +257,12 @@ export class DashNav extends PureComponent<Props> {
               classSuffix="settings"
               icon="gicon gicon-cog"
               onClick={this.onOpenSettings}
+              text="Settings"
             />
           )}
         </div>
 
-        <div className="navbar-buttons navbar-buttons--tv">
+        {/*<div className="navbar-buttons navbar-buttons--tv">
           <DashNavButton
             tooltip="Cycle view mode"
             classSuffix="tv"
@@ -261,6 +270,7 @@ export class DashNav extends PureComponent<Props> {
             onClick={this.onToggleTVMode}
           />
         </div>
+        */}
 
         {!dashboard.timepicker.hidden && (
           <div className="navbar-buttons">
