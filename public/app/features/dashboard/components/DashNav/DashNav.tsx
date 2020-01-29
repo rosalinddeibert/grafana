@@ -226,7 +226,7 @@ export class DashNav extends PureComponent<Props> {
             <DashNavButton
               tooltip="Share dashboard"
               classSuffix="share"
-              icon="fa fa-share-square-o"
+              icon="gicon gicon-share"
               onClick={this.onOpenShare}
               text="Share Dashboard"
             />
@@ -236,7 +236,7 @@ export class DashNav extends PureComponent<Props> {
             <DashNavButton
               tooltip="Save dashboard"
               classSuffix="save"
-              icon="fa fa-save"
+              icon="gicon gicon-save"
               onClick={this.onSave}
               text="Save Dashboard"
             />
