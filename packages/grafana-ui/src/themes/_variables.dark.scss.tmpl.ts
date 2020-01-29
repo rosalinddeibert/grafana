@@ -62,9 +62,9 @@ $pink: #e671b8;
 $purple: ${theme.colors.purple};
 $variable: $blue;
 
-$brand-primary: $blue;
-$brand-success: $blue;
-$brand-warning: $yellow;
+$brand-primary: $orange;
+$brand-success: $green;
+$brand-warning: $orange;
 $brand-danger: $red;
 
 $query-red: $red;
@@ -124,7 +124,7 @@ $hr-border-color: $dark-3! default;
 $panel-bg: ${theme.colors.panelBg};
 $panel-border-color: $gray-5;
 $panel-border: none;
-$panel-header-hover-bg: darken($gray-7, 20%);
+$panel-header-hover-bg: $gray-6;
 $panel-corner: $panel-bg;
 
 // page header
@@ -144,8 +144,8 @@ $code-tag-bg: $gray-6;
 $code-tag-border: darken($code-tag-bg, 3%);
 
 // cards
-$card-background: linear-gradient(135deg, $gray-6, $gray-5);
-$card-background-hover: linear-gradient(135deg, $gray-5, $gray-6);
+$card-background: $gray-7;
+$card-background-hover: darken($gray-7, 10%);
 $card-shadow: -1px -1px 0 0 hsla(0, 0%, 100%, 0.1), 1px 1px 0 0 rgba(0, 0, 0, 0.1);
 
 // Lists
@@ -194,9 +194,9 @@ $btn-inverse-text-color: $gray-8;
 $btn-inverse-text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 
 $btn-active-bg: $white;
-$btn-active-text-color: $blue-highlight;
+$btn-active-text-color: $blue;
 
-$btn-link-color: $gray-8;
+$btn-link-color: $gray-1;
 
 $iconContainerBackground: $white;
 
@@ -219,7 +219,7 @@ $input-box-shadow: none;
 $input-border-focus: $blue !default;
 $input-box-shadow-focus: $blue !default;
 $input-color-placeholder: $gray-4 !default;
-$input-label-bg: $gray-7;
+$input-label-bg: $gray-5;
 $input-label-border-color: $gray-5;
 $input-color-select-arrow: $gray-1;
 
@@ -247,8 +247,8 @@ $dropdownLinkColor: $dark-3;
 $dropdownLinkColorHover: $link-color;
 $dropdownLinkColorActive: $link-color;
 
-$dropdownLinkBackgroundActive: darken($gray-6, 10%);
-$dropdownLinkBackgroundHover: darken($gray-6, 10%);
+$dropdownLinkBackgroundActive: $gray-6;
+$dropdownLinkBackgroundHover: $gray-6;
 
 // Horizontal forms & lists
 // -------------------------
@@ -261,7 +261,7 @@ $navbarBackground: $white;
 $navbarBorder: 1px solid $gray-4;
 $navbarShadow: 0 0 3px #c1c1c1;
 
-$navbarLinkColor: $text-color;
+$navbarLinkColor: #444;
 $navbarBrandColor: $navbarLinkColor;
 
 $navbarButtonBackground: lighten($navbarBackground, 3%);

@@ -11,12 +11,12 @@ const basicColors = {
   dark9: '#343436',
   dark10: '#424345',
   grayBlue: '#212327',
-  blue: '#3033f8',
+  blue: '#0083b3',
   blueBase: '#3274d9',
   blueShade: '#1f60c4',
   blueLight: '#00a8e6',
   blueFaint: '#041126',
-  red: '#d44a3a',
+  red: '#d44939',
   redBase: '#e02f44',
   redShade: '#c4162a',
   greenBase: '#299c46',
@@ -60,7 +60,7 @@ const darkTheme: GrafanaTheme = {
     textFaint: basicColors.gray4,
     textEmphasis: basicColors.dark5,
     // Link colors
-    link: basicColors.gray8,
+    link: basicColors.gray1,
     linkDisabled: basicColors.gray2, // lighten(link, 30%);
     linkHover: basicColors.white, // darken(link, 20%);
     linkExternal: basicColors.blue,
