@@ -28,8 +28,9 @@ $black: ${theme.colors.black};
 
 $dark-1: ${theme.colors.dark1};
 $dark-2: ${theme.colors.dark2};
+$dark-3: ${theme.colors.dark3};
 $dark-4: ${theme.colors.dark4};
-$dark-10: ${theme.colors.dark10};
+$dark-5: ${theme.colors.dark5};
 $gray-1: ${theme.colors.gray1};
 $gray-2: ${theme.colors.gray2};
 $gray-3: ${theme.colors.gray3};
@@ -37,6 +38,7 @@ $gray-4: ${theme.colors.gray4};
 $gray-5: ${theme.colors.gray5};
 $gray-6: ${theme.colors.gray6};
 $gray-7: ${theme.colors.gray7};
+$gray-8: ${theme.colors.gray8};
 
 $white: ${theme.colors.white};
 
@@ -84,7 +86,7 @@ $text-shadow-faint: none;
 // gradients
 $brand-gradient-horizontal: linear-gradient(to right, #f05a28 30%, #fbca0a 99%);
 $brand-gradient-vertical: linear-gradient(#f05a28 30%, #fbca0a 99%);
-$page-gradient: linear-gradient(180deg, $white 10px, $gray-7 100px);
+$page-gradient: $gray-7;
 $edit-gradient: linear-gradient(-60deg, $gray-7, #f5f6f9 70%, $gray-7 98%);
 
 // Links
@@ -105,12 +107,12 @@ $hr-border-color: $gray-4 !default;
 // Panel
 // -------------------------
 $panel-bg: ${theme.colors.panelBg};
-$panel-border: solid 1px $gray-5;
-$panel-header-hover-bg: darken($gray-7, 10%);
+$panel-border: none;
+$panel-header-hover-bg: $gray-6;
 $panel-corner: $gray-4;
 
 // Page header
-$page-header-bg: linear-gradient(90deg, $white, $gray-7);
+$page-header-bg: transparent;
 $page-header-shadow: inset 0px -3px 10px $gray-6;
 $page-header-border-color: $gray-4;
 
@@ -125,17 +127,17 @@ $code-tag-bg: $gray-6;
 $code-tag-border: $gray-4;
 
 // cards
-$card-background: linear-gradient(135deg, $gray-6, $gray-7);
-$card-background-hover: linear-gradient(135deg, $gray-6, $gray-5);
+$card-background: $gray-7;
+$card-background-hover: darken($gray-7, 10%);
 $card-shadow: -1px -1px 0 0 hsla(0, 0%, 100%, 0.1), 1px 1px 0 0 rgba(0, 0, 0, 0.1);
 
 // Lists
-$list-item-bg: $gray-7;
-$list-item-hover-bg: $gray-6;
-$list-item-link-color: $text-color;
+$list-item-bg: darken($white, 10%);
+$list-item-hover-bg: darken($white, 5%);
+$list-item-link-color: darken($gray-8, 20%);
 $list-item-shadow: $card-shadow;
 
-$empty-list-cta-bg: $gray-6;
+$empty-list-cta-bg: $gray-8;
 
 // Scrollbars
 $scrollbarBackground: $gray-4;
@@ -144,11 +146,12 @@ $scrollbarBorder: $gray-7;
 
 // Tables
 // -------------------------
-$table-bg-accent: $gray-5; // for striping
+$table-bg-accent: darken($gray-7, 10%); // for striping
+$table-bg-hover: $gray-7;
+$table-bg-active: $table-bg-hover !default;
 $table-border: $gray-3; // table and cell border
 
-$table-bg-odd: $gray-6;
-$table-bg-hover: $gray-5;
+$table-bg-odd: darken($gray-7, 10%);
 
 // Buttons
 // -------------------------
@@ -164,10 +167,9 @@ $btn-success-bg-hl: $green-shade;
 $btn-danger-bg: $red-base;
 $btn-danger-bg-hl: $red-shade;
 
-$btn-inverse-bg: $gray-5;
-$btn-inverse-bg-hl: darken($gray-5, 5%);
-$btn-inverse-bg-hl: $gray-4;
-$btn-inverse-text-color: $gray-1;
+$btn-inverse-bg: $white;
+$btn-inverse-bg-hl: darken($white, 5%);
+$btn-inverse-text-color: $gray-8;
 $btn-inverse-text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 
 $btn-link-color: $gray-1;
@@ -188,13 +190,13 @@ $btn-active-box-shadow: 0px 0px 4px rgba(234, 161, 51, 0.6);
 $input-bg: $white;
 $input-bg-disabled: $gray-5;
 
-$input-color: $dark-2;
+$input-color: $text-color;
 $input-border-color: $gray-5;
 $input-box-shadow: none;
 $input-border-focus: $gray-5 !default;
 $input-box-shadow-focus: $blue-light !default;
 $input-color-placeholder: $gray-4 !default;
-$input-label-bg: $gray-5;
+$input-label-bg: darken($gray-7, 10%);
 $input-label-border-color: $gray-5;
 $input-color-select-arrow: $gray-1;
 
@@ -237,16 +239,16 @@ $navbarBorder: 1px solid $gray-5;
 $navbarButtonBackground: lighten($navbarBackground, 3%);
 $navbarButtonBackgroundHighlight: lighten($navbarBackground, 5%);
 
-$navbar-button-border: $gray-4;
+$navbar-button-border: none;
 
 // Sidemenu
 // -------------------------
-$side-menu-bg: $dark-1;
-$side-menu-bg-mobile: rgba(0, 0, 0, 0); //$gray-6;
-$side-menu-item-hover-bg: $gray-1;
-$side-menu-item-hover-fg: $gray-7;
+$side-menu-bg: $white;
+$side-menu-bg-mobile: $white; //$gray-6;
+$side-menu-item-hover-bg: darken($white, 10%);
+$side-menu-item-hover-fg: $blue-highlight;
 $side-menu-shadow: 5px 0px 10px -5px $gray-1;
-$side-menu-link-color: $gray-6;
+$side-menu-link-color: darken($gray-8, 10%);
 
 // Menu dropdowns
 // -------------------------

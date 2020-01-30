@@ -11,7 +11,7 @@
 // Global values
 // --------------------------------------------------
 
-$theme-name: light;
+$theme-name: dark;
 
 // New Colors
 // -------------------------
@@ -166,13 +166,12 @@ $scrollbarBorder: $gray-4;
 // Tables
 // -------------------------
 $table-bg: transparent; // overall background-color
-$table-bg-accent: $gray-5; // for striping
-$table-bg-hover: $gray-5; // for hover
+$table-bg-accent: darken($gray-7, 10%); // for striping
+$table-bg-hover: $gray-7; // for hover
 $table-bg-active: $table-bg-hover !default; // for hover
 $table-border: $gray-3; // table and cell border
 
-$table-bg-odd: $gray-6;
-$table-bg-hover: $gray-5;
+$table-bg-odd: darken($gray-7, 10%);
 
 // Buttons
 // -------------------------

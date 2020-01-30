@@ -67,9 +67,9 @@ const lightTheme: GrafanaTheme = {
 
     // Text colors
     body: basicColors.gray1,
-    text: basicColors.gray1,
+    text: basicColors.gray8,
     textStrong: basicColors.dark2,
-    textWeak: basicColors.gray2,
+    textWeak: basicColors.gray8,
     textEmphasis: basicColors.dark5,
     textFaint: basicColors.dark4,
 
