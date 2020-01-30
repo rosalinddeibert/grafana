@@ -6,7 +6,7 @@
   top: $navbarHeight;
   z-index: $zindex-modal-backdrop;
   background-color: $black;
-  @include opacity(75);
+  @include opacity(50);
 }
 
 .search-container {
