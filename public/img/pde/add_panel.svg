@@ -4,8 +4,11 @@
     <title>Add Panel</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
+    <style type="text/css">
+	      .st0{ fill:#9E9E9E; }
+    </style>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.755970982">
-        <g id="PDE" transform="translate(-558.000000, -157.000000)" fill="#9E9E9E">
+        <g id="PDE" transform="translate(-558.000000, -157.000000)" class="st0">
             <g id="Add-Panel" transform="translate(558.000000, 157.000000)">
                 <rect id="Rectangle-3" x="15" y="0" width="5" height="19" rx="1"></rect>
                 <rect id="Rectangle-3" x="7.5" y="4" width="5" height="15" rx="1"></rect>
