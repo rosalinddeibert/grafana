@@ -19,11 +19,10 @@ const getSearchFieldStyles = (theme: GrafanaTheme) => ({
     width: 100%;
     height: 55px; /* this variable is not part of GrafanaTheme yet*/
     display: flex;
-    color: ${theme.colors.white};
     background-color: ${selectThemeVariant(
       {
         light: theme.colors.white,
-        dark: theme.colors.orangeBase,
+        dark: theme.colors.white,
       },
       theme.type
     )};
@@ -35,17 +34,10 @@ const getSearchFieldStyles = (theme: GrafanaTheme) => ({
     height: 51px;
     box-sizing: border-box;
     outline: none;
-    color: ${selectThemeVariant(
-      {
-        light: theme.colors.gray8,
-        dark: theme.colors.white,
-      },
-      theme.type
-    )};
     background: ${selectThemeVariant(
       {
         light: theme.colors.dark1,
-        dark: theme.colors.orangeShade,
+        dark: theme.colors.white,
       },
       theme.type
     )};
@@ -54,20 +46,18 @@ const getSearchFieldStyles = (theme: GrafanaTheme) => ({
         light: tinycolor(theme.colors.white)
           .lighten(4)
           .toString(),
-        dark: theme.colors.orangeBase,
+        dark: theme.colors.white,
+      },
+      theme.type
+    )};
+    color: ${selectThemeVariant(
+      {
+        light: theme.colors.gray8,
+        dark: theme.colors.gray2,
       },
       theme.type
     )};
     flex-grow: 10;
-
-    &::placeholder {
-      color: ${selectThemeVariant(
-        {
-          light: theme.colors.gray8,
-          dark: theme.colors.white,
-        },
-        theme.type
-      )};
     }
   `,
   spacer: css`
