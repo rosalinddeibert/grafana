@@ -1,7 +1,7 @@
 import angular from 'angular';
 import _ from 'lodash';
 import { dateMath, DataQueryRequest, DataSourceApi } from '@grafana/data';
-import { getBackendSrv } from '@grafana/runtime';
+import { BackendSrv } from 'app/core/services/backend_srv';
 import { TemplateSrv } from 'app/features/templating/template_srv';
 import { OpenTsdbOptions, OpenTsdbQuery } from './types';
 
@@ -19,8 +19,10 @@ export default class OpenTsDatasource extends DataSourceApi<OpenTsdbQuery, OpenT
   aggregatorsPromise: any;
   filterTypesPromise: any;
 
-  constructor(instanceSettings: any, private templateSrv: TemplateSrv) {
+  /** @ngInject */
+  constructor(instanceSettings: any, private backendSrv: BackendSrv, private templateSrv: TemplateSrv) {
     super(instanceSettings);
+
     this.type = 'opentsdb';
     this.url = instanceSettings.url;
     this.name = instanceSettings.name;
@@ -167,7 +169,7 @@ export default class OpenTsDatasource extends DataSourceApi<OpenTsdbQuery, OpenT
     };
 
     this._addCredentialOptions(options);
-    return getBackendSrv().datasourceRequest(options);
+    return this.backendSrv.datasourceRequest(options);
   }
 
   suggestTagKeys(metric: string | number) {
@@ -246,7 +248,7 @@ export default class OpenTsDatasource extends DataSourceApi<OpenTsdbQuery, OpenT
 
     this._addCredentialOptions(options);
 
-    return getBackendSrv().datasourceRequest(options);
+    return this.backendSrv.datasourceRequest(options);
   }
 
   _addCredentialOptions(options: any) {

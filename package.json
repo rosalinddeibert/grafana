@@ -3,7 +3,7 @@
   "license": "Apache-2.0",
   "private": true,
   "name": "grafana",
-  "version": "6.7.0-pre",
+  "version": "6.6.1",
   "repository": {
     "type": "git",
     "url": "http://github.com/grafana/grafana.git"
@@ -268,7 +268,7 @@
     "tether-drop": "https://github.com/torkelo/drop/tarball/master",
     "tinycolor2": "1.4.1",
     "tti-polyfill": "0.2.2",
-    "whatwg-fetch": "3.0.0",
+    "url-search-params-polyfill": "7.0.1",
     "xss": "1.0.3"
   },
   "resolutions": {

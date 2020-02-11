@@ -275,7 +275,7 @@ func (hs *HTTPServer) setIndexViewData(c *m.ReqContext) (*dtos.IndexViewData, er
 		})
 	}
 
-	if c.OrgRole == m.ROLE_ADMIN || hs.Cfg.EditorsCanAdmin {
+	if c.OrgRole == m.ROLE_ADMIN || (hs.Cfg.EditorsCanAdmin && c.OrgRole == m.ROLE_EDITOR) {
 		configNodes = append(configNodes, &dtos.NavLink{
 			Text:        "Teams",
 			Id:          "teams",
@@ -346,6 +346,22 @@ func (hs *HTTPServer) setIndexViewData(c *m.ReqContext) (*dtos.IndexViewData, er
 			})*/
 	}
 	/*
+			data.NavTree = append(data.NavTree, &dtos.NavLink{
+				Text:         "Help",
+				SubTitle:     fmt.Sprintf(`%s v%s (%s)`, setting.ApplicationName, setting.BuildVersion, setting.BuildCommit),
+				Id:           "help",
+				Url:          "#",
+				Icon:         "gicon gicon-question",
+				HideFromMenu: true,
+				SortWeight:   dtos.WeightHelp,
+				Children:     []*dtos.NavLink{
+					{Text: "Keyboard shortcuts", Url: "/shortcuts", Icon: "fa fa-fw fa-keyboard-o", Target: "_self"},
+					{Text: "Community site", Url: "http://community.grafana.com", Icon: "fa fa-fw fa-comment", Target: "_blank"},
+					{Text: "Documentation", Url: "http://docs.grafana.org", Icon: "fa fa-fw fa-file", Target: "_blank"},
+				},
+			})
+		}
+
 		data.NavTree = append(data.NavTree, &dtos.NavLink{
 			Text:         "Help",
 			SubTitle:     fmt.Sprintf(`%s v%s (%s)`, setting.ApplicationName, setting.BuildVersion, setting.BuildCommit),
@@ -354,14 +370,10 @@ func (hs *HTTPServer) setIndexViewData(c *m.ReqContext) (*dtos.IndexViewData, er
 			Icon:         "gicon gicon-question",
 			HideFromMenu: true,
 			SortWeight:   dtos.WeightHelp,
-			Children:     []*dtos.NavLink{
-				{Text: "Keyboard shortcuts", Url: "/shortcuts", Icon: "fa fa-fw fa-keyboard-o", Target: "_self"},
-				{Text: "Community site", Url: "http://community.grafana.com", Icon: "fa fa-fw fa-comment", Target: "_blank"},
-				{Text: "Documentation", Url: "http://docs.grafana.org", Icon: "fa fa-fw fa-file", Target: "_blank"},
-			},
+			Children:     []*dtos.NavLink{},
 		})
 	*/
-	hs.HooksService.RunIndexDataHooks(&data)
+	hs.HooksService.RunIndexDataHooks(&data, c)
 
 	sort.SliceStable(data.NavTree, func(i, j int) bool {
 		return data.NavTree[i].SortWeight < data.NavTree[j].SortWeight
