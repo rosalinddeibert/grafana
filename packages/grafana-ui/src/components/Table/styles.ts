@@ -43,7 +43,7 @@ export const getTableStyles = stylesFactory(
         padding: ${padding}px 10px;
         cursor: pointer;
         white-space: nowrap;
-        color: ${colors.blue};
+        color: ${colors.blueBase};
       `,
       row: css`
         border-bottom: 2px solid ${colors.bodyBg};

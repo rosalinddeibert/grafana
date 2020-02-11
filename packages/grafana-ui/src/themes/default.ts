@@ -14,6 +14,7 @@ export const commonColorsPalette = {
   gray6: '#e9edf2',
   gray7: 'rgba(240, 240, 240, 0.89)',
   gray8: '#9e9e9e',
+  gray9: '#d6d6d6',
 
   // New greys palette used by next-gen form elements
   gray98: '#f7f8fa',

@@ -141,6 +141,7 @@ export interface GrafanaTheme extends GrafanaThemeCommons {
     gray6: string;
     gray7: string;
     gray8: string;
+    gray9: string;
 
     // New greys palette used by next-gen form elements
     gray98: string;
@@ -165,7 +166,6 @@ export interface GrafanaTheme extends GrafanaThemeCommons {
     inputBlack: string;
 
     // Accent colors
-    blue: string;
     blueBase: string;
     blueShade: string;
     blueLight: string;
@@ -174,12 +174,10 @@ export interface GrafanaTheme extends GrafanaThemeCommons {
     redShade: string;
     greenBase: string;
     greenShade: string;
-    red: string;
     yellow: string;
     purple: string;
-    variable: string;
-    orange: string;
-    orangeDark: string;
+    orangeBase: string;
+    orangeShade: string;
     queryRed: string;
     queryGreen: string;
     queryPurple: string;

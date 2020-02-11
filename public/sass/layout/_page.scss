@@ -12,12 +12,12 @@
 .main-view {
   position: relative;
   flex-grow: 1;
-  background: $page-gradient;
+  background: $page-bg;
 }
 
 .panel-in-fullscreen {
   .main-view {
-    background: $edit-gradient;
+    background: linear-gradient(-60deg, $gray-8, $gray-9 70%, $gray-6 98%);
   }
 }
 

@@ -2,7 +2,9 @@
   display: flex;
 
   .btn {
-    @include buttonBackground($btn-inverse-bg, $btn-inverse-bg-hl, $btn-inverse-text-color, $btn-inverse-text-shadow);
+    background: $btn-inverse-bg;
+    color: $btn-inverse-text-color;
+    box-shadow: inset 0 0 1px $black;
 
     height: $input-height;
     padding: 7px 10px;
@@ -17,7 +19,8 @@
       border-right: 0;
       color: $white;
 
-      &:hover {
+      &:hover,
+      &:focus {
         cursor: default;
       }
     }

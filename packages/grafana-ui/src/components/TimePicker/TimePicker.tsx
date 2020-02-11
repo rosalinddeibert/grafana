@@ -71,13 +71,13 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
     `,
     syncedTimePicker: css`
       label: syncedTimePicker;
-      border-color: ${theme.colors.orangeDark};
+      border-color: ${theme.colors.orangeShade};
       background-image: none;
       background-color: transparent;
-      color: ${theme.colors.orangeDark};
+      color: ${theme.colors.orangeShade};
       &:focus,
       :hover {
-        color: ${theme.colors.orangeDark};
+        color: ${theme.colors.orangeShade};
         background-image: none;
         background-color: transparent;
       }
@@ -95,7 +95,7 @@ const getLabelStyles = stylesFactory((theme: GrafanaTheme) => {
       display: inline-block;
     `,
     utc: css`
-      color: ${theme.colors.orange};
+      color: ${theme.colors.orangeBase};
       font-size: 75%;
       padding: 3px;
       font-weight: ${theme.typography.weight.semibold};

@@ -16,11 +16,13 @@
 
     &:focus {
       outline: none;
+      border: inset $input-border-focus;
+      box-shadow: inset $input-box-shadow-focus;
     }
 
     &.active {
-      background-color: lighten($input-label-bg, 5%);
-      color: $link-color;
+      //background-color: darken($input-label-bg, 5%);
+      color: $btn-active-text-color;
     }
 
     &:nth-child(2) {
@@ -53,7 +55,8 @@
   padding: $space-md;
   border-radius: 4px;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: $card-background-hover;
   }
 
