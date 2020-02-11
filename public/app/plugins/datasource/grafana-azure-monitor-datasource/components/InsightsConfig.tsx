@@ -4,17 +4,16 @@ import { AzureDataSourceSettings } from '../types';
 
 export interface Props {
   options: AzureDataSourceSettings;
-  onUpdateOption: (key: string, val: any) => void;
-  onUpdateSecureOption: (key: string, val: any) => void;
+  onUpdateOption: (key: string, val: any, secure: boolean) => void;
   onResetOptionKey: (key: string) => void;
 }
 export class InsightsConfig extends PureComponent<Props> {
   onAppInsightsAppIdChange = (event: ChangeEvent<HTMLInputElement>) => {
-    this.props.onUpdateOption('appInsightsAppId', event.target.value);
+    this.props.onUpdateOption('appInsightsAppId', event.target.value, false);
   };
 
   onAppInsightsApiKeyChange = (event: ChangeEvent<HTMLInputElement>) => {
-    this.props.onUpdateSecureOption('appInsightsApiKey', event.target.value);
+    this.props.onUpdateOption('appInsightsApiKey', event.target.value, true);
   };
 
   onAppInsightsResetApiKey = () => {

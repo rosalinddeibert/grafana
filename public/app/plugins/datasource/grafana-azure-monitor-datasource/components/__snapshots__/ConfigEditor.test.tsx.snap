@@ -80,7 +80,6 @@ exports[`Render should render component 1`] = `
   <InsightsConfig
     onResetOptionKey={[Function]}
     onUpdateOption={[Function]}
-    onUpdateSecureOption={[Function]}
     options={
       Object {
         "access": "proxy",

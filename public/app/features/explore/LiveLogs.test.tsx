@@ -70,6 +70,7 @@ const makeLog = (overides: Partial<LogRowModel>): LogRowModel => {
     hasAnsi: false,
     labels: {},
     raw: entry,
+    timestamp: '',
     timeFromNow: '',
     timeEpochMs: 1,
     timeLocal: '',

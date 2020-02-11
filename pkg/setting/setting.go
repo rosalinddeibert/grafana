@@ -36,10 +36,11 @@ const (
 )
 
 const (
-	DEV      = "development"
-	PROD     = "production"
-	TEST     = "test"
-	APP_NAME = "Grafana"
+	DEV                 = "development"
+	PROD                = "production"
+	TEST                = "test"
+	APP_NAME            = "Grafana"
+	APP_NAME_ENTERPRISE = "Grafana Enterprise"
 )
 
 var (
@@ -618,6 +619,9 @@ func (cfg *Cfg) Load(args *CommandLineArgs) error {
 	Raw = cfg.Raw
 
 	ApplicationName = APP_NAME
+	if IsEnterprise {
+		ApplicationName = APP_NAME_ENTERPRISE
+	}
 
 	Env, err = valueAsString(iniFile.Section(""), "app_mode", "development")
 	if err != nil {

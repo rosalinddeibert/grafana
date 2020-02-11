@@ -94,7 +94,7 @@ export function QueryFieldsEditor({
           placeholder="Select region"
           options={regions}
           allowCustomValue
-          onChange={({ value: region }) => onQueryChange({ ...query, region })}
+          onChange={({ value: region }) => onChange({ ...query, region })}
         />
       </QueryInlineField>
 
@@ -106,7 +106,7 @@ export function QueryFieldsEditor({
               placeholder="Select namespace"
               allowCustomValue
               options={namespaces}
-              onChange={({ value: namespace }) => onQueryChange({ ...query, namespace })}
+              onChange={({ value: namespace }) => onChange({ ...query, namespace })}
             />
           </QueryInlineField>
 
@@ -116,7 +116,7 @@ export function QueryFieldsEditor({
               placeholder="Select metric name"
               allowCustomValue
               loadOptions={loadMetricNames}
-              onChange={({ value: metricName }) => onQueryChange({ ...query, metricName })}
+              onChange={({ value: metricName }) => onChange({ ...query, metricName })}
             />
           </QueryInlineField>
 

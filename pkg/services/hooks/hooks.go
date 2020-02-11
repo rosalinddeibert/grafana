@@ -2,11 +2,10 @@ package hooks
 
 import (
 	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/models"
 	"github.com/grafana/grafana/pkg/registry"
 )
 
-type IndexDataHook func(indexData *dtos.IndexViewData, req *models.ReqContext)
+type IndexDataHook func(indexData *dtos.IndexViewData)
 
 type HooksService struct {
 	indexDataHooks []IndexDataHook
@@ -24,8 +23,8 @@ func (srv *HooksService) AddIndexDataHook(hook IndexDataHook) {
 	srv.indexDataHooks = append(srv.indexDataHooks, hook)
 }
 
-func (srv *HooksService) RunIndexDataHooks(indexData *dtos.IndexViewData, req *models.ReqContext) {
+func (srv *HooksService) RunIndexDataHooks(indexData *dtos.IndexViewData) {
 	for _, hook := range srv.indexDataHooks {
-		hook(indexData, req)
+		hook(indexData)
 	}
 }

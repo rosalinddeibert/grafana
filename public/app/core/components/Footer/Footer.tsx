@@ -5,7 +5,7 @@ export interface FooterLink {
   text: string;
   icon?: string;
   url?: string;
-  target?: string;
+  target: string;
 }
 
 export let getFooterLinks = (): FooterLink[] => {
@@ -17,7 +17,7 @@ export let getFooterLinks = (): FooterLink[] => {
       target: '_blank',
     },
     {
-      text: 'Support',
+      text: 'Support & Enterprise',
       icon: 'fa fa-support',
       url: 'https://grafana.com/products/enterprise/?utm_source=grafana_footer',
       target: '_blank',
@@ -32,12 +32,15 @@ export let getFooterLinks = (): FooterLink[] => {
 };
 
 export let getVersionLinks = (): FooterLink[] => {
-  const { buildInfo, licenseInfo } = config;
-  const links: FooterLink[] = [];
-  const stateInfo = licenseInfo.stateInfo ? ` (${licenseInfo.stateInfo})` : '';
+  const { buildInfo } = config;
 
-  links.push({ text: `${buildInfo.edition}${stateInfo}`, url: licenseInfo.licenseUrl });
-  links.push({ text: `v${buildInfo.version} (${buildInfo.commit})` });
+  const links: FooterLink[] = [
+    {
+      text: `Grafana v${buildInfo.version} (commit: ${buildInfo.commit})`,
+      url: 'https://grafana.com',
+      target: '_blank',
+    },
+  ];
 
   if (buildInfo.hasUpdate) {
     links.push({

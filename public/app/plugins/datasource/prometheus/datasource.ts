@@ -6,6 +6,11 @@ import $ from 'jquery';
 import kbn from 'app/core/utils/kbn';
 import {
   AnnotationEvent,
+  dateMath,
+  DateTime,
+  LoadingState,
+  TimeRange,
+  TimeSeries,
   CoreApp,
   DataQueryError,
   DataQueryRequest,
@@ -13,14 +18,8 @@ import {
   DataQueryResponseData,
   DataSourceApi,
   DataSourceInstanceSettings,
-  dateMath,
-  DateTime,
-  LoadingState,
-  ScopedVars,
-  TimeRange,
-  TimeSeries,
 } from '@grafana/data';
-import { forkJoin, from, merge, Observable, of } from 'rxjs';
+import { from, merge, Observable, of, forkJoin } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 
 import PrometheusMetricFindQuery from './metric_find_query';
@@ -36,8 +35,6 @@ import { safeStringifyValue } from 'app/core/utils/explore';
 import templateSrv from 'app/features/templating/template_srv';
 import { getTimeSrv } from 'app/features/dashboard/services/TimeSrv';
 import TableModel from 'app/core/table_model';
-
-export const ANNOTATION_QUERY_STEP_DEFAULT = '60s';
 
 interface RequestOptions {
   method?: string;
@@ -522,21 +519,9 @@ export class PrometheusDatasource extends DataSourceApi<PromQuery, PromOptions> 
     };
   }
 
-  createAnnotationQueryOptions = (options: any): DataQueryRequest<PromQuery> => {
-    const annotation = options.annotation;
-    const interval =
-      annotation && annotation.step && typeof annotation.step === 'string'
-        ? annotation.step
-        : ANNOTATION_QUERY_STEP_DEFAULT;
-    return {
-      ...options,
-      interval,
-    };
-  };
-
   async annotationQuery(options: any) {
     const annotation = options.annotation;
-    const { expr = '', tagKeys = '', titleFormat = '', textFormat = '' } = annotation;
+    const { expr = '', tagKeys = '', titleFormat = '', textFormat = '', step = '60s' } = annotation;
 
     if (!expr) {
       return Promise.resolve([]);
@@ -544,7 +529,10 @@ export class PrometheusDatasource extends DataSourceApi<PromQuery, PromOptions> 
 
     const start = this.getPrometheusTime(options.range.from, false);
     const end = this.getPrometheusTime(options.range.to, true);
-    const queryOptions = this.createAnnotationQueryOptions(options);
+    const queryOptions = {
+      ...options,
+      interval: step,
+    };
 
     // Unsetting min interval for accurate event resolution
     const minStep = '1s';
@@ -620,14 +608,14 @@ export class PrometheusDatasource extends DataSourceApi<PromQuery, PromOptions> 
       : { status: 'error', message: response.error };
   }
 
-  interpolateVariablesInQueries(queries: PromQuery[], scopedVars: ScopedVars): PromQuery[] {
+  interpolateVariablesInQueries(queries: PromQuery[]): PromQuery[] {
     let expandedQueries = queries;
     if (queries && queries.length) {
       expandedQueries = queries.map(query => {
         const expandedQuery = {
           ...query,
           datasource: this.name,
-          expr: templateSrv.replace(query.expr, scopedVars, this.interpolateQueryExpr),
+          expr: templateSrv.replace(query.expr, {}, this.interpolateQueryExpr),
         };
         return expandedQuery;
       });

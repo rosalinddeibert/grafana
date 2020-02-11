@@ -75,7 +75,7 @@ export class InfluxLogsQueryField extends React.PureComponent<Props, State> {
         measurements.push({
           label: measurementObj.text,
           value: measurementObj.text,
-          children: fields,
+          items: fields,
         });
       }
       this.setState({ measurements });

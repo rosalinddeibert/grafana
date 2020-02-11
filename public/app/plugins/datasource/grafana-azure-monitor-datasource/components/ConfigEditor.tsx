@@ -296,12 +296,7 @@ export class ConfigEditor extends PureComponent<Props, State> {
           onLoadWorkspaces={this.getWorkspaces}
         />
 
-        <InsightsConfig
-          options={options}
-          onUpdateOption={this.updateOption}
-          onUpdateSecureOption={this.updateSecureOption}
-          onResetOptionKey={this.resetKey}
-        />
+        <InsightsConfig options={options} onUpdateOption={this.updateOption} onResetOptionKey={this.resetKey} />
       </>
     );
   }

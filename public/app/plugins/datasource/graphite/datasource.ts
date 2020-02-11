@@ -148,14 +148,14 @@ export class GraphiteDatasource extends DataSourceApi<GraphiteQuery, GraphiteOpt
     return tags;
   }
 
-  interpolateVariablesInQueries(queries: GraphiteQuery[], scopedVars: ScopedVars): GraphiteQuery[] {
+  interpolateVariablesInQueries(queries: GraphiteQuery[]): GraphiteQuery[] {
     let expandedQueries = queries;
     if (queries && queries.length > 0) {
       expandedQueries = queries.map(query => {
         const expandedQuery = {
           ...query,
           datasource: this.name,
-          target: this.templateSrv.replace(query.target, scopedVars),
+          target: this.templateSrv.replace(query.target),
         };
         return expandedQuery;
       });

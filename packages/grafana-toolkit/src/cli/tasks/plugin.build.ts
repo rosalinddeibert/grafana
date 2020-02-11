@@ -149,9 +149,7 @@ export const lintPlugin = useSpinner<Fixable>('Linting', async ({ fix }) => {
 
   if (lintResults.length > 0) {
     console.log('\n');
-    const failures = lintResults.reduce<RuleFailure[]>((failures, result) => {
-      return [...failures, ...result.failures];
-    }, []);
+    const failures: RuleFailure[] = lintResults.flat();
     failures.forEach(f => {
       // tslint:disable-next-line
       console.log(

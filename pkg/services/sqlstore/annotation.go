@@ -144,48 +144,46 @@ func (r *SqlAnnotationRepo) Find(query *annotations.ItemQuery) ([]*annotations.I
 		FROM annotation
 		LEFT OUTER JOIN ` + dialect.Quote("user") + ` as usr on usr.id = annotation.user_id
 		LEFT OUTER JOIN alert on alert.id = annotation.alert_id
-		INNER JOIN (
-			SELECT a.id from annotation a
 		`)
 
-	sql.WriteString(`WHERE a.org_id = ?`)
+	sql.WriteString(`WHERE annotation.org_id = ?`)
 	params = append(params, query.OrgId)
 
 	if query.AnnotationId != 0 {
 		// fmt.Print("annotation query")
-		sql.WriteString(` AND a.id = ?`)
+		sql.WriteString(` AND annotation.id = ?`)
 		params = append(params, query.AnnotationId)
 	}
 
 	if query.AlertId != 0 {
-		sql.WriteString(` AND a.alert_id = ?`)
+		sql.WriteString(` AND annotation.alert_id = ?`)
 		params = append(params, query.AlertId)
 	}
 
 	if query.DashboardId != 0 {
-		sql.WriteString(` AND a.dashboard_id = ?`)
+		sql.WriteString(` AND annotation.dashboard_id = ?`)
 		params = append(params, query.DashboardId)
 	}
 
 	if query.PanelId != 0 {
-		sql.WriteString(` AND a.panel_id = ?`)
+		sql.WriteString(` AND annotation.panel_id = ?`)
 		params = append(params, query.PanelId)
 	}
 
 	if query.UserId != 0 {
-		sql.WriteString(` AND a.user_id = ?`)
+		sql.WriteString(` AND annotation.user_id = ?`)
 		params = append(params, query.UserId)
 	}
 
 	if query.From > 0 && query.To > 0 {
-		sql.WriteString(` AND a.epoch <= ? AND a.epoch_end >= ?`)
+		sql.WriteString(` AND annotation.epoch <= ? AND annotation.epoch_end >= ?`)
 		params = append(params, query.To, query.From)
 	}
 
 	if query.Type == "alert" {
-		sql.WriteString(` AND a.alert_id > 0`)
+		sql.WriteString(` AND annotation.alert_id > 0`)
 	} else if query.Type == "annotation" {
-		sql.WriteString(` AND a.alert_id = 0`)
+		sql.WriteString(` AND annotation.alert_id = 0`)
 	}
 
 	if len(query.Tags) > 0 {
@@ -206,7 +204,7 @@ func (r *SqlAnnotationRepo) Find(query *annotations.ItemQuery) ([]*annotations.I
 			tagsSubQuery := fmt.Sprintf(`
         SELECT SUM(1) FROM annotation_tag at
           INNER JOIN tag on tag.id = at.tag_id
-          WHERE at.annotation_id = a.id
+          WHERE at.annotation_id = annotation.id
             AND (
               %s
             )
@@ -225,8 +223,7 @@ func (r *SqlAnnotationRepo) Find(query *annotations.ItemQuery) ([]*annotations.I
 		query.Limit = 100
 	}
 
-	// order of ORDER BY arguments match the order of a sql index for performance
-	sql.WriteString(" ORDER BY a.org_id, a.epoch_end DESC, a.epoch DESC" + dialect.Limit(query.Limit) + " ) dt on dt.id = annotation.id")
+	sql.WriteString(" ORDER BY epoch DESC" + dialect.Limit(query.Limit))
 
 	items := make([]*annotations.ItemDTO, 0)
 

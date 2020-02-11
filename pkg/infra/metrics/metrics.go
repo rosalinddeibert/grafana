@@ -154,8 +154,6 @@ var (
 
 func init() {
 	httpStatusCodes := []string{"200", "404", "500", "unknown"}
-	objectiveMap := map[float64]float64{0.5: 0.05, 0.9: 0.01, 0.99: 0.001}
-
 	MInstanceStart = prometheus.NewCounter(prometheus.CounterOpts{
 		Name:      "instance_start_total",
 		Help:      "counter for started instances",
@@ -193,9 +191,8 @@ func init() {
 
 	MHttpRequestSummary = prometheus.NewSummaryVec(
 		prometheus.SummaryOpts{
-			Name:       "http_request_duration_milliseconds",
-			Help:       "http request summary",
-			Objectives: objectiveMap,
+			Name: "http_request_duration_milliseconds",
+			Help: "http request summary",
 		},
 		[]string{"handler", "statuscode", "method"},
 	)
@@ -219,24 +216,21 @@ func init() {
 	})
 
 	MApiDashboardSave = prometheus.NewSummary(prometheus.SummaryOpts{
-		Name:       "api_dashboard_save_milliseconds",
-		Help:       "summary for dashboard save duration",
-		Objectives: objectiveMap,
-		Namespace:  exporterName,
+		Name:      "api_dashboard_save_milliseconds",
+		Help:      "summary for dashboard save duration",
+		Namespace: exporterName,
 	})
 
 	MApiDashboardGet = prometheus.NewSummary(prometheus.SummaryOpts{
-		Name:       "api_dashboard_get_milliseconds",
-		Help:       "summary for dashboard get duration",
-		Objectives: objectiveMap,
-		Namespace:  exporterName,
+		Name:      "api_dashboard_get_milliseconds",
+		Help:      "summary for dashboard get duration",
+		Namespace: exporterName,
 	})
 
 	MApiDashboardSearch = prometheus.NewSummary(prometheus.SummaryOpts{
-		Name:       "api_dashboard_search_milliseconds",
-		Help:       "summary for dashboard search duration",
-		Objectives: objectiveMap,
-		Namespace:  exporterName,
+		Name:      "api_dashboard_search_milliseconds",
+		Help:      "summary for dashboard search duration",
+		Namespace: exporterName,
 	})
 
 	MApiAdminUserCreate = newCounterStartingAtZero(prometheus.CounterOpts{
@@ -336,24 +330,21 @@ func init() {
 	})
 
 	LDAPUsersSyncExecutionTime = prometheus.NewSummary(prometheus.SummaryOpts{
-		Name:       "ldap_users_sync_execution_time",
-		Help:       "summary for LDAP users sync execution duration",
-		Objectives: objectiveMap,
-		Namespace:  exporterName,
+		Name:      "ldap_users_sync_execution_time",
+		Help:      "summary for LDAP users sync execution duration",
+		Namespace: exporterName,
 	})
 
 	MDataSourceProxyReqTimer = prometheus.NewSummary(prometheus.SummaryOpts{
-		Name:       "api_dataproxy_request_all_milliseconds",
-		Help:       "summary for dataproxy request duration",
-		Objectives: objectiveMap,
-		Namespace:  exporterName,
+		Name:      "api_dataproxy_request_all_milliseconds",
+		Help:      "summary for dataproxy request duration",
+		Namespace: exporterName,
 	})
 
 	MAlertingExecutionTime = prometheus.NewSummary(prometheus.SummaryOpts{
-		Name:       "alerting_execution_time_milliseconds",
-		Help:       "summary of alert exeuction duration",
-		Objectives: objectiveMap,
-		Namespace:  exporterName,
+		Name:      "alerting_execution_time_milliseconds",
+		Help:      "summary of alert exeuction duration",
+		Namespace: exporterName,
 	})
 
 	MAlertingActiveAlerts = prometheus.NewGauge(prometheus.GaugeOpts{

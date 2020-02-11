@@ -24,6 +24,7 @@ export class BarGaugePanel extends PureComponent<PanelProps<BarGaugeOptions>> {
   ): JSX.Element => {
     const { options } = this.props;
     const { field, display, view, colIndex } = value;
+    const f = view.dataFrame.fields[colIndex];
 
     return (
       <DataLinksContextMenu links={getFieldLinksSupplier(value)}>
@@ -35,7 +36,7 @@ export class BarGaugePanel extends PureComponent<PanelProps<BarGaugeOptions>> {
               height={height}
               orientation={options.orientation}
               field={field}
-              display={view?.getFieldDisplayProcessor(colIndex)}
+              display={f.display!}
               theme={config.theme}
               itemSpacing={this.getItemSpacing()}
               displayMode={options.displayMode}

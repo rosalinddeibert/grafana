@@ -60,15 +60,13 @@ const Navigation = ({ main }: { main: NavModelItem }) => {
       <TabsBar className="page-header__tabs" hideBorder={true}>
         {main.children.map((child, index) => {
           return (
-            !child.hideFromTabs && (
-              <Tab
-                label={child.text}
-                active={child.active}
-                key={`${child.url}-${index}`}
-                icon={child.icon}
-                onChangeTab={() => goToUrl(index)}
-              />
-            )
+            <Tab
+              label={child.text}
+              active={child.active}
+              key={`${child.url}-${index}`}
+              icon={child.icon}
+              onChangeTab={() => goToUrl(index)}
+            />
           );
         })}
       </TabsBar>

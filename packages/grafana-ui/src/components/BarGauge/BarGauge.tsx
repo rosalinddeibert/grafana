@@ -131,8 +131,7 @@ export class BarGauge extends PureComponent<Props> {
       };
     }
 
-    const color = display ? display(positionValue).color : null;
-
+    const color = display(positionValue).color;
     if (color) {
       // if we are past real value the cell is not "on"
       if (value === null || (positionValue !== null && positionValue > value.numeric)) {

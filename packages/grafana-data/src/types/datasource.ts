@@ -33,16 +33,15 @@ export type DataSourceOptionsType<DSType extends DataSourceApi<any, any>> = DSTy
 export class DataSourcePlugin<
   DSType extends DataSourceApi<TQuery, TOptions>,
   TQuery extends DataQuery = DataSourceQueryType<DSType>,
-  TOptions extends DataSourceJsonData = DataSourceOptionsType<DSType>,
-  TSecureOptions = {}
+  TOptions extends DataSourceJsonData = DataSourceOptionsType<DSType>
 > extends GrafanaPlugin<DataSourcePluginMeta<TOptions>> {
-  components: DataSourcePluginComponents<DSType, TQuery, TOptions, TSecureOptions> = {};
+  components: DataSourcePluginComponents<DSType, TQuery, TOptions> = {};
 
   constructor(public DataSourceClass: DataSourceConstructor<DSType, TQuery, TOptions>) {
     super();
   }
 
-  setConfigEditor(editor: ComponentType<DataSourcePluginOptionsEditorProps<TOptions, TSecureOptions>>) {
+  setConfigEditor(editor: ComponentType<DataSourcePluginOptionsEditorProps<TOptions>>) {
     this.components.ConfigEditor = editor;
     return this;
   }
@@ -132,8 +131,7 @@ interface PluginMetaQueryOptions {
 export interface DataSourcePluginComponents<
   DSType extends DataSourceApi<TQuery, TOptions>,
   TQuery extends DataQuery = DataQuery,
-  TOptions extends DataSourceJsonData = DataSourceJsonData,
-  TSecureOptions = {}
+  TOptions extends DataSourceJsonData = DataSourceJsonData
 > {
   QueryCtrl?: any;
   AnnotationsQueryCtrl?: any;
@@ -143,7 +141,7 @@ export interface DataSourcePluginComponents<
   ExploreMetricsQueryField?: ComponentType<ExploreQueryFieldProps<DSType, TQuery, TOptions>>;
   ExploreLogsQueryField?: ComponentType<ExploreQueryFieldProps<DSType, TQuery, TOptions>>;
   ExploreStartPage?: ComponentType<ExploreStartPageProps>;
-  ConfigEditor?: ComponentType<DataSourcePluginOptionsEditorProps<TOptions, TSecureOptions>>;
+  ConfigEditor?: ComponentType<DataSourcePluginOptionsEditorProps<TOptions>>;
   MetadataInspector?: ComponentType<MetadataInspectorProps<DSType, TQuery, TOptions>>;
 }
 
@@ -278,7 +276,7 @@ export abstract class DataSourceApi<
    */
   annotationQuery?(options: AnnotationQueryRequest<TQuery>): Promise<AnnotationEvent[]>;
 
-  interpolateVariablesInQueries?(queries: TQuery[], scopedVars: ScopedVars | {}): TQuery[];
+  interpolateVariablesInQueries?(queries: TQuery[]): TQuery[];
 }
 
 export interface MetadataInspectorProps<

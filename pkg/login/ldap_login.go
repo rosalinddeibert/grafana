@@ -51,7 +51,6 @@ var loginUsingLDAP = func(query *models.LoginUserQuery) (bool, error) {
 	}
 
 	upsert := &models.UpsertUserCommand{
-		ReqContext:    query.ReqContext,
 		ExternalUser:  externalUser,
 		SignupAllowed: setting.LDAPAllowSignup,
 	}

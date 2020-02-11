@@ -14,7 +14,6 @@ import {
 import { TemplateSrv } from 'app/features/templating/template_srv';
 import { ColumnRender, TableRenderModel, ColumnStyle } from './types';
 import { ColumnOptionsCtrl } from './column_options';
-import { sanitizeUrl } from 'app/core/utils/text';
 
 export class TableRenderer {
   formatters: any[];
@@ -298,15 +297,13 @@ export class TableRenderer {
       scopedVars['__cell'] = { value: value, text: value ? value.toString() : '' };
 
       const cellLink = this.templateSrv.replace(column.style.linkUrl, scopedVars, encodeURIComponent);
-      const sanitizedCellLink = sanitizeUrl(cellLink);
-
       const cellLinkTooltip = this.templateSrv.replace(column.style.linkTooltip, scopedVars);
       const cellTarget = column.style.linkTargetBlank ? '_blank' : '';
 
       cellClasses.push('table-panel-cell-link');
 
       columnHtml += `
-        <a href="${sanitizedCellLink}" target="${cellTarget}" data-link-tooltip data-original-title="${cellLinkTooltip}" data-placement="right"${cellStyle}>
+        <a href="${cellLink}" target="${cellTarget}" data-link-tooltip data-original-title="${cellLinkTooltip}" data-placement="right"${cellStyle}>
           ${value}
         </a>
       `;

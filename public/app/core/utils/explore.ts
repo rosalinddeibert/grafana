@@ -88,12 +88,11 @@ export async function getExploreUrl(args: GetExploreUrlArguments) {
     const range = timeSrv.timeRangeForUrl();
     let state: Partial<ExploreUrlState> = { range };
     if (exploreDatasource.interpolateVariablesInQueries) {
-      const scopedVars = panel.scopedVars || {};
       state = {
         ...state,
         datasource: exploreDatasource.name,
         context: 'explore',
-        queries: exploreDatasource.interpolateVariablesInQueries(exploreTargets, scopedVars),
+        queries: exploreDatasource.interpolateVariablesInQueries(exploreTargets),
       };
     } else {
       state = {
@@ -474,11 +473,11 @@ export const getRefIds = (value: any): string[] => {
 };
 
 export const sortInAscendingOrder = (a: LogRowModel, b: LogRowModel) => {
-  if (a.timeEpochMs < b.timeEpochMs) {
+  if (a.timestamp < b.timestamp) {
     return -1;
   }
 
-  if (a.timeEpochMs > b.timeEpochMs) {
+  if (a.timestamp > b.timestamp) {
     return 1;
   }
 
@@ -486,11 +485,11 @@ export const sortInAscendingOrder = (a: LogRowModel, b: LogRowModel) => {
 };
 
 const sortInDescendingOrder = (a: LogRowModel, b: LogRowModel) => {
-  if (a.timeEpochMs > b.timeEpochMs) {
+  if (a.timestamp > b.timestamp) {
     return -1;
   }
 
-  if (a.timeEpochMs < b.timeEpochMs) {
+  if (a.timestamp < b.timestamp) {
     return 1;
   }
 

@@ -52,7 +52,6 @@ export interface PanelModel<TOptions = any> {
   id: number;
   options: TOptions;
   pluginVersion?: string;
-  scopedVars?: ScopedVars;
 }
 
 /**

@@ -1,8 +1,7 @@
 import _ from 'lodash';
 import ResponseParser from './response_parser';
 import MysqlQuery from 'app/plugins/datasource/mysql/mysql_query';
-import { BackendSrv } from 'app/core/services/backend_srv';
-import { ScopedVars } from '@grafana/data';
+import { getBackendSrv } from '@grafana/runtime';
 import { TemplateSrv } from 'app/features/templating/template_srv';
 import { TimeSrv } from 'app/features/dashboard/services/TimeSrv';
 //Types
@@ -17,12 +16,7 @@ export class MysqlDatasource {
   interval: string;
 
   /** @ngInject */
-  constructor(
-    instanceSettings: any,
-    private backendSrv: BackendSrv,
-    private templateSrv: TemplateSrv,
-    private timeSrv: TimeSrv
-  ) {
+  constructor(instanceSettings: any, private templateSrv: TemplateSrv, private timeSrv: TimeSrv) {
     this.name = instanceSettings.name;
     this.id = instanceSettings.id;
     this.responseParser = new ResponseParser();
@@ -33,8 +27,7 @@ export class MysqlDatasource {
   interpolateVariable = (value: string, variable: any) => {
     if (typeof value === 'string') {
       if (variable.multi || variable.includeAll) {
-        const result = this.queryModel.quoteLiteral(value);
-        return result;
+        return this.queryModel.quoteLiteral(value);
       } else {
         return value;
       }
@@ -50,17 +43,14 @@ export class MysqlDatasource {
     return quotedValues.join(',');
   };
 
-  interpolateVariablesInQueries(
-    queries: MysqlQueryForInterpolation[],
-    scopedVars: ScopedVars
-  ): MysqlQueryForInterpolation[] {
+  interpolateVariablesInQueries(queries: MysqlQueryForInterpolation[]): MysqlQueryForInterpolation[] {
     let expandedQueries = queries;
     if (queries && queries.length > 0) {
       expandedQueries = queries.map(query => {
         const expandedQuery = {
           ...query,
           datasource: this.name,
-          rawSql: this.templateSrv.replace(query.rawSql, scopedVars, this.interpolateVariable),
+          rawSql: this.templateSrv.replace(query.rawSql, {}, this.interpolateVariable),
         };
         return expandedQuery;
       });
@@ -88,7 +78,7 @@ export class MysqlDatasource {
       return Promise.resolve({ data: [] });
     }
 
-    return this.backendSrv
+    return getBackendSrv()
       .datasourceRequest({
         url: '/api/tsdb/query',
         method: 'POST',
@@ -115,7 +105,7 @@ export class MysqlDatasource {
       format: 'table',
     };
 
-    return this.backendSrv
+    return getBackendSrv()
       .datasourceRequest({
         url: '/api/tsdb/query',
         method: 'POST',
@@ -161,7 +151,7 @@ export class MysqlDatasource {
       data['to'] = optionalOptions.range.to.valueOf().toString();
     }
 
-    return this.backendSrv
+    return getBackendSrv()
       .datasourceRequest({
         url: '/api/tsdb/query',
         method: 'POST',
@@ -171,7 +161,7 @@ export class MysqlDatasource {
   }
 
   testDatasource() {
-    return this.backendSrv
+    return getBackendSrv()
       .datasourceRequest({
         url: '/api/tsdb/query',
         method: 'POST',

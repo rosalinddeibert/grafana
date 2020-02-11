@@ -15,11 +15,3 @@
     display: inline;
   }
 }
-
-.query-part__link {
-  cursor: pointer;
-
-  &--no-value {
-    color: $text-muted;
-  }
-}

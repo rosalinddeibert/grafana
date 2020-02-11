@@ -56,6 +56,7 @@ export interface LogRowModel {
   logLevel: LogLevel;
   raw: string;
   searchWords?: string[];
+  timestamp: string; // ISO with nanosec precision
   timeFromNow: string;
   timeEpochMs: number;
   timeLocal: string;

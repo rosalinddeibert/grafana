@@ -86,7 +86,7 @@ export function sharedSingleStatPanelChangedHandler(
       defaults.mappings = mappings;
     }
 
-    if (panel.gauge && panel.gauge.show) {
+    if (panel.gauge) {
       defaults.min = panel.gauge.minValue;
       defaults.max = panel.gauge.maxValue;
     }
@@ -151,10 +151,11 @@ export function sharedSingleStatMigrationHandler(panel: PanelModel<SingleStatBas
 
     // Migrate color from simple string to a mode
     const { defaults } = fieldOptions;
-    if (defaults.color && typeof defaults.color === 'string') {
+    if (defaults.color) {
+      const old = defaults.color;
       defaults.color = {
         mode: FieldColorMode.Fixed,
-        fixedColor: defaults.color,
+        fixedColor: old,
       };
     }
 
