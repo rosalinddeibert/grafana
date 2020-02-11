@@ -12,12 +12,12 @@ $login-border: #999999;
   justify-content: center;
   background-image: url(../img/grafana-psiphon-login.png);
   background-size: cover;
-  color: #d8d9da;
+  color: $gray-8;
   & a {
-    color: #d8d9da !important;
+    color: $gray-8 !important;
   }
   & .btn-primary {
-    @include buttonBackground(#ff6600, #bc3e06);
+    @include buttonBackground($brand-primary, $brand-primary-shade);
   }
 }
 
@@ -45,11 +45,11 @@ select:-webkit-autofill:focus {
 }
 
 .login-form-group button[type='submit']:hover {
-  background: #d43f27;
+  background: $brand-primary;
 }
 
 .login-form-group button[type='submit']:active {
-  background: #d43f27;
+  background: $brand-primary;
 }
 
 .login-form {

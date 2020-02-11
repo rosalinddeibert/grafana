@@ -15,15 +15,16 @@ $theme-name: dark;
 
 // New Colors
 // -------------------------
+$blue: #3274d9;
 $blue-faint: #041126;
 $blue-light: #00a8e6;
-$blue-base: #3274d9;
 $blue-shade: #1f60c4;
-$red-base: #e02f44;
-$red-shade: #c4162a;
-$green-base: #299c46;
+$red: #ff2a2a;
+$red-shade: #b00000;
+$green: #299c46;
 $green-shade: #23843b;
-$orange-dark: #ff780a;
+$orange: #ff7941;
+$orange-shade: #fd6222;
 
 // Grays
 // -------------------------
@@ -46,6 +47,7 @@ $gray-5: #dde4ed;
 $gray-6: #e9edf2;
 $gray-7: rgba(240, 240, 240, 0.89);
 $gray-8: #9e9e9e;
+$gray-9: #d6d6d6;
 
 $gray-blue: #212327;
 $input-black: #09090b;
@@ -54,18 +56,13 @@ $white: #ffffff;
 
 // Accent colors
 // -------------------------
-$blue: #0083b3;
-$blue-light: #00a8e6;
-$blue-highlight: #585eff;
-$green: #3aa655;
-$red: #ff7358;
+
 $yellow: #ff851b;
-$orange: #ff7941;
-$pink: #e671b8;
 $purple: #9954bb;
 $variable: $blue;
 
 $brand-primary: $orange;
+$brand-primary-shade: $orange-shade;
 $brand-success: $green;
 $brand-warning: $orange;
 $brand-danger: $red;
@@ -99,11 +96,10 @@ $text-shadow-faint: none;
 $textShadow: none;
 
 // gradients
-$brand-gradient: linear-gradient(to right, #ffd500 0%, #ff4400 99%, #ff4400 100%);
-$brand-gradient-horizontal: linear-gradient(to right, #f05a28 30%, #fbca0a 99%);
-$brand-gradient-vertical: linear-gradient(#f05a28 30%, #fbca0a 99%);
-$page-gradient: $gray-7;
-$edit-gradient: linear-gradient(180deg, $dark-2 50%, $input-black);
+$brand-gradient: linear-gradient(to right, $red 0%, $red-shade 99%, $red-shade 100%);
+$brand-gradient-horizontal: linear-gradient(to right, $red 30%, $red-shade 99%);
+$brand-gradient-vertical: linear-gradient($red 30%, $red-shade 99%);
+$page-bg: $gray-7;
 
 // Links
 // -------------------------
@@ -133,7 +129,7 @@ $panel-corner: $panel-bg;
 // page header
 $page-header-bg: transparent;
 $page-header-shadow: inset 0px -3px 10px $gray-6;
-$page-header-border-color: $gray-4;
+$page-header-border-color: $gray-8;
 
 $divider-border-color: $gray-2;
 
@@ -176,27 +172,26 @@ $table-bg-odd: darken($gray-7, 10%);
 // Buttons
 // -------------------------
 $btn-primary-bg: $brand-primary;
-$btn-primary-bg-hl: lighten($brand-primary, 8%);
+$btn-primary-bg-hl: $brand-primary-shade;
 
 $btn-secondary-bg: $blue;
-$btn-secondary-bg-hl: lighten($blue, 4%);
+$btn-secondary-bg-hl: $blue-shade;
 
-$btn-success-bg: lighten($green, 3%);
-$btn-success-bg-hl: darken($green, 3%);
+$btn-success-bg: $green;
+$btn-success-bg-hl: $green-shade;
 
-$btn-warning-bg: lighten($orange, 3%);
-$btn-warning-bg-hl: darken($orange, 3%);
+$btn-warning-bg: $orange;
+$btn-warning-bg-hl: $orange-shade;
 
-$btn-danger-bg: lighten($red, 3%);
-$btn-danger-bg-hl: darken($red, 3%);
+$btn-danger-bg: $red;
+$btn-danger-bg-hl: $red-shade;
 
 $btn-inverse-bg: $white;
 $btn-inverse-bg-hl: darken($white, 5%);
 $btn-inverse-text-color: $gray-8;
 $btn-inverse-text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 
-$btn-active-bg: $white;
-$btn-active-text-color: $blue;
+$btn-active-text-color: $orange;
 
 $btn-link-color: $gray-1;
 
@@ -217,11 +212,12 @@ $input-bg-disabled: $gray-5;
 
 $input-color: $text-color;
 $input-border-color: $gray-5;
+$input-border-focus: $orange solid 1px !default;
 $input-box-shadow: none;
-$input-border-focus: $blue !default;
-$input-box-shadow-focus: $blue !default;
+$input-box-shadow-focus: 0 0 4px $orange !default;
+$input-box-shadow-bottom-focus: 0px 4px 4px -4px $orange;
 $input-color-placeholder: $gray-4 !default;
-$input-label-bg: darken($gray-7, 10%);
+$input-label-bg: $white;
 $input-label-border-color: $gray-5;
 $input-color-select-arrow: $gray-1;
 
@@ -242,7 +238,7 @@ $typeahead-selected-color: $blue;
 $dropdownBackground: $white;
 $dropdownBorder: $gray-4;
 $dropdownDividerTop: $gray-6;
-$dropdownDividerBottom: $white;
+$dropdownDividerBottom: $gray-3;
 $dropdownDivider: $dropdownDividerTop;
 
 $dropdownLinkColor: $dark-3;
@@ -261,7 +257,8 @@ $horizontalComponentOffset: 180px;
 $navbarHeight: 52px;
 $navbarBackground: $white;
 $navbarBorder: 1px solid $gray-4;
-$navbarShadow: 0 0 3px #c1c1c1;
+$navbarRoundedBorder: 4px;
+$navbarShadow: $gray-9 2px 2px 4px;
 
 $navbarLinkColor: #444;
 $navbarBrandColor: $navbarLinkColor;
@@ -276,22 +273,23 @@ $navbar-button-border: none;
 $side-menu-bg: $white;
 $side-menu-bg-mobile: $side-menu-bg;
 $side-menu-item-hover-bg: darken($white, 10%);
-$side-menu-item-hover-fg: $blue-highlight;
+$side-menu-item-hover-fg: $orange;
 $side-menu-shadow: 5px 0px 10px -5px $gray-1;
 $side-menu-link-color: darken($gray-8, 10%);
 
 // Menu dropdowns
 // -------------------------
-$menu-dropdown-bg: $gray-7;
+$menu-dropdown-bg: $side-menu-item-hover-bg;
 $menu-dropdown-hover-bg: $gray-6;
 $menu-dropdown-shadow: 5px 5px 10px -5px $gray-1;
+$menu-dropdown-text: $gray-1;
 
 // Tabs
 // -------------------------
-$tab-border-color: $gray-5;
+$tab-border-color: $gray-8;
 
 // Toolbar
-$toolbar-bg: $input-black;
+$toolbar-bg: $dark-8;
 
 // Form states and alerts
 // -------------------------
@@ -300,9 +298,9 @@ $error-text-color: lighten($red, 10%);
 $success-text-color: lighten($green, 10%);
 $info-text-color: $blue;
 
-$alert-error-bg: linear-gradient(90deg, #d44939, #e04d3d);
-$alert-success-bg: linear-gradient(90deg, $green, #47b274);
-$alert-warning-bg: linear-gradient(90deg, #d44939, #e04d3d);
+$alert-error-bg: linear-gradient(90deg, $red, $red-shade);
+$alert-success-bg: linear-gradient(90deg, $green, $green-shade);
+$alert-warning-bg: linear-gradient(90deg, $red, $red-shade);
 $alert-info-bg: $blue;
 
 // popover
@@ -380,48 +378,44 @@ $variable-option-bg: $blue-light;
 //Switch Slider
 // -------------------------
 $switch-bg: $input-bg;
-$switch-slider-color: $dark-3;
-$switch-slider-off-bg: $gray-1;
-$switch-slider-on-bg: linear-gradient(90deg, #eb7b18, #d44a3a);
-$switch-slider-shadow: 0 0 3px black;
+$switch-slider-color: $white;
+$switch-slider-off-bg: $gray-8;
+$switch-slider-on-bg: $gray-1;
+$switch-slider-shadow: 0 0 3px $dark-3;
 
 //Checkbox
 // -------------------------
-$checkbox-bg: $dark-1;
-$checkbox-border: 1px solid $gray-1;
-$checkbox-checked-bg: linear-gradient(0deg, #eb7b18, #d44a3a);
-$checkbox-color: $dark-1;
+$checkbox-bg: darken($gray-7, 10%);
+$checkbox-border: 1px solid $gray-8;
+$checkbox-checked-bg: $orange;
+$checkbox-color: $white;
 
 //Panel Edit
 // -------------------------
 $panel-editor-shadow: 0 0 20px black;
-$panel-editor-side-menu-shadow: drop-shadow(0 0 10px $black);
-$panel-editor-viz-item-shadow: 0 0 8px $dark-10;
-$panel-editor-viz-item-border: 1px solid $dark-10;
-$panel-editor-viz-item-shadow-hover: 0 0 4px $blue-light;
-$panel-editor-viz-item-border-hover: 1px solid $blue-light;
-$panel-editor-viz-item-bg: $input-black;
+$panel-editor-side-menu-shadow: drop-shadow(0 0 8px $dark-8);
+$panel-editor-viz-item-shadow: $card-shadow;
+$panel-editor-viz-item-bg: $card-background;
+$panel-editor-viz-item-bg-hover: $card-background-hover;
 $panel-editor-tabs-line-color: #e3e3e3;
 
-$panel-editor-viz-item-bg-hover: darken($blue-base, 46%);
-
 $panel-options-group-border: none;
-$panel-options-group-header-bg: $gray-blue;
+$panel-options-group-header-bg: $gray-1;
 
-$panel-grid-placeholder-bg: $blue-faint;
-$panel-grid-placeholder-shadow: 0 0 4px $blue-shade;
+$panel-grid-placeholder-bg: $gray-3;
+$panel-grid-placeholder-shadow: 0 0 4px $orange;
 
 // logs
 $logs-color-unkown: $gray-2;
 
 // toggle-group
-$button-toggle-group-btn-active-bg: linear-gradient(90deg, #eb7b18, #d44a3a);
+$button-toggle-group-btn-active-bg: $orange;
 $button-toggle-group-btn-active-shadow: inset 0 0 4px $black;
 $button-toggle-group-btn-seperator-border: 1px solid $dark-2;
 
-$vertical-resize-handle-bg: $dark-10;
-$vertical-resize-handle-dots: $gray-1;
-$vertical-resize-handle-dots-hover: $gray-2;
+$vertical-resize-handle-bg: $dark-8;
+$vertical-resize-handle-dots: $gray-4;
+$vertical-resize-handle-dots-hover: $white;
 
 // Calendar
 $calendar-bg-days: $input-bg;

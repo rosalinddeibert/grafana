@@ -21,6 +21,13 @@ gf-form-switch[disabled] {
 .gf-form-switch-container {
   display: flex;
   cursor: pointer;
+
+  &:hover,
+  &:focus-within/* not compatible with ms edge */ {
+    .gf-form-switch__slider::before {
+      background-color: $orange;
+    }
+  }
 }
 
 .gf-form-switch {

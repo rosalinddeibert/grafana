@@ -22,6 +22,10 @@ $panel-header-no-title-zindex: 1;
   cursor: move;
   word-wrap: break-word;
   display: block;
+
+  &:hover {
+    background-color: darken($input-label-bg, 10%);
+  }
 }
 
 .panel-title {
@@ -37,6 +41,7 @@ $panel-header-no-title-zindex: 1;
 }
 
 .panel-title-text {
+  color: $text-color;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;

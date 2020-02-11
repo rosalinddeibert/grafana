@@ -9,13 +9,13 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
   return {
     timePickerSynced: css`
       label: timePickerSynced;
-      border-color: ${theme.colors.orangeDark};
+      border-color: ${theme.colors.orangeShade};
       background-image: none;
       background-color: transparent;
-      color: ${theme.colors.orangeDark};
+      color: ${theme.colors.orangeShade};
       &:focus,
       :hover {
-        color: ${theme.colors.orangeDark};
+        color: ${theme.colors.orangeShade};
         background-image: none;
         background-color: transparent;
       }

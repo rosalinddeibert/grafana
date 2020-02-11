@@ -33,7 +33,7 @@ export const getButtonStyles = stylesFactory(({ theme, size, variant, textAndIco
 
   switch (variant) {
     case 'primary':
-      background = buttonVariantStyles(theme.colors.greenBase, theme.colors.greenShade, theme.colors.white);
+      background = buttonVariantStyles(theme.colors.orangeBase, theme.colors.orangeShade, theme.colors.white);
       break;
 
     case 'secondary':
