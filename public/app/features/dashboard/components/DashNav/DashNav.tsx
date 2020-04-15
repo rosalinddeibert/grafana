@@ -171,9 +171,7 @@ export class DashNav extends PureComponent<Props> {
 
   render() {
     const { dashboard, onAddPanel, location, $injector } = this.props;
-    const { canStar, canSave, canShare, showSettings, isStarred } = dashboard.meta;
-    const { snapshot } = dashboard;
-    const snapshotUrl = snapshot && snapshot.originalUrl;
+    const { canSave, canShare, showSettings } = dashboard.meta;
     return (
       <div className="navbar">
         {this.isInFullscreenOrSettings && this.renderBackButton()}
