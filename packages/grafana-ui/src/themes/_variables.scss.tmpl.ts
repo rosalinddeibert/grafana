@@ -74,10 +74,10 @@ $grid-breakpoints: (
 // Define the maximum width of \`.container\` for different screen sizes.
 
 $container-max-widths: (
-  sm: 576px,
-  md: 720px,
-  lg: 940px,
-  xl: 1080px,
+  sm: 720px,
+  md: 940px,
+  lg: 1080px,
+  xl: 1440px,
 ) !default;
 
 // Grid columns
@@ -195,8 +195,9 @@ $side-menu-width: 60px;
 $navbar-padding: 20px;
 
 // dashboard
-$dashboard-padding: $space-md;
-$panel-padding: ${theme.panelPadding}px;
+$panel-margin: 20px;
+$dashboard-padding: $panel-margin * 2;
+$panel-padding: ${theme.panelPadTop}px ${theme.panelPadSide}px ${theme.panelPadBottom}px ${theme.panelPadSide}px;
 $panel-header-height: ${theme.panelHeaderHeight}px;
 $panel-header-z-index: 10;
 

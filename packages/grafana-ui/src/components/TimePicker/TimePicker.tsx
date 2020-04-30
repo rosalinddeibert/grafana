@@ -69,6 +69,19 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
         font-size: ${theme.typography.size.md};
       }
     `,
+    syncedTimePicker: css`
+      label: syncedTimePicker;
+      border-color: ${theme.colors.orangeShade};
+      background-image: none;
+      background-color: transparent;
+      color: ${theme.colors.orangeShade};
+      &:focus,
+      :hover {
+        color: ${theme.colors.orangeShade};
+        background-image: none;
+        background-color: transparent;
+      }
+    `,
     noRightBorderStyle: css`
       label: noRightBorderStyle;
       border-right: 0;
@@ -82,7 +95,7 @@ const getLabelStyles = stylesFactory((theme: GrafanaTheme) => {
       display: inline-block;
     `,
     utc: css`
-      color: ${theme.colors.orange};
+      color: ${theme.colors.orangeBase};
       font-size: 75%;
       padding: 3px;
       font-weight: ${theme.typography.weight.semibold};

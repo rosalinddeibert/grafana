@@ -27,7 +27,7 @@ const getStyles = (theme: GrafanaTheme) => ({
   `,
   name: css`
     font-weight: ${theme.typography.weight.semibold};
-    color: ${theme.colors.blue};
+    color: ${theme.colors.blueBase};
   `,
   iconRow: css`
     display: flex;

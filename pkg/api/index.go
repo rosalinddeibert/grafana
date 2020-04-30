@@ -85,9 +85,9 @@ func (hs *HTTPServer) setIndexViewData(c *models.ReqContext) (*dtos.IndexViewDat
 		NewGrafanaVersionExists: plugins.GrafanaHasUpdate,
 		AppName:                 setting.ApplicationName,
 		AppNameBodyClass:        getAppNameBodyClass(hs.License.HasValidLicense()),
-		FavIcon:                 "public/img/fav32.png",
-		AppleTouchIcon:          "public/img/apple-touch-icon.png",
-		AppTitle:                "Grafana",
+		FavIcon:                 "public/img/favicon-psiphon.ico",
+		AppleTouchIcon:          "public/img/favicon-psiphon.ico",
+		AppTitle:                "Psiphon",
 	}
 
 	if setting.DisableGravatar {
@@ -130,7 +130,7 @@ func (hs *HTTPServer) setIndexViewData(c *models.ReqContext) (*dtos.IndexViewDat
 
 	dashboardChildNavs := []*dtos.NavLink{
 		{Text: "Home", Id: "home", Url: setting.AppSubUrl + "/", Icon: "gicon gicon-home", HideFromTabs: true},
-		{Text: "Divider", Divider: true, Id: "divider", HideFromTabs: true},
+		{Text: "", Divider: true, Id: "divider", HideFromTabs: true},
 		{Text: "Manage", Id: "manage-dashboards", Url: setting.AppSubUrl + "/dashboards", Icon: "gicon gicon-manage"},
 		{Text: "Playlists", Id: "playlists", Url: setting.AppSubUrl + "/playlists", Icon: "gicon gicon-playlists"},
 		{Text: "Snapshots", Id: "snapshots", Url: setting.AppSubUrl + "/dashboard/snapshots", Icon: "gicon gicon-snapshots"},
@@ -172,7 +172,7 @@ func (hs *HTTPServer) setIndexViewData(c *models.ReqContext) (*dtos.IndexViewDat
 			HideFromMenu: true,
 			SortWeight:   dtos.WeightProfile,
 			Children: []*dtos.NavLink{
-				{Text: "Preferences", Id: "profile-settings", Url: setting.AppSubUrl + "/profile", Icon: "gicon gicon-preferences"},
+				{Text: "Preferences", Id: "profile-settings", Url: setting.AppSubUrl + "/profile", Icon: "fa fa-fw fa-sliders"},
 				{Text: "Change Password", Id: "change-password", Url: setting.AppSubUrl + "/profile/password", Icon: "fa fa-fw fa-lock", HideFromMenu: true},
 			},
 		}
@@ -345,30 +345,31 @@ func (hs *HTTPServer) setIndexViewData(c *models.ReqContext) (*dtos.IndexViewDat
 				Text: "LDAP", Id: "ldap", Url: setting.AppSubUrl + "/admin/ldap", Icon: "fa fa-fw fa-address-book-o",
 			})
 		}
-
-		data.NavTree = append(data.NavTree, &dtos.NavLink{
-			Text:         "Server Admin",
-			SubTitle:     "Manage all users & orgs",
-			HideFromTabs: true,
-			Id:           "admin",
-			Icon:         "gicon gicon-shield",
-			Url:          setting.AppSubUrl + "/admin/users",
-			SortWeight:   dtos.WeightAdmin,
-			Children:     adminNavLinks,
-		})
+		/*
+			data.NavTree = append(data.NavTree, &dtos.NavLink{
+				Text:         "Server Admin",
+				SubTitle:     "Manage all users & orgs",
+				HideFromTabs: true,
+				Id:           "admin",
+				Icon:         "gicon gicon-shield",
+				Url:          setting.AppSubUrl + "/admin/users",
+				SortWeight:   dtos.WeightAdmin,
+				Children:     adminNavLinks,
+			})*/
 	}
-
-	data.NavTree = append(data.NavTree, &dtos.NavLink{
-		Text:         "Help",
-		SubTitle:     fmt.Sprintf(`%s v%s (%s)`, setting.ApplicationName, setting.BuildVersion, setting.BuildCommit),
-		Id:           "help",
-		Url:          "#",
-		Icon:         "gicon gicon-question",
-		HideFromMenu: true,
-		SortWeight:   dtos.WeightHelp,
-		Children:     []*dtos.NavLink{},
-	})
-
+	/*
+		data.NavTree = append(data.NavTree, &dtos.NavLink{
+			Text:         "Help",
+			SubTitle:     fmt.Sprintf(`%s v%s (%s)`, setting.ApplicationName, setting.BuildVersion, setting.BuildCommit),
+			Id:           "help",
+			Url:          "#",
+			Icon:         "gicon gicon-question",
+			HideFromMenu: true,
+			SortWeight:   dtos.WeightHelp,
+			Children:     []*dtos.NavLink{},
+			},
+		})
+	*/
 	hs.HooksService.RunIndexDataHooks(&data, c)
 
 	sort.SliceStable(data.NavTree, func(i, j int) bool {

@@ -12,7 +12,7 @@ export interface TabProps {
 
 const getTabStyles = stylesFactory((theme: GrafanaTheme) => {
   const colors = theme.colors;
-  const tabBorderColor = selectThemeVariant({ dark: colors.dark9, light: colors.gray5 }, theme.type);
+  const tabBorderColor = selectThemeVariant({ dark: colors.gray8, light: colors.gray5 }, theme.type);
 
   return {
     tabItem: css`
@@ -42,7 +42,7 @@ const getTabStyles = stylesFactory((theme: GrafanaTheme) => {
       }
     `,
     activeStyle: css`
-      border-color: ${colors.orange} ${tabBorderColor} transparent;
+      border-color: transparent ${tabBorderColor} ${colors.pageBg} ${tabBorderColor};
       background: ${colors.pageBg};
       color: ${colors.link};
       overflow: hidden;
@@ -56,7 +56,7 @@ const getTabStyles = stylesFactory((theme: GrafanaTheme) => {
         right: 0;
         height: 2px;
         top: 0;
-        background-image: linear-gradient(to right, #f05a28 30%, #fbca0a 99%);
+        border-top: ${colors.orangeBase} solid 2px;
       }
     `,
   };

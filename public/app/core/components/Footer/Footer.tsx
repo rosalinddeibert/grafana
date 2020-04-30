@@ -60,21 +60,7 @@ export function setVersionLinkFn(fn: typeof getFooterLinks) {
 }
 
 export const Footer: FC = React.memo(() => {
-  const links = getFooterLinks().concat(getVersionLinks());
+  //const links = getFooterLinks().concat(getVersionLinks());
 
-  return (
-    <footer className="footer">
-      <div className="text-center">
-        <ul>
-          {links.map(link => (
-            <li key={link.text}>
-              <a href={link.url} target={link.target} rel="noopener">
-                <i className={link.icon} /> {link.text}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </footer>
-  );
+  return <footer className="footer"></footer>;
 });

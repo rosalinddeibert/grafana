@@ -275,9 +275,10 @@ export class PanelChrome extends PureComponent<Props, State> {
     const timeRange = data.timeRange || this.timeSrv.timeRange();
 
     const headerHeight = this.hasOverlayHeader() ? 0 : theme.panelHeaderHeight;
-    const chromePadding = plugin.noPadding ? 0 : theme.panelPadding;
-    const panelWidth = width - chromePadding * 2 - PANEL_BORDER;
-    const innerPanelHeight = height - headerHeight - chromePadding * 2 - PANEL_BORDER;
+    const chromePaddingWidth = plugin.noPadding ? 0 : theme.panelPadSide * 2;
+    const panelWidth = width - chromePaddingWidth - PANEL_BORDER;
+    const chromePaddingHeight = plugin.noPadding ? 0 : theme.panelPadTop + theme.panelPadBottom;
+    const innerPanelHeight = height - headerHeight - chromePaddingHeight - PANEL_BORDER;
 
     const panelContentClassNames = classNames({
       'panel-content': true,

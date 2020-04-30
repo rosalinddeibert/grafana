@@ -1,4 +1,5 @@
 .navbar {
+  align-items: center;
   position: relative;
   z-index: $zindex-navbar-fixed;
   height: $navbarHeight;
@@ -58,15 +59,29 @@
 }
 
 .navbar-page-btn {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  background-color: $btn-inverse-bg;
+  border: 1px solid $navbar-button-border;
+  border-radius: $navbarRoundedBorder;
+  box-shadow: $navbarShadow;
   display: block;
-  margin: 0;
-  color: $headings-color;
   font-size: $font-size-lg;
-  min-height: $navbarHeight;
-  line-height: $navbarHeight;
+  line-height: 20px;
+  margin-right: 9px;
+  min-height: 20px;
+  overflow: hidden;
+  padding: 6px 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: $text-muted;
+
+  a {
+    color: $text-muted;
+  }
+  &:hover {
+    a {
+      color: $orange;
+    }
+  }
 
   .gicon {
     top: -2px;
@@ -129,20 +144,31 @@ i.navbar-page-btn__search {
 }
 
 .navbar-button {
-  @include buttonBackground($btn-inverse-bg, $btn-inverse-bg-hl, $btn-inverse-text-color, $btn-inverse-text-shadow);
-
-  display: flex;
-  align-items: center;
+  //@include buttonBackground($btn-inverse-bg, $btn-inverse-bg-hl, $btn-inverse-text-color, $btn-inverse-text-shadow);
+  background-color: $btn-inverse-bg;
+  box-shadow: $navbarShadow;
+  display: inline-block;
   font-weight: $btn-font-weight;
-  padding: 6px $space-sm;
-  line-height: 18px;
+  padding: 6px 11px;
+  line-height: 17px;
+  height: 30px;
   color: $text-muted;
   border: 1px solid $navbar-button-border;
-  margin-left: $space-xs;
+  border-radius: $navbarRoundedBorder;
+  margin-right: 9px;
   white-space: nowrap;
 
   .gicon {
     font-size: 16px;
+    margin-right: 4px;
+    line-height: 14px;
+  }
+  &:hover,
+  &:focus {
+    .gicon {
+      filter: brightness(0.5);
+    }
+    color: $gray-1;
   }
 
   .fa {
@@ -150,7 +176,7 @@ i.navbar-page-btn__search {
   }
 
   &--add-panel {
-    padding: 2px 10px;
+    padding: 5px 10px;
 
     .gicon {
       font-size: 22px;
@@ -164,22 +190,12 @@ i.navbar-page-btn__search {
 
   &--attached {
     margin-left: 0;
-    border-radius: 0 2px 2px 0;
-  }
-
-  &--settings {
-    .gicon {
-      filter: $navbar-btn-gicon-brightness;
-    }
-    &:hover {
-      .gicon {
-        filter: brightness(0.8);
-      }
-    }
+    border-radius: 2px;
   }
 
   &--tight {
     padding: 7px 4px;
+    margin-right: 0;
 
     .fa {
       font-size: 14px;

@@ -172,3 +172,34 @@ describe('dataSourceSettingsReducer', () => {
     });
   });
 });
+
+describe('dataSourceSettingsReducer', () => {
+  describe('when initDataSourceSettingsSucceeded is dispatched', () => {
+    it('then state should be correct', () => {
+      reducerTester<DataSourceSettingsState>()
+        .givenReducer(dataSourceSettingsReducer, { ...initialDataSourceSettingsState })
+        .whenActionIsDispatched(initDataSourceSettingsSucceeded({} as GenericDataSourcePlugin))
+        .thenStateShouldEqual({
+          ...initialDataSourceSettingsState,
+          plugin: {} as GenericDataSourcePlugin,
+          loadError: null,
+        });
+    });
+  });
+
+  describe('when initDataSourceSettingsFailed is dispatched', () => {
+    it('then state should be correct', () => {
+      reducerTester<DataSourceSettingsState>()
+        .givenReducer(dataSourceSettingsReducer, {
+          ...initialDataSourceSettingsState,
+          plugin: {} as GenericDataSourcePlugin,
+        })
+        .whenActionIsDispatched(initDataSourceSettingsFailed(new Error('Some error')))
+        .thenStatePredicateShouldEqual(resultingState => {
+          expect(resultingState.plugin).toEqual(null);
+          expect(resultingState.loadError).toEqual('Some error');
+          return true;
+        });
+    });
+  });
+});

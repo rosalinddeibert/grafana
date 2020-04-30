@@ -22,7 +22,7 @@ const getSearchFieldStyles = (theme: GrafanaTheme) => ({
     background-color: ${selectThemeVariant(
       {
         light: theme.colors.white,
-        dark: theme.colors.dark4,
+        dark: theme.colors.white,
       },
       theme.type
     )};
@@ -37,7 +37,7 @@ const getSearchFieldStyles = (theme: GrafanaTheme) => ({
     background: ${selectThemeVariant(
       {
         light: theme.colors.dark1,
-        dark: theme.colors.black,
+        dark: theme.colors.white,
       },
       theme.type
     )};
@@ -46,11 +46,19 @@ const getSearchFieldStyles = (theme: GrafanaTheme) => ({
         light: tinycolor(theme.colors.white)
           .lighten(4)
           .toString(),
-        dark: theme.colors.dark4,
+        dark: theme.colors.white,
+      },
+      theme.type
+    )};
+    color: ${selectThemeVariant(
+      {
+        light: theme.colors.gray8,
+        dark: theme.colors.gray2,
       },
       theme.type
     )};
     flex-grow: 10;
+    }
   `,
   spacer: css`
     flex-grow: 1;

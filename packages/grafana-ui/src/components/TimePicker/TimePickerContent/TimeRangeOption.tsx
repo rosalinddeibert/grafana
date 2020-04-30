@@ -7,7 +7,7 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
   const background = selectThemeVariant(
     {
       light: theme.colors.gray7,
-      dark: theme.colors.dark3,
+      dark: theme.colors.gray4,
     },
     theme.type
   );
@@ -22,13 +22,10 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
 
       &:hover {
         background: ${background};
-        border-image: linear-gradient(#f05a28 30%, #fbca0a 99%);
-        border-image-slice: 1;
-        border-style: solid;
+        border-left: ${theme.colors.orangeBase} solid 2px;
         border-top: 0;
         border-right: 0;
         border-bottom: 0;
-        border-left-width: 2px;
         cursor: pointer;
       }
     `,

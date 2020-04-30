@@ -31,15 +31,16 @@
   margin-bottom: $space-xxs;
 
   &:hover {
-    box-shadow: $panel-editor-viz-item-shadow-hover;
     background: $panel-editor-viz-item-bg-hover;
-    border: $panel-editor-viz-item-border-hover;
     color: $text-color-strong;
 
     .add-data-source-item-actions {
       opacity: 1;
       transition: 0.15s opacity ease-in-out;
     }
+  }
+  &:focus-within /* not compatible with ms edge */ {
+    background: $panel-editor-viz-item-bg-hover;
   }
 }
 

@@ -1,6 +1,6 @@
 .query-keyword {
   font-weight: $font-weight-semi-bold;
-  color: $blue;
+  color: $orange;
 }
 
 .query-segment-operator {
@@ -143,7 +143,7 @@ input[type='text'].tight-form-func-param {
 }
 .query-editor-row__ref-id {
   font-weight: $font-weight-semi-bold;
-  color: $blue;
+  color: $orange;
   font-size: $font-size-md;
   cursor: pointer;
   display: flex;
@@ -187,8 +187,9 @@ input[type='text'].tight-form-func-param {
   border: none;
   box-shadow: none;
 
-  &:hover {
-    color: $text-color;
+  &:hover,
+  &:focus {
+    color: $gray-1;
   }
 }
 

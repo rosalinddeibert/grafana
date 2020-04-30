@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Clock</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <style type="text/css">
+        .st0{ fill:#9E9E9E; }
+        .st1{ fill:none; stroke:#9E9E9E; stroke-width:3.5; }
+    </style>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.773939732">
+        <g id="PDE" transform="translate(-1116.000000, -157.000000)">
+            <g id="Clock" transform="translate(1116.000000, 157.000000)">
+                <circle id="Oval" class="st1" cx="9" cy="9" r="7.25"></circle>
+                <rect id="Rectangle-4" class="st0" x="7" y="2" width="3" height="9"></rect>
+                <polygon id="Rectangle-4" class="st0" points="16 8 16 11 7 11 7 8"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -40,7 +40,7 @@ export class TableContainer extends PureComponent<TableContainerProps> {
     const { loading, onClickCell, showingTable, tableResult, width } = this.props;
 
     const height = this.getTableHeight();
-    const tableWidth = width - config.theme.panelPadding * 2 - PANEL_BORDER;
+    const tableWidth = width - config.theme.panelPadSide * 2 - PANEL_BORDER;
     const hasTableResult = tableResult?.length;
 
     return (

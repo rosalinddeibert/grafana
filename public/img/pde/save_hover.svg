@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Save Hover</title>
+    <desc>A save icon.</desc>
+    <defs></defs>
+    <style type="text/css">
+        .st0{ fill:#ff7941; }
+    </style>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PDE" transform="translate(-854.000000, -158.000000)">
+            <g id="Save-Hover" class="st0" transform="translate(854.000000, 158.000000)">
+                <rect id="stub" x="11" y="1" width="1" height="4.5" rx="1"></rect>
+                <rect id="top" x="0" y="0" width="15.05" height="2.5" rx="1"></rect>
+                <rect id="mid" x="0" y="7.5" width="15.05" height="2.5"></rect>
+                <rect id="mid-right" x="13.5" y="0" width="1.55" height="8"></rect>
+                <rect id="mid-rightmost" x="15" y="4" width="1.55" height="6"></rect>
+                <rect id="top-left" x="0" y="1" width="4.5" height="7"></rect>
+                <rect id="bottom-left" x="0" y="7" width="3" height="12.5"></rect>
+                <rect id="bottom" x="0" y="17.5" width="20" height="2.5"></rect>
+                <rect id="right" x="16.5" y="4.95" width="3.5" height="15"></rect>
+                <path id="top-corner-right" d="M0 2.5 V2 Q0 1.1 -1 0.9 H1 V2.5z" transform="translate(13.5, 1.5)"/>
+                <path id="top-corner-left" d="M0 2.5 V2 Q0 1.1 -1 0.9 H1 V2.5z" transform="rotate(270) translate(-2.5, 3.5)"/>
+                <path id="bottom-corner-right" d="M0 2.5 V2 Q0 1.1 -1 0.9 H1 V2.5z" transform="translate(16.5, 9)"/>
+                <path id="bottom-corner-left" d="M0 2.5 V2 Q0 1.1 -1 0.9 H1 V2.5z" transform="rotate(270) translate(-10, 2)"/>
+                <polygon id="top-left" points="0,0 5,5 0,5" transform="translate(15, 0)"/>
+            </g>
+        </g>
+    </g>
+</svg>

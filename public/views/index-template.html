@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="theme-color" content="#000" />
 
-    <title>[[.AppTitle]]</title>
+    <title>Psiphon</title>
 
     <base href="[[.AppSubUrl]]/" />
 
@@ -31,9 +31,10 @@
     />
 
     <link rel="icon" type="image/png" href="[[.FavIcon]]" />
+    <link rel="mask-icon" href="public/img/favicon-psiphon.ico" color="#F05A28" />
     <link rel="apple-touch-icon" sizes="180x180" href="[[.AppleTouchIcon]]" />
-    <link rel="mask-icon" href="public/img/grafana_mask_icon.svg" color="#F05A28" />
 
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="public/build/grafana.[[ .Theme ]].<%= webpack.hash %>.css" />
 
     <script>
@@ -210,11 +211,11 @@
     </div>
 
     <grafana-app class="grafana-app" ng-cloak>
-      <sidemenu class="sidemenu"></sidemenu>
       <app-notifications-list class="page-alert-list"></app-notifications-list>
       <dashboard-search></dashboard-search>
 
       <div class="main-view">
+        <sidemenu class="sidemenu"></sidemenu>
 				<div ng-view class="scroll-canvas"></div>
       </div>
     </grafana-app>

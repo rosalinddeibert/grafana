@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Dashboards</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <style type="text/css">
+        .st0{ fill:#9E9E9E; }
+    </style>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PDE" class="st0" transform="translate(-976.000000, -72.000000)">
+            <g id="Dashboards" transform="translate(976.000000, 72.000000)">
+                <rect id="Rectangle-3" x="0" y="0" width="9" height="9" rx="2"></rect>
+                <rect id="Rectangle-3" x="12" y="0" width="9" height="9" rx="2"></rect>
+                <rect id="Rectangle-3" x="0" y="12" width="9" height="9" rx="2"></rect>
+                <rect id="Rectangle-3" x="12" y="12" width="9" height="9" rx="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

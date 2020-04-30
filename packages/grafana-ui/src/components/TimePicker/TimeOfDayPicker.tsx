@@ -40,7 +40,7 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
           outline-width: 2px;
           &.rc-time-picker-panel-select-option-selected {
             background-color: inherit;
-            border: 1px solid ${theme.colors.orange};
+            border: 1px solid ${theme.colors.orangeBase};
             border-radius: ${borderRadius};
           }
 

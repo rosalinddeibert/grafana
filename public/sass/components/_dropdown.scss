@@ -6,6 +6,7 @@
 .dropup,
 .dropdown {
   position: relative;
+  display: inline-block;
 }
 
 .dropdown-toggle:active,
@@ -46,11 +47,11 @@
 // ----------------------
 .dropdown-menu {
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 48px;
+  left: 20px;
   z-index: $zindex-dropdown;
   display: none; // none by default, but block on "open" of the menu
-  float: left;
+  // float: left;
   min-width: 140px;
   margin: 2px 0 0; // override default ul
   list-style: none;
@@ -69,7 +70,7 @@
     height: 1px;
     margin: $space-sm 0; // 8px 1px
     overflow: hidden;
-    background-color: $dropdownDividerTop;
+    background-color: $menu-dropdown-bg;
     border-bottom: 1px solid $dropdownDividerBottom;
   }
 
@@ -87,7 +88,8 @@
       i {
         display: inline-block;
         margin-right: 10px;
-        color: $link-color-disabled;
+        color: $menu-dropdown-text;
+        opacity: 0.7;
         position: relative;
         top: 3px;
       }
@@ -114,6 +116,7 @@
     border: none;
 
     > li > a {
+      color: $menu-dropdown-text;
       display: flex;
       padding: 5px 10px;
       border-left: 2px solid transparent;

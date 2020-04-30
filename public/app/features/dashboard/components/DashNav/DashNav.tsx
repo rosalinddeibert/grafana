@@ -17,7 +17,6 @@ import { DashboardModel } from '../../state';
 import { CoreEvents, StoreState } from 'app/types';
 import { ShareModal } from 'app/features/dashboard/components/ShareModal';
 import { SaveDashboardModalProxy } from 'app/features/dashboard/components/SaveDashboard/SaveDashboardModalProxy';
-import { sanitizeUrl } from 'app/core/utils/text';
 
 export interface OwnProps {
   dashboard: DashboardModel;
@@ -149,10 +148,7 @@ export class DashNav extends PureComponent<Props> {
 
   render() {
     const { dashboard, onAddPanel, location } = this.props;
-    const { canStar, canSave, canShare, showSettings, isStarred } = dashboard.meta;
-    const { snapshot } = dashboard;
-    const snapshotUrl = snapshot && snapshot.originalUrl;
-
+    const { canSave, canShare, showSettings } = dashboard.meta;
     return (
       <div className="navbar">
         {this.isInFullscreenOrSettings && this.renderBackButton()}
@@ -188,17 +184,18 @@ export class DashNav extends PureComponent<Props> {
               classSuffix="add-panel"
               icon="gicon gicon-add-panel"
               onClick={onAddPanel}
+              text="Add Panel"
             />
           )}
 
-          {canStar && (
+          {/*canStar && (
             <DashNavButton
               tooltip="Mark as favorite"
               classSuffix="star"
               icon={`${isStarred ? 'fa fa-star' : 'fa fa-star-o'}`}
               onClick={this.onStarDashboard}
             />
-          )}
+          )*/}
 
           {canShare && (
             <ModalsController>
@@ -206,13 +203,14 @@ export class DashNav extends PureComponent<Props> {
                 <DashNavButton
                   tooltip="Share dashboard"
                   classSuffix="share"
-                  icon="fa fa-share-square-o"
+                  icon="gicon gicon-share"
                   onClick={() => {
                     showModal(ShareModal, {
                       dashboard,
                       onDismiss: hideModal,
                     });
                   }}
+                  text="Share Dashboard"
                 />
               )}
             </ModalsController>
@@ -224,26 +222,27 @@ export class DashNav extends PureComponent<Props> {
                 <DashNavButton
                   tooltip="Save dashboard"
                   classSuffix="save"
-                  icon="fa fa-save"
+                  icon="gicon gicon-save"
                   onClick={() => {
                     showModal(SaveDashboardModalProxy, {
                       dashboard,
                       onDismiss: hideModal,
                     });
                   }}
+                  text="Save Dashboard"
                 />
               )}
             </ModalsController>
           )}
 
-          {snapshotUrl && (
+          {/*snapshotUrl && (
             <DashNavButton
               tooltip="Open original dashboard"
               classSuffix="snapshot-origin"
               icon="gicon gicon-link"
               href={sanitizeUrl(snapshotUrl)}
             />
-          )}
+          )*/}
 
           {showSettings && (
             <DashNavButton
@@ -251,11 +250,12 @@ export class DashNav extends PureComponent<Props> {
               classSuffix="settings"
               icon="gicon gicon-cog"
               onClick={this.onOpenSettings}
+              text="Settings"
             />
           )}
         </div>
 
-        <div className="navbar-buttons navbar-buttons--tv">
+        {/*<div className="navbar-buttons navbar-buttons--tv">
           <DashNavButton
             tooltip="Cycle view mode"
             classSuffix="tv"
@@ -263,6 +263,7 @@ export class DashNav extends PureComponent<Props> {
             onClick={this.onToggleTVMode}
           />
         </div>
+        */}
 
         {!dashboard.timepicker.hidden && (
           <div className="navbar-buttons">

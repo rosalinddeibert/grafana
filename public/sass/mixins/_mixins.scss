@@ -335,7 +335,10 @@
 }
 
 @mixin left-brand-border-gradient() {
-  border-image: $brand-gradient-vertical;
+  border: none;
+  //border-image: linear-gradient(rgba(255, 213, 0, 1) 0%, rgba(255, 68, 0, 1) 99%, rgba(255, 68, 0, 1) 100%);
+  border-image: none;
+  border-color: $orange;
   border-image-slice: 1;
   border-style: solid;
   border-top: 0;
@@ -345,7 +348,9 @@
 }
 
 @mixin brand-bottom-border() {
-  border-image: $brand-gradient-horizontal;
+  //border-image: $brand-gradient;
+  border-image: none;
+  border-color: $orange;
   border-image-slice: 1;
   border-style: solid;
   border-top: 0;
@@ -363,7 +368,8 @@
   color: $list-item-link-color;
   border-radius: $border-radius;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: $list-item-hover-bg;
     color: $list-item-link-color;
   }

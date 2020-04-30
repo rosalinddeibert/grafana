@@ -31,13 +31,11 @@ const basicColors = {
   redShade: '#c4162a',
   greenBase: '#3eb15b',
   greenShade: '#369b4f',
-  blue: '#0083b3',
-  red: '#d44939',
   yellow: '#ff851b',
   purple: '#9954bb',
   variable: '#007580',
-  orange: '#ff7941',
-  orangeDark: '#ed5700',
+  orangeBase: '#ff7941',
+  orangeShade: '#ed5700',
 };
 
 const lightTheme: GrafanaTheme = {
@@ -48,17 +46,16 @@ const lightTheme: GrafanaTheme = {
   name: 'Grafana Light',
   colors: {
     ...basicColors,
-    variable: basicColors.blue,
     inputBlack: '#09090b',
-    brandPrimary: basicColors.orange,
+    brandPrimary: basicColors.orangeBase,
     brandSuccess: basicColors.greenBase,
-    brandWarning: basicColors.orange,
+    brandWarning: basicColors.orangeBase,
     brandDanger: basicColors.redBase,
     queryRed: basicColors.redBase,
     queryGreen: basicColors.greenBase,
     queryPurple: basicColors.purple,
     queryKeyword: basicColors.blueBase,
-    queryOrange: basicColors.orange,
+    queryOrange: basicColors.orangeBase,
     online: basicColors.greenShade,
     warn: '#f79520',
     critical: basicColors.redShade,
@@ -67,9 +64,9 @@ const lightTheme: GrafanaTheme = {
 
     // Text colors
     body: basicColors.gray1,
-    text: basicColors.gray1,
+    text: basicColors.gray8,
     textStrong: basicColors.dark2,
-    textWeak: basicColors.gray2,
+    textWeak: basicColors.gray8,
     textEmphasis: basicColors.dark5,
     textFaint: basicColors.dark4,
 

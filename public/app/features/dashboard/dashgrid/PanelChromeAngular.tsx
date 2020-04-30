@@ -149,15 +149,15 @@ export class PanelChromeAngularUnconnected extends PureComponent<Props, State> {
     const { theme } = config;
 
     const headerHeight = this.hasOverlayHeader() ? 0 : theme.panelHeaderHeight;
-    const chromePadding = plugin.noPadding ? 0 : theme.panelPadding;
-    return height - headerHeight - chromePadding * 2 - PANEL_BORDER;
+    const chromePadding = plugin.noPadding ? 0 : theme.panelPadBottom + theme.panelPadTop;
+    return height - headerHeight - chromePadding - PANEL_BORDER;
   }
 
   getInnerPanelWidth() {
     const { plugin, width } = this.props;
     const { theme } = config;
 
-    const chromePadding = plugin.noPadding ? 0 : theme.panelPadding;
+    const chromePadding = plugin.noPadding ? 0 : theme.panelPadSide;
     return width - chromePadding * 2 - PANEL_BORDER;
   }
 

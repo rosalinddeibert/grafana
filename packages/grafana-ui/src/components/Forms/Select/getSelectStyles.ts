@@ -33,13 +33,10 @@ export const getSelectStyles = stylesFactory((theme: GrafanaTheme) => {
     `,
     optionFocused: css`
       background: ${optionBgHover};
-      border-image: linear-gradient(#f05a28 30%, #fbca0a 99%);
-      border-image-slice: 1;
-      border-style: solid;
+      border-left: ${theme.colors.orangeBase} solid 2px;
       border-top: 0;
       border-right: 0;
       border-bottom: 0;
-      border-left-width: 2px;
     `,
     singleValue: css`
       color: ${theme.colors.formInputText};

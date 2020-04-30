@@ -11,10 +11,10 @@ import { ResponsiveButton } from './ResponsiveButton';
 
 const getStyles = stylesFactory((theme: GrafanaTheme) => {
   const bgColor = selectThemeVariant({ light: theme.colors.gray5, dark: theme.colors.dark1 }, theme.type);
-  const orangeLighter = tinycolor(theme.colors.orangeDark)
+  const orangeLighter = tinycolor(theme.colors.orangeShade)
     .lighten(10)
     .toString();
-  const pulseTextColor = tinycolor(theme.colors.orangeDark)
+  const pulseTextColor = tinycolor(theme.colors.orangeShade)
     .desaturate(90)
     .toString();
   return {
@@ -28,13 +28,13 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
     `,
     isLive: css`
       label: isLive;
-      border-color: ${theme.colors.orangeDark};
-      color: ${theme.colors.orangeDark};
+      border-color: ${theme.colors.orangeShade};
+      color: ${theme.colors.orangeShade};
       background: transparent;
       &:focus {
         background: transparent;
-        border-color: ${theme.colors.orangeDark};
-        color: ${theme.colors.orangeDark};
+        border-color: ${theme.colors.orangeShade};
+        color: ${theme.colors.orangeShade};
       }
       &:hover {
         background-color: ${bgColor};
@@ -47,12 +47,12 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
     `,
     isPaused: css`
       label: isPaused;
-      border-color: ${theme.colors.orangeDark};
+      border-color: ${theme.colors.orangeShade};
       background: transparent;
       animation: pulse 3s ease-out 0s infinite normal forwards;
       &:focus {
         background: transparent;
-        border-color: ${theme.colors.orangeDark};
+        border-color: ${theme.colors.orangeShade};
       }
       &:hover {
         background-color: ${bgColor};
@@ -66,7 +66,7 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
           color: ${pulseTextColor};
         }
         50% {
-          color: ${theme.colors.orangeDark};
+          color: ${theme.colors.orangeShade};
         }
         100% {
           color: ${pulseTextColor};

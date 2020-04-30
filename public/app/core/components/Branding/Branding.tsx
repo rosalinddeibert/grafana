@@ -13,15 +13,14 @@ export const LoginLogo: FC<BrandComponentProps> = ({ className }) => {
 
   return (
     <>
-      <img className={cx(className, maxSize)} src="public/img/grafana_icon.svg" alt="Grafana" />
-      <div className="logo-wordmark" />
+      <img className={cx(className, maxSize)} src="public/img/psiphon-logo-512x512.png" alt="Psiphon Inc." />
     </>
   );
 };
 
 export const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
   const background = css`
-    background: url(public/img/heatmap_bg_test.svg);
+    background: url(public/img/grafana-psiphon-login.png);
     background-size: cover;
   `;
 
@@ -29,7 +28,7 @@ export const LoginBackground: FC<BrandComponentProps> = ({ className, children }
 };
 
 export const MenuLogo: FC<BrandComponentProps> = ({ className }) => {
-  return <img className={className} src="public/img/grafana_icon.svg" alt="Grafana" />;
+  return <img className={className} src="public/img/psiphon-logo-512x512.png" alt="Psiphon Inc." />;
 };
 
 export const AppTitle = 'Grafana';

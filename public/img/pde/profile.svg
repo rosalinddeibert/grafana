@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Profile</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="13" cy="13" r="13"></circle>
+    </defs>
+    <style type="text/css">
+        .st0{ fill:#9E9E9E; }
+        .st1{ stroke:#9E9E9E; stroke-width:2; }
+    </style>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PDE" transform="translate(-1219.000000, -67.000000)">
+            <g id="Profile" transform="translate(1220.000000, 68.000000)">
+                <circle id="Oval-3" class="st0" cx="13" cy="10.4" r="4.33333333"></circle>
+                <g id="Group-7">
+                    <g id="Oval-3">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Mask"></g>
+                        <circle class="st0" mask="url(#mask-2)" cx="13" cy="26" r="9.53333333"></circle>
+                    </g>
+                    <circle id="Oval-4" class="st1" cx="13" cy="13.4333333" r="12.5666667"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg> 

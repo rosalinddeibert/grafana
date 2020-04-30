@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="33px" height="19px" viewBox="0 0 33 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Add Panel Hover</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <style type="text/css">
+	      .st0{ fill:#ff7941; }
+    </style>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PDE" transform="translate(-558.000000, -157.000000)" class="st0">
+            <g id="Add-Panel-Hover" transform="translate(558.000000, 157.000000)">
+                <rect id="Rectangle-3" x="15" y="0" width="5" height="19" rx="1"></rect>
+                <rect id="Rectangle-3" x="7.5" y="4" width="5" height="15" rx="1"></rect>
+                <rect id="Rectangle-3" x="0" y="8" width="5" height="11" rx="1"></rect>
+                <g id="Group-2" transform="translate(22.000000, 4.500000)">
+                    <rect id="Rectangle-3" x="4" y="0" width="3.03030303" height="10" rx="1"></rect>
+                    <path d="M10.3974118,4.48345416 L10.3974118,5.54684887 C10.3974118,5.79192217 10.3185438,6.03048973 10.1724706,6.22727273 L10.1724706,6.22727273 C10.0309595,6.41790993 9.80755523,6.53030303 9.5701359,6.53030303 L1.32727591,6.53030303 C1.08985658,6.53030303 0.866452293,6.41790993 0.724941178,6.22727273 L0.724941178,6.22727273 C0.578867998,6.03048973 0.5,5.79192217 0.5,5.54684887 L0.5,4.48345416 C0.5,4.23838086 0.578867998,3.9998133 0.724941178,3.8030303 L0.724941178,3.8030303 C0.866452293,3.6123931 1.08985658,3.5 1.32727591,3.5 L9.5701359,3.5 C9.80755523,3.5 10.0309595,3.6123931 10.1724706,3.8030303 L10.1724706,3.8030303 C10.3185438,3.9998133 10.3974118,4.23838086 10.3974118,4.48345416 Z" id="Rectangle-3"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

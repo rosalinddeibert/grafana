@@ -48,7 +48,7 @@ const getStyles = stylesFactory((theme: GrafanaTheme, isRemoved: boolean) => {
       background-color: ${cardColor};
       border-radius: ${theme.border.radius.sm};
       .starred {
-        color: ${theme.colors.orange};
+        color: ${theme.colors.orangeBase};
       }
     `,
     cardRow: css`

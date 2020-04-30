@@ -3,9 +3,9 @@ $mobile-menu-breakpoint: md;
 .sidemenu {
   position: fixed;
   display: flex;
-  flex-flow: column;
-  flex-direction: column;
-  width: $side-menu-width;
+  flex-flow: row;
+  flex-direction: row;
+  height: $side-menu-width;
   z-index: $zindex-sidemenu;
   a:focus {
     text-decoration: none;
@@ -36,12 +36,18 @@ $mobile-menu-breakpoint: md;
 }
 
 .sidemenu__top {
-  padding-top: 40px;
-  flex-grow: 1;
+  flex-grow: 0;
+
+  display: none;
+  right: 70px;
+  position: absolute;
+  height: 48px;
 }
 
 .sidemenu__bottom {
-  padding-bottom: $spacer;
+  display: none;
+  right: 0;
+  position: absolute;
 }
 
 .sidemenu__top,
@@ -55,22 +61,28 @@ $mobile-menu-breakpoint: md;
 
 .sidemenu-item {
   position: relative;
-  @include left-brand-border();
+  justify-content: space-around;
+  //@include left-brand-border();
 
   @include media-breakpoint-up($mobile-menu-breakpoint) {
     &.active,
     &:hover {
       background-color: $side-menu-item-hover-bg;
-      @include left-brand-border-gradient();
+      color: $side-menu-item-hover-fg;
+      //@include left-brand-border-gradient();
+      .sidemenu-icon .gicon,
+      .sidemenu-icon .fa {
+        color: $side-menu-item-hover-fg;
+      }
 
       .dropdown-menu {
         margin: 0;
         display: block;
         opacity: 0;
-        top: 0px;
+        top: $side-menu-width - 10px;
         // important to overlap it otherwise it can be hidden
         // again by the mouse getting outside the hover space
-        left: $side-menu-width - 2px;
+        left: 0;
         @include animation('dropdown-anim 150ms ease-in-out 100ms forwards');
         z-index: $zindex-sidemenu;
       }
@@ -83,14 +95,22 @@ $mobile-menu-breakpoint: md;
 }
 
 .sidemenu-link {
-  color: $link-color;
-  line-height: 42px;
+  color: $text-color;
+  line-height: 48px;
   padding: 0px 10px 0px 10px;
-  display: block;
+  display: inline-block;
   position: relative;
   font-size: 16px;
   border: 1px solid transparent;
   text-align: center;
+  &:hover {
+    color: $side-menu-item-hover-fg;
+  }
+  &:focus {
+    border-bottom: $input-border-focus;
+    box-shadow: $input-box-shadow-bottom-focus;
+    color: $side-menu-item-hover-fg;
+  }
 
   img {
     border-radius: 50%;
@@ -146,7 +166,7 @@ $mobile-menu-breakpoint: md;
   white-space: nowrap;
   background-color: $side-menu-item-hover-bg;
   font-size: 17px;
-  color: #ebedf2;
+  color: $text-color;
 }
 
 .side-menu-header-link {
@@ -199,17 +219,18 @@ li.sidemenu-org-switcher {
 
 .sidemenu__logo {
   display: block;
-  padding: 6px 14px 6px 9px;
-  min-height: $navbarHeight;
+  padding: 0 0.4rem;
+  padding-top: 8px;
+  min-height: 48px;
   position: relative;
-  height: $navbarHeight - 1px;
+  height: 48px;
 
   &:hover {
     background: $navbarButtonBackgroundHighlight;
   }
 
   img {
-    width: 30px;
+    width: 242px;
     position: relative;
     top: 5px;
     left: 4px;
@@ -227,8 +248,10 @@ li.sidemenu-org-switcher {
       background: $side-menu-bg-mobile;
       height: auto;
       box-shadow: $side-menu-shadow;
-      position: relative;
+      position: initial;
       z-index: $zindex-sidemenu;
+      flex-flow: column;
+      flex-direction: column;
     }
 
     .sidemenu__close {
@@ -241,9 +264,16 @@ li.sidemenu-org-switcher {
     .sidemenu__top,
     .sidemenu__bottom {
       display: block;
+      position: relative;
+      flex-grow: 1;
+      width: 100%;
     }
     .sidemenu-item {
+      width: 100%;
       border-right: 2px solid transparent;
+    }
+    .sidemenu-link {
+      display: block;
     }
   }
 

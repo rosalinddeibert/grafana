@@ -8,7 +8,7 @@
 
 .icon-brand-gradient {
   text-shadow: none;
-  background: linear-gradient(180deg, #f05a28 30%, #fbca0a 100%);
+  background: linear-gradient(180deg, $red 30%, $red-shade 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
@@ -24,10 +24,10 @@
 
 .explore-active-button {
   box-shadow: $btn-active-box-shadow;
-  border-color: $orange-dark;
+  border-color: $orange-shade;
   background-image: none;
   background-color: transparent;
-  color: $orange-dark !important;
+  color: $orange-shade !important;
   &:focus {
     background-color: transparent;
   }
