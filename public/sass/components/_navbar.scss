@@ -165,10 +165,11 @@ i.navbar-page-btn__search {
   }
   &:hover,
   &:focus {
+    color: $gray-1;
+
     .gicon {
       filter: brightness(0.5);
     }
-    color: $gray-1;
   }
 
   .fa {
