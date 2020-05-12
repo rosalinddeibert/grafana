@@ -23,7 +23,7 @@ $mobile-menu-breakpoint: md;
     background: $side-menu-bg;
     height: auto;
     box-shadow: $side-menu-shadow;
-    position: relative;
+    width: 100%;
     z-index: $zindex-sidemenu;
   }
 }
