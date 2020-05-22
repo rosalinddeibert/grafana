@@ -1,3 +1,5 @@
+$mobile-menu-breakpoint: md;
+
 .grafana-app {
   display: flex;
   flex-direction: row;
@@ -65,6 +67,10 @@
 
   &--dashboard {
     height: calc(100% - 56px);
+
+    @include media-breakpoint-up($mobile-menu-breakpoint) {
+      height: calc(100% - (56px + #{$side-menu-width}));
+    }
   }
 
   > div {

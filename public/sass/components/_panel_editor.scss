@@ -82,6 +82,10 @@
     padding: 0;
   }
 
+  .scroll-canvas--dashboard {
+    height: calc(100% - 56px);
+  }
+
   .submenu-controls {
     padding: 0 $dashboard-padding $space-sm $dashboard-padding;
   }
