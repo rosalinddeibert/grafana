@@ -246,12 +246,13 @@ li.sidemenu-org-switcher {
     .sidemenu {
       width: 100%;
       background: $side-menu-bg-mobile;
-      height: auto;
+      height: 100%;
       box-shadow: $side-menu-shadow;
       position: initial;
       z-index: $zindex-sidemenu;
       flex-flow: column;
       flex-direction: column;
+      overflow: auto;
     }
 
     .sidemenu__close {
@@ -261,7 +262,28 @@ li.sidemenu-org-switcher {
       top: -3px;
     }
 
-    .sidemenu__top,
+    .sidemenu__top {
+      display: block;
+      position: relative;
+      flex-grow: 1;
+      width: 100%;
+      height: auto;
+      right: 0px;
+
+      .sidemenu-link {
+        background-color: $side-menu-item-hover-bg;
+        color: $menu-dropdown-text;
+
+        &:hover {
+          color: $side-menu-item-hover-fg;
+        }
+      }
+
+      .dropdown-menu--sidemenu {
+        background: $white;
+        box-shadow: none;
+      }
+    }
     .sidemenu__bottom {
       display: block;
       position: relative;
@@ -270,7 +292,7 @@ li.sidemenu-org-switcher {
     }
     .sidemenu-item {
       width: 100%;
-      border-right: 2px solid transparent;
+      border: 0;
     }
     .sidemenu-link {
       display: block;
@@ -291,6 +313,11 @@ li.sidemenu-org-switcher {
 
       .fa-bars {
         font-size: 25px;
+      }
+
+      &:hover {
+        color: $side-menu-item-hover-fg;
+        cursor: pointer;
       }
     }
 

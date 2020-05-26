@@ -91,6 +91,11 @@ $input-border: 1px solid $input-border-color;
   &--nowrap {
     flex-wrap: nowrap;
   }
+
+  dash-link:last-child .gf-form-label {
+    border-right: $border-width solid $input-label-border-color;
+    border-radius: 3px;
+  }
 }
 
 .gf-form-button-row {
