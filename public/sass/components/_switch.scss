@@ -22,10 +22,9 @@ gf-form-switch[disabled] {
   display: flex;
   cursor: pointer;
 
-  &:hover,
-  &:focus-within/* not compatible with ms edge */ {
-    .gf-form-switch__slider::before {
-      background-color: $orange;
+  &:hover {
+    .gf-form-switch__slider {
+      background-color: $switch-slider-hover-bg;
     }
   }
 }
@@ -56,6 +55,7 @@ gf-form-switch[disabled] {
 
 /* The slider */
 .gf-form-switch__slider {
+  transition: background-color 0.5s;
   background: $switch-slider-off-bg;
   border-radius: 8px;
   height: 16px;

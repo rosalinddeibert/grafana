@@ -45,18 +45,10 @@ export const getButtonStyles = stylesFactory(({ theme, size, variant, textAndIco
       break;
 
     case 'inverse':
-      const from = selectThemeVariant({ light: theme.colors.gray5, dark: theme.colors.dark6 }, theme.type) as string;
-      const to = selectThemeVariant(
-        {
-          light: tinycolor(from)
-            .darken(5)
-            .toString(),
-          dark: tinycolor(from)
-            .lighten(4)
-            .toString(),
-        },
-        theme.type
-      ) as string;
+      const from = selectThemeVariant({ light: theme.colors.gray5, dark: theme.colors.gray9 }, theme.type) as string;
+      const to = tinycolor(from)
+        .darken(5)
+        .toString();
 
       background = buttonVariantStyles(from, to, theme.colors.link, 'rgba(0, 0, 0, 0.1)', true);
       break;

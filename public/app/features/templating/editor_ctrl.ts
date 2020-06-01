@@ -21,7 +21,7 @@ export class VariableEditorCtrl {
     $scope.emptyListCta = {
       title: 'There are no variables yet',
       buttonTitle: 'Add variable',
-      buttonIcon: 'gicon gicon-variable',
+      buttonIcon: 'gicon gicon-variable gicon--call-to-action',
       infoBox: {
         __html: ` <p>
       Variables enable more interactive and dynamic dashboards. Instead of hard-coding things like server or

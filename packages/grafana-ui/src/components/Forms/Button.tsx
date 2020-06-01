@@ -1,7 +1,7 @@
 import React, { AnchorHTMLAttributes, ButtonHTMLAttributes, useContext } from 'react';
 import { css, cx } from 'emotion';
 import tinycolor from 'tinycolor2';
-import { selectThemeVariant, stylesFactory, ThemeContext } from '../../themes';
+import { stylesFactory, ThemeContext } from '../../themes';
 import { Button as DefaultButton, LinkButton as DefaultLinkButton } from '../Button/Button';
 import { getFocusStyle, getPropertiesForButtonSize } from './commonStyles';
 import { ButtonSize, StyleDeps } from '../Button/types';
@@ -24,26 +24,14 @@ const buttonVariantStyles = (from: string, to: string, textColor: string) => css
 const getPropertiesForVariant = (theme: GrafanaTheme, variant: ButtonVariant) => {
   switch (variant) {
     case 'secondary':
-      const from = selectThemeVariant({ light: theme.colors.gray7, dark: theme.colors.gray15 }, theme.type) as string;
-      const to = selectThemeVariant(
-        {
-          light: tinycolor(from)
-            .darken(5)
-            .toString(),
-          dark: tinycolor(from)
-            .lighten(4)
-            .toString(),
-        },
-        theme.type
-      ) as string;
+      const from = theme.colors.gray7;
+      const to = tinycolor(from)
+        .darken(5)
+        .toString();
 
       return {
-        borderColor: selectThemeVariant({ light: theme.colors.gray85, dark: theme.colors.gray25 }, theme.type),
-        background: buttonVariantStyles(
-          from,
-          to,
-          selectThemeVariant({ light: theme.colors.gray25, dark: theme.colors.gray4 }, theme.type) as string
-        ),
+        borderColor: theme.colors.gray85,
+        background: buttonVariantStyles(from, to, theme.colors.gray25),
       };
 
     case 'destructive':

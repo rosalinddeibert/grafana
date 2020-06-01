@@ -325,6 +325,7 @@ $tooltipBackgroundError: $brand-danger;
 $checkboxImageUrl: '../img/checkbox_white.png';
 
 // info box
+$info-box-bg: $gray-6;
 $info-box-border-color: lighten($blue, 20%);
 
 // footer
@@ -376,8 +377,9 @@ $variable-option-bg: $blue-light;
 // -------------------------
 $switch-bg: $input-bg;
 $switch-slider-color: $white;
-$switch-slider-off-bg: $gray-8;
-$switch-slider-on-bg: $gray-1;
+$switch-slider-hover-bg: $orange;
+$switch-slider-off-bg: $gray-9;
+$switch-slider-on-bg: $gray-2;
 $switch-slider-shadow: 0 0 3px $dark-3;
 
 //Checkbox

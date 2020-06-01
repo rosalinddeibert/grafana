@@ -1,7 +1,7 @@
 .grafana-info-box {
   position: relative;
   padding: $space-lg;
-  background-color: $empty-list-cta-bg;
+  background-color: $info-box-bg;
   border-top: 3px solid $info-box-border-color;
   margin-bottom: $space-md;
   margin-right: $space-xs;
@@ -10,6 +10,7 @@
 
   h5 {
     margin-bottom: $spacer;
+    color: $info-box-border-color;
   }
   ul {
     padding-left: $spacer * 1.5;

@@ -27,7 +27,7 @@ export class AnnotationsEditorCtrl {
 
   emptyListCta = {
     title: 'There are no custom annotation queries added yet',
-    buttonIcon: 'gicon gicon-annotation',
+    buttonIcon: 'gicon gicon-annotation gicon--call-to-action',
     buttonTitle: 'Add Annotation Query',
     infoBox: {
       __html: `<p>Annotations provide a way to integrate event data into your graphs. They are visualized as vertical lines

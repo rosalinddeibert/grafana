@@ -87,8 +87,9 @@ $text-color-emphasis: ${theme.colors.textEmphasis};
 $text-shadow-faint: none;
 
 // gradients
-$brand-gradient-horizontal: linear-gradient(to right, #f05a28 30%, #fbca0a 99%);
-$brand-gradient-vertical: linear-gradient(#f05a28 30%, #fbca0a 99%);
+$brand-gradient: linear-gradient(to right, $red 0%, $red-shade 99%, $red-shade 100%);
+$brand-gradient-horizontal: linear-gradient(to right, $red 30%, $red-shade 99%);
+$brand-gradient-vertical: linear-gradient($red 30%, $red-shade 99%);
 $page-bg: $gray-7;
 
 // Links
@@ -134,8 +135,8 @@ $card-background-hover: darken($gray-7, 10%);
 $card-shadow: -1px -1px 0 0 hsla(0, 0%, 100%, 0.1), 1px 1px 0 0 rgba(0, 0, 0, 0.1);
 
 // Lists
-$list-item-bg: darken($white, 10%);
-$list-item-hover-bg: darken($white, 5%);
+$list-item-bg: $gray-6;
+$list-item-hover-bg: lighten($list-item-bg, 5%);
 $list-item-link-color: darken($gray-8, 20%);
 $list-item-shadow: $card-shadow;
 
@@ -310,7 +311,8 @@ $tooltipBackgroundError: $brand-danger;
 $checkboxImageUrl: '../img/checkbox_white.png';
 
 // info box
-$info-box-border-color: $blue;
+$info-box-bg: $gray-6;
+$info-box-border-color: lighten($blue, 20%);
 
 // footer
 $footer-link-color: $gray-3;
@@ -359,15 +361,16 @@ $variable-option-bg: $dropdownLinkBackgroundHover;
 // -------------------------
 $switch-bg: $white;
 $switch-slider-color: $gray-7;
+$switch-slider-hover-bg: $orange;
 $switch-slider-off-bg: $gray-5;
-$switch-slider-on-bg: linear-gradient(90deg, #ff9830, #e55400);
+$switch-slider-on-bg: $gray-3;
 $switch-slider-shadow: 0 0 3px $dark-2;
 
 //Checkbox
 // -------------------------
 $checkbox-bg: $gray-6;
 $checkbox-border: 1px solid $gray-3;
-$checkbox-checked-bg: linear-gradient(0deg, #ff9830, #e55400);
+$checkbox-checked-bg: $orange;
 $checkbox-color: $gray-7;
 
 //Panel Edit

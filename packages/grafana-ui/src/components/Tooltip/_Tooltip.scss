@@ -34,6 +34,10 @@ $popper-margin-from-ref: 5px;
     border-color: $tooltipBackground;
   }
 
+  h5 {
+    color: lighten($tooltipColor, 5%);
+  }
+
   // Themes
   &.popper__background--error {
     @include popper-theme($tooltipBackgroundError, $white);

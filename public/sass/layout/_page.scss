@@ -20,7 +20,7 @@ $mobile-menu-breakpoint: md;
 
 .panel-in-fullscreen {
   .main-view {
-    background: linear-gradient(-60deg, $gray-8, $gray-9 70%, $gray-6 98%);
+    background: linear-gradient(-60deg, darken($page-bg, 2%) 50%, lighten($page-bg, 2%) 98%);
   }
 }
 
