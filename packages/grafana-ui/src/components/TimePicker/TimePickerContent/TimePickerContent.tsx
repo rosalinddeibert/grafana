@@ -17,7 +17,7 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
     container: css`
       display: flex;
       background: ${colors.background};
-      box-shadow: 0px 0px 20px ${colors.shadow};
+      box-shadow: 4px 4px 8px ${colors.shadow};
       position: absolute;
       z-index: ${theme.zIndex.modal};
       width: 546px;
@@ -70,11 +70,16 @@ const getNarrowScreenStyles = stylesFactory((theme: GrafanaTheme) => {
       align-items: center;
       border-bottom: 1px solid ${colors.border};
       padding: 7px 9px 7px 9px;
+
+      &:hover {
+        background: ${theme.colors.gray6};
+        cursor: pointer;
+      }
     `,
     body: css`
       border-bottom: 1px solid ${colors.border};
       background: ${colors.formBackground};
-      box-shadow: inset 0px 2px 2px ${colors.shadow};
+      box-shadow: inset 0px 4px 4px -4px ${colors.shadow}, inset 0px -4px 4px -4px ${colors.shadow};
     `,
     form: css`
       padding: 7px 9px 7px 9px;

@@ -56,7 +56,7 @@ div.flot-text {
   width: 100%;
 
   &--transparent {
-    background-color: $page-bg;
+    background-color: rgba($panel-bg, 0.89);
     border: none;
   }
 

@@ -18,7 +18,6 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
       top: 0;
       position: absolute;
       right: 546px;
-      box-shadow: 0px 0px 20px ${colors.shadow};
       background-color: ${colors.background};
       z-index: -1;
 
@@ -43,6 +42,7 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
     content: css`
       margin: 0 auto;
       width: 268px;
+      box-shadow: 0 0 8px ${colors.shadow};
     `,
     backdrop: css`
       position: fixed;
@@ -141,7 +141,7 @@ const getBodyStyles = stylesFactory((theme: GrafanaTheme) => {
       .react-calendar__tile--active:hover {
         color: ${theme.colors.white};
         font-weight: ${theme.typography.weight.semibold};
-        background: ${theme.colors.blue95};
+        background: ${theme.colors.blueBase};
         box-shadow: none;
         border: 0px;
       }
@@ -152,7 +152,7 @@ const getBodyStyles = stylesFactory((theme: GrafanaTheme) => {
         border: 0px;
         color: ${theme.colors.white};
         font-weight: ${theme.typography.weight.semibold};
-        background: ${theme.colors.blue95};
+        background: ${theme.colors.blueBase};
 
         abbr {
           background-color: ${theme.colors.blue77};

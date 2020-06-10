@@ -1,17 +1,9 @@
 import React, { memo } from 'react';
 import { css } from 'emotion';
 import { GrafanaTheme, TimeOption } from '@grafana/data';
-import { useTheme, stylesFactory, selectThemeVariant } from '../../../themes';
+import { useTheme, stylesFactory } from '../../../themes';
 
 const getStyles = stylesFactory((theme: GrafanaTheme) => {
-  const background = selectThemeVariant(
-    {
-      light: theme.colors.gray7,
-      dark: theme.colors.gray4,
-    },
-    theme.type
-  );
-
   return {
     container: css`
       display: flex;
@@ -21,7 +13,7 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
       border-left: 2px solid rgba(255, 255, 255, 0);
 
       &:hover {
-        background: ${background};
+        background: ${theme.colors.gray6};
         border-left: ${theme.colors.orangeBase} solid 2px;
         border-top: 0;
         border-right: 0;

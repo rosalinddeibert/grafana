@@ -96,9 +96,9 @@ const darkTheme: GrafanaTheme = {
     formCheckboxCheckmark: basicColors.gray25,
   },
   background: {
-    dropdown: basicColors.gray2,
-    scrollbar: basicColors.gray1,
-    scrollbar2: basicColors.gray1,
+    dropdown: basicColors.white,
+    scrollbar: basicColors.gray5,
+    scrollbar2: basicColors.gray5,
     pageHeader: `linear-gradient(90deg, ${basicColors.gray5}, ${basicColors.gray3})`,
   },
   shadow: {
