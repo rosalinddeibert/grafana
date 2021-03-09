@@ -31,7 +31,7 @@ export const MenuLogo: FC<BrandComponentProps> = ({ className }) => {
   return <img className={className} src="public/img/psiphon-logo-512x512.png" alt="Psiphon Inc." />;
 };
 
-export const AppTitle = 'Grafana';
+export const AppTitle = 'Psiphon';
 
 export class Branding {
   static LoginLogo = LoginLogo;

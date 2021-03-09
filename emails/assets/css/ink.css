@@ -318,7 +318,7 @@ img.center {
 /* Typography */
 
 body, table.body, h1, h2, h3, h4, h5, h6, p, td {
-  color: #222222;
+  color: #52545c;
   font-family: "Helvetica", "Arial", sans-serif;
   font-weight: normal;
   padding:0;
@@ -523,16 +523,16 @@ table.large-button td a:visited {
 table.secondary td {
   background: #e9e9e9;
   border-color: #d0d0d0;
-  color: #555;
+  color: #52545c;
 }
 
 table.secondary td a {
-  color: #555;
+  color: #52545c;
 }
 
 table.secondary:hover td {
   background: #d0d0d0 !important;
-  color: #555;
+  color: #52545c;
 }
 
 table.secondary:hover td a,
