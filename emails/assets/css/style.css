@@ -183,18 +183,15 @@ table.columns td[class^="better-button"] {
 .body-bg {
   background-color: #f7f8fa;
 }
+
 .container-bg {
   background-color: #ffffff;
 }
+
 td.spacer.brand-bg {
   background-color: #ff7941;
 }
-.text-color-dark {
-  color: #52545c;
-}
-.text-color-link {
-  color: #fd6222;
-}
+
 .text-color-normal {
   color: #9e9e9e;
 }
