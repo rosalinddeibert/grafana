@@ -25,16 +25,14 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: #ff7941 !important;
-}
-
-a:active {
-  color: #F2821E !important;
-}
-
+/* order matters here for visited, active and hover */
 a:visited {
   color: #fd6222 !important;
+}
+
+a:active,
+a:hover {
+  color: #ff7941 !important;
 }
 
 table.facebook td {
