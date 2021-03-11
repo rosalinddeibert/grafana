@@ -37,23 +37,23 @@ color: #F2821E !important;
 a:visited {
 color: #fd6222 !important;
 }
-.better-button:hover a {
-color: #FFFFFF !important; background-color: #F2821E; border: 1px solid #F2821E;
+.better-button-primary:hover a {
+background-color: #ff7941 !important; background-image: none !important; color: #FFFFFF !important;
 }
-.better-button:visited a {
+.better-button-primary:visited a {
 color: #FFFFFF !important;
 }
-.better-button:active a {
+.better-button-primary:active a {
 color: #FFFFFF !important;
 }
 .better-button-alt:hover a {
-color: #ff8f2b !important; background-color: #DDDDDD; border: 1px solid #F2821E;
+background-color: #f7f8fa !important; border-color: #fd6222 !important; color: #fd6222 !important;
 }
 .better-button-alt:visited a {
-color: #ff8f2b !important;
+color: #ff7941 !important;
 }
 .better-button-alt:active a {
-color: #ff8f2b !important;
+color: #ff7941 !important;
 }
 body {
 height: 100% !important; width: 100% !important;
@@ -289,8 +289,8 @@ text-decoration: underline;
           <td class="center six" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; width: 50%; color: #52545c; font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; margin: 0; padding: 0px 0px 10px;" align="center" valign="top">
             <table class="better-button" align="center" border="0" cellspacing="0" cellpadding="0" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; margin-top: 10px; margin-bottom: 20px; padding: 0;">
               <tr style="vertical-align: top; padding: 0;" align="left">
-                <td align="center" class="better-button" bgcolor="#ff8f2b" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; color: #52545c; font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; margin: 0; padding: 0px;" valign="top">
-                  <a href="{{.RuleUrl}}" target="_blank" style="color: #FFF; text-decoration: none; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; display: inline-block; padding: 12px 25px; border: 1px solid #ff8f2b;">View your Alert rule</a>
+                <td align="center" class="better-button-primary" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; color: #52545c; font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; margin: 0; padding: 0px;" valign="top">
+                  <a href="{{.RuleUrl}}" target="_blank" style="color: #FFFFFF; text-decoration: none; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; display: inline-block; font-weight: 500; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); background: #ff7941 linear-gradient(to bottom, #ff7941, #fd6222) repeat-x 60%; padding: 12px 25px; border: #ff7941;">View your Alert rule</a>
                 </td>
               </tr>
             </table>
@@ -298,8 +298,8 @@ text-decoration: underline;
             <td class="center six" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; width: 50%; color: #52545c; font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; margin: 0; padding: 0px 0px 10px;" align="center" valign="top">
             <table class="better-button" align="center" border="0" cellspacing="0" cellpadding="0" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; margin-top: 10px; margin-bottom: 20px; padding: 0;">
               <tr style="vertical-align: top; padding: 0;" align="left">
-                <td align="center" class="better-button-alt" bgcolor="#efefef" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; color: #52545c; font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; margin: 0; padding: 0px;" valign="top">
-                  <a href="{{.AlertPageUrl}}" target="_blank" style="color: #ff8f2b; text-decoration: none; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; display: inline-block; background-color: #EFEFEF; padding: 12px 25px; border: 1px solid #ff8f2b;"> Go to the Alerts page</a>
+                <td align="center" class="better-button-alt" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; color: #52545c; font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; margin: 0; padding: 0px;" valign="top">
+                  <a href="{{.AlertPageUrl}}" target="_blank" style="color: #ff7941; text-decoration: none; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; display: inline-block; font-weight: 500; background-color: transparent; padding: 12px 25px; border: 1px solid #ff7941;"> Go to the Alerts page</a>
                 </td>
               </tr>
             </table>
