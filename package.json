@@ -3,7 +3,7 @@
   "license": "Apache-2.0",
   "private": true,
   "name": "grafana",
-  "version": "6.7.3",
+  "version": "6.7.6",
   "repository": "github:grafana/grafana",
   "devDependencies": {
     "@babel/core": "7.8.4",
@@ -185,6 +185,10 @@
     "themes:generate": "ts-node --project ./scripts/cli/tsconfig.json ./scripts/cli/generateSassVariableFiles.ts",
     "typecheck": "tsc --noEmit",
     "watch": "yarn start -d watch,start core:start --watchTheme "
+  },
+  "grafana": {
+    "whatsNewUrl": "https://grafana.com/docs/grafana/latest/guides/whats-new-in-v6-7/",
+    "releaseNotesUrl": "https://community.grafana.com/t/release-notes-v6-7-x/"
   },
   "husky": {
     "hooks": {
