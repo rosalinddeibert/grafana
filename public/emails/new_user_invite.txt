@@ -1,4 +1,4 @@
-{{Subject .Subject "{{.InvitedBy}} has invited you to join Grafana"}}
+{{Subject .Subject "{{.InvitedBy}} has invited you to join the Psiphon Data Engine"}}
 
 You're invited to join {{.OrgName}}
 
@@ -8,4 +8,4 @@ directly:
 
 {{.LinkUrl}}
 
-Sent by Grafana v{{.BuildVersion}} (c) 2022 Grafana Labs
+Sent by PDE v9.3.6 (c) 2023 Psiphon Inc.
