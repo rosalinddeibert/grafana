@@ -29,6 +29,9 @@ $panel-header-no-title-zindex: 1;
   word-wrap: break-word;
   display: block;
 }
+  &:hover {
+    background-color: darken($input-label-bg, 10%);
+  } /* Psiphon change */
 
 .panel-title {
   border: 0px;

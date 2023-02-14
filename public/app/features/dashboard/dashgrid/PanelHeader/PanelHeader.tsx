@@ -86,6 +86,7 @@ export const PanelHeader: FC<Props> = ({ panel, error, isViewing, isEditing, dat
 const panelStyles = (theme: GrafanaTheme2) => {
   return {
     titleText: css`
+      color: $text-color;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
@@ -102,5 +103,5 @@ const panelStyles = (theme: GrafanaTheme2) => {
         max-width: calc(100% - 54px);
       }
     `,
-  };
+  }; //Psiphon change color: $text-color
 };
