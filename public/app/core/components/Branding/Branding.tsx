@@ -10,7 +10,7 @@ export interface BrandComponentProps {
 }
 
 export const LoginLogo: FC<BrandComponentProps & { logo?: string }> = ({ className, logo }) => {
-  return <img className={className} src="public/img/psiphon-logo-512x512.png" alt="Grafana" />; // Psiphon Change
+  return <img className={className} src="public/img/psiphon-logo-512x512.png" alt="Psiphon Inc." />; // Psiphon Change
 };
 
 const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
@@ -43,7 +43,7 @@ const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
 };
 
 const MenuLogo: FC<BrandComponentProps> = ({ className }) => {
-  return <img className={className} src="public/img/psiphon-logo-512x512.png" alt="Grafana" />; // Psiphon change
+  return <img className={className} src="public/img/psiphon-logo-512x512.png" alt="Psiphon Inc." />; // Psiphon change
 };
 
 const LoginBoxBackground = () => {
@@ -59,8 +59,8 @@ export class Branding {
   static LoginBackground = LoginBackground;
   static MenuLogo = MenuLogo;
   static LoginBoxBackground = LoginBoxBackground;
-  static AppTitle = 'Grafana';
-  static LoginTitle = 'Welcome to Grafana';
+  static AppTitle = 'Psiphon'; //Psiphon change
+  static LoginTitle = 'Welcome to the Psiphon Data Engine'; //Psiphon change
   static GetLoginSubTitle = (): null | string => {
     return null;
   };

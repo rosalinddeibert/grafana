@@ -54,7 +54,7 @@ export class TableContainer extends PureComponent<Props> {
   render() {
     const { loading, onCellFilterAdded, tableResult, width, splitOpenFn, range, ariaLabel, timeZone } = this.props;
     const height = this.getTableHeight();
-    const tableWidth = width - config.theme.panelPadding * 2 - PANEL_BORDER;
+    const tableWidth = width - config.theme.panelPadSide * 2 - PANEL_BORDER; // Psiphon change - WHY?
 
     let dataFrames = tableResult;
 

@@ -33,7 +33,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
   wrapper: css`
     label: call-to-action-card;
     padding: ${theme.spacing(3)};
-    background: ${theme.colors.background.secondary};
+    background: ${theme.colors.gray5};
     border-radius: ${theme.shape.borderRadius(2)};
     display: flex;
     flex-direction: column;
@@ -47,5 +47,5 @@ const getStyles = (theme: GrafanaTheme2) => ({
   `,
   footer: css`
     margin-top: ${theme.spacing(3)}};
-  `,
+  `, // Psiphon change to background
 });

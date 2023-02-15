@@ -53,7 +53,7 @@ export class Graph extends PureComponent<GraphProps, GraphState> {
     showPoints: false,
     showBars: false,
     isStacked: false,
-    lineWidth: 1,
+    lineWidth: 0, //Psiphon change
   };
 
   state: GraphState = {
