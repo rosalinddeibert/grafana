@@ -128,7 +128,7 @@ export class SharedPreferences extends PureComponent<Props, State> {
       <Form onSubmit={this.onSubmitForm}>
         {() => {
           return (
-            <FieldSet label={<Trans i18nKey="shared-preferences.title">Preferences</Trans>} disabled={disabled}>
+            <FieldSet label={<Trans i18nKey="shared-preferences.title">Preferences</Trans>} disabled={true} /* Psiphon change */>
               <Field label={t('shared-preferences.fields.theme-label', 'UI Theme')}>
                 <RadioButtonGroup
                   options={themes}
