@@ -79,9 +79,10 @@ const getContentStyle = (
   headerHeight: number,
   height: number
 ) => {
-  const chromePadding = (padding === 'md' ? theme.components.panel.padding : 0) * theme.spacing.gridSize;
+  const chromePaddingHeight =
+    (padding === 'md' ? theme.panelPadTop + theme.panelPadBottom : 0) * theme.spacing.gridSize;
   const panelBorder = 1 * 2;
-  const innerWidth = width - chromePadding * 2 - panelBorder;
+  const innerWidth = width - chromePaddingWidth - PANEL_BORDER;
   const innerHeight = height - headerHeight - chromePadding * 2 - panelBorder;
 
   const contentStyle: CSSProperties = {

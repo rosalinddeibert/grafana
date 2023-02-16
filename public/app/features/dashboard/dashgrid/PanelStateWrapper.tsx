@@ -509,9 +509,10 @@ export class PanelStateWrapper extends PureComponent<Props, State> {
     const PanelComponent = plugin.panel!;
     const timeRange = this.state.liveTime ?? data.timeRange ?? this.timeSrv.timeRange();
     const headerHeight = this.hasOverlayHeader() ? 0 : theme.panelHeaderHeight;
-    const chromePadding = plugin.noPadding ? 0 : theme.panelPadding;
-    const panelWidth = width - chromePadding * 2 - PANEL_BORDER;
-    const innerPanelHeight = height - headerHeight - chromePadding * 2 - PANEL_BORDER;
+    const chromePaddingWidth = plugin.noPadding ? 0 : theme.panelPadSide * 2; /* Psiphon change */
+    const panelWidth = width - chromePaddingWidth - PANEL_BORDER; /* Psiphon change */
+    const chromePaddingHeight = plugin.noPadding ? 0 : theme.panelPadTop + theme.panelPadBottom; /* Psiphon change */
+    const innerPanelHeight = height - headerHeight - chromePaddingHeight - PANEL_BORDER; /* Psiphon change */
     const panelContentClassNames = classNames({
       'panel-content': true,
       'panel-content--no-padding': plugin.noPadding,

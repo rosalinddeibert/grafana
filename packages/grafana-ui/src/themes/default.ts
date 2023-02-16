@@ -122,6 +122,9 @@ const theme: GrafanaThemeCommons = {
     lg: 48,
   },
   panelPadding: 8,
+  panelPadBottom: 10 /* Psiphon change */,
+  panelPadSide: 20 /* Psiphon change */,
+  panelPadTop: 0 /* Psiphon change */,
   panelHeaderHeight: 28,
   zIndex: {
     navbarFixed: 1000,

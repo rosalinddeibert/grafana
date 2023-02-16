@@ -100,6 +100,9 @@ export interface GrafanaThemeCommons {
     lg: number;
   };
   panelPadding: number;
+  panelPadBottom: number /* Psiphon change */;
+  panelPadSide: number /* Psiphon change */;
+  panelPadTop: number /* Psiphon change */;
   panelHeaderHeight: number;
   zIndex: {
     dropdown: number;

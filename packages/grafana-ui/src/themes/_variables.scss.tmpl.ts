@@ -194,7 +194,7 @@ $navbar-padding: 20px;
 
 // dashboard
 $dashboard-padding: $space-md;
-$panel-padding: ${theme.components.panel.padding * theme.spacing.gridSize}px;
+$panel-padding: ${theme.panelPadTop}px ${theme.panelPadSide}px ${theme.panelPadBottom}px ${theme.panelPadSide}px;
 $panel-header-height: ${theme.spacing.gridSize * theme.components.panel.headerHeight}px;
 $panel-header-z-index: 10;
 
@@ -238,4 +238,4 @@ $external-services: (
     icon: '',
   ),
 ) !default;
-`;
+`; /* Psiphon change - panel-padding */

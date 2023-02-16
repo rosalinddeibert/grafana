@@ -22,13 +22,13 @@ const getStyles = (theme: GrafanaTheme2) => ({
   `,
   collapseBody: css`
     label: collapse__body;
-    padding: ${theme.spacing(theme.components.panel.padding)};
+    padding: ${theme.panelPadTop}px ${theme.panelPadSide}px ${theme.panelPadBottom}px ${theme.panelPadSide}px;
     padding-top: 0;
     flex: 1;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-  `,
+  ` /* Psiphon change - padding */,
   bodyContentWrapper: css`
     label: bodyContentWrapper;
     flex: 1;
