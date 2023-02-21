@@ -119,7 +119,7 @@ func (hs *HTTPServer) setIndexViewData(c *models.ReqContext) (*dtos.IndexViewDat
 		AppNameBodyClass:                    "app-grafana",
 		FavIcon:                             "public/img/favicon-psiphon.ico", // Psiphon Change
 		AppleTouchIcon:                      "public/img/favicon-psiphon.ico", // Psiphon Change
-		AppTitle:                            "Grafana",
+		AppTitle:                            "Psiphon",                        // Psiphon Change
 		NavTree:                             navTree,
 		Sentry:                              &hs.Cfg.Sentry,
 		Nonce:                               c.RequestNonce,
