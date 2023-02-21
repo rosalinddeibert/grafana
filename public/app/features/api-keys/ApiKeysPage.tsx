@@ -190,7 +190,7 @@ export class ApiKeysPageUnconnected extends PureComponent<Props, State> {
                   {showCTA ? (
                     <EmptyListCTA
                       title="You haven't added any API keys yet."
-                      buttonIcon="gicon gicon-apikeys gicon--call-to-action" //Psiphon change
+                      buttonIcon="key-skeleton-alt"
                       onClick={toggleIsAdding}
                       buttonTitle="New API key"
                       proTip="Remember, you can provide view-only API access to other applications."
