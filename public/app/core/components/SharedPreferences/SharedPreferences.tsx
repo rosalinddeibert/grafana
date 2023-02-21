@@ -10,7 +10,7 @@ import {
   FieldSet,
   Form,
   Label,
-  RadioButtonGroup,
+  /* Psiphon change */
   Select,
   stylesFactory,
   TimeZonePicker,
@@ -31,11 +31,7 @@ export interface Props {
 
 export type State = UserPreferencesDTO;
 
-const themes: SelectableValue[] = [
-  { value: '', label: t('shared-preferences.theme.default-label', 'Default') },
-  { value: 'dark', label: t('shared-preferences.theme.dark-label', 'Dark') },
-  { value: 'light', label: t('shared-preferences.theme.light-label', 'Light') },
-];
+// Psiphon change remove theme values
 
 function getLanguageOptions(): Array<SelectableValue<string>> {
   const languageOptions = LOCALES.map((v) => ({
@@ -119,7 +115,7 @@ export class SharedPreferences extends PureComponent<Props, State> {
   };
 
   render() {
-    const { theme, timezone, weekStart, homeDashboardUID, locale } = this.state;
+    const { timezone, weekStart, homeDashboardUID, locale } = this.state; // Psiphon change remove theme
     const { disabled } = this.props;
     const styles = getStyles();
     const languages = getLanguageOptions();
@@ -204,7 +200,7 @@ export class SharedPreferences extends PureComponent<Props, State> {
                 </Button>
               </div>
             </FieldSet>
-          );
+          ); // Psiphon change remove theme radio form
         }}
       </Form>
     );
