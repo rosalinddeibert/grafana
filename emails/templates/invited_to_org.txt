@@ -1,8 +1,8 @@
-[[HiddenSubject .Subject "[[.InvitedBy]] has added you to the [[.OrgName]] organization"]]
+[[Subject .Subject "[[.InvitedBy]] has added you to the [[.OrgName]] organization"]]
 
 You have been added to [[.OrgName]]
 
-[[.InvitedBy]] has added you to the [[.OrgName]] organization in Grafana.
+[[.InvitedBy]] has added you to the [[.OrgName]] organization.
 Once logged in, [[.OrgName]] will be available in the left side menu, in the dropdown below your username.
 
 Log in now:

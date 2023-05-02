@@ -1,0 +1,23 @@
+[[Subject .Subject "[[.Title]]"]]
+
+[[.Title]]
+----------------
+
+[[.Message]]
+
+[[if ne .Error "" ]]
+Error message:
+[[.Error]]
+[[end]]
+
+[[if ne .State "ok" ]]
+[[range .EvalMatches]]
+Metric name:
+[[.Metric]]
+Value:
+[[.Value]]
+[[end]]
+[[end]]
+
+Check your Dashboards:
+[[.RuleUrl]]"
