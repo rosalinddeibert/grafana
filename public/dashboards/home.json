@@ -22,7 +22,7 @@
       "folderId": 0,
       "gridPos": {
         "h": 17,
-        "w": 12,
+        "w": 24,
         "x": 0,
         "y": 6
       },
@@ -38,21 +38,6 @@
       "title": "",
       "transparent": false,
       "type": "dashlist"
-    },
-    {
-      "editable": true,
-      "error": false,
-      "gridPos": {
-        "h": 17,
-        "w": 12,
-        "x": 12,
-        "y": 6
-      },
-      "id": 4,
-      "links": [],
-      "title": "",
-      "transparent": false,
-      "type": "pluginlist"
     }
   ],
   "schemaVersion": 22,
