@@ -43,7 +43,7 @@ const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
 };
 
 const MenuLogo: FC<BrandComponentProps> = ({ className }) => {
-  return <img className={className} src="public/img/pde_icon.png" alt="Psiphon Data Engine" />;
+  return <img className={className} src="public/img/psiphon_pde_icon.png" alt="Psiphon Data Engine" />;
 };
 
 const LoginBoxBackground = () => {
