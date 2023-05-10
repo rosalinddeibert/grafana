@@ -81,6 +81,7 @@ const getStyles = (theme: GrafanaTheme2) => {
         z-index: 1;
       }
     `,
+    // Add Psiphon orange color to active tab
     activeStyle: css`
       label: activeTabStyle;
       color: ${theme.colors.text.primary};
@@ -96,7 +97,7 @@ const getStyles = (theme: GrafanaTheme2) => {
         bottom: 2px;
         top: 2px;
         border-radius: ${theme.shape.radius.default};
-        background-image: ${theme.colors.gradients.brandVertical};
+        background: ${theme.colors.psiphon.psiphonOrangeLight};
       }
     `,
     suffix: css`
