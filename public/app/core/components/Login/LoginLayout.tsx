@@ -6,7 +6,7 @@ import { useStyles2, styleMixins } from '@grafana/ui';
 
 import { Branding } from '../Branding/Branding';
 import { BrandingSettings } from '../Branding/types';
-import { Footer } from '../Footer/Footer';
+// Remove unused import after Psiphon changes
 
 interface InnerBoxProps {
   enterAnimation?: boolean;
@@ -21,31 +21,32 @@ export interface LoginLayoutProps {
   branding?: BrandingSettings;
 }
 
+// Psiphon change remove unused/removed items from LoginLayout
 export const LoginLayout = ({ children, branding }: React.PropsWithChildren<LoginLayoutProps>) => {
   const loginStyles = useStyles2(getLoginStyles);
   const [startAnim, setStartAnim] = useState(false);
   const subTitle = branding?.loginSubtitle ?? Branding.GetLoginSubTitle();
-  const loginTitle = branding?.loginTitle ?? Branding.LoginTitle;
-  const loginBoxBackground = branding?.loginBoxBackground || Branding.LoginBoxBackground();
   const loginLogo = branding?.loginLogo;
 
   useEffect(() => setStartAnim(true), []);
 
+  // Psiphon changes
+  // Remove footer links from login page
+  // Remove loginboxbackground styling as it does not work with the custom Psiphon background image
+  // Remove 'Welcome to Grafana' message
   return (
     <Branding.LoginBackground
       className={cx(loginStyles.container, startAnim && loginStyles.loginAnim, branding?.loginBackground)}
     >
-      <div className={cx(loginStyles.loginContent, loginBoxBackground, 'login-content-box')}>
+      <div className={cx(loginStyles.loginContent, 'login-content-box')}>
         <div className={loginStyles.loginLogoWrapper}>
           <Branding.LoginLogo className={loginStyles.loginLogo} logo={loginLogo} />
           <div className={loginStyles.titleWrapper}>
-            <h1 className={loginStyles.mainTitle}>{loginTitle}</h1>
             {subTitle && <h3 className={loginStyles.subTitle}>{subTitle}</h3>}
           </div>
         </div>
         <div className={loginStyles.loginOuterBox}>{children}</div>
       </div>
-      {branding?.hideFooter ? <></> : <Footer customLinks={branding?.footerLinks} />}
     </Branding.LoginBackground>
   );
 };
