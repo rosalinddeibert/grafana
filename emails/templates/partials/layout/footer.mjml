@@ -1,6 +1,6 @@
 <mj-column background-color="transparent">
   <mj-text align="center">
     <!-- Psiphon change - replace footer info with Psiphon footer info -->
-    &copy; {{ now | date "2006" }} Psipon Inc. Sent by <a href="{{ .AppUrl }}">PDE v{{ .BuildVersion }}</a>.
+    &copy; 2023 Psipon Inc. Sent by <a href="https://psix.ca">PDE v9.5.1</a>.
   </mj-text>
 </mj-column>
