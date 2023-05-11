@@ -6,7 +6,7 @@ import { useStyles2, styleMixins } from '@grafana/ui';
 
 import { Branding } from '../Branding/Branding';
 import { BrandingSettings } from '../Branding/types';
-// Remove unused import after Psiphon changes
+// Psiphon change - Remove unused import after Psiphon changes
 
 interface InnerBoxProps {
   enterAnimation?: boolean;
@@ -21,7 +21,7 @@ export interface LoginLayoutProps {
   branding?: BrandingSettings;
 }
 
-// Psiphon change remove unused/removed items from LoginLayout
+// Psiphon change - remove unused/removed items from LoginLayout
 export const LoginLayout = ({ children, branding }: React.PropsWithChildren<LoginLayoutProps>) => {
   const loginStyles = useStyles2(getLoginStyles);
   const [startAnim, setStartAnim] = useState(false);
@@ -30,10 +30,8 @@ export const LoginLayout = ({ children, branding }: React.PropsWithChildren<Logi
 
   useEffect(() => setStartAnim(true), []);
 
-  // Psiphon changes
-  // Remove footer links from login page
-  // Remove loginboxbackground styling as it does not work with the custom Psiphon background image
-  // Remove 'Welcome to Grafana' message
+  // Psiphon changes - remove footer links from login page, remove loginboxbackground
+  // styling because it looks bad with custom image, remove 'Welcome to Grafana' message
   return (
     <Branding.LoginBackground
       className={cx(loginStyles.container, startAnim && loginStyles.loginAnim, branding?.loginBackground)}

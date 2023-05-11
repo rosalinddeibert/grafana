@@ -87,8 +87,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     },
   }),
   img: css({
-    // Psiphon change.
-    // Resized logo spacing to fit aspect ratio of PDE logo
+    // Psiphon change - resize logo spacing to fit aspect ratio of PDE logo
     height: theme.spacing(2),
     width: theme.spacing(32.27),
   }),

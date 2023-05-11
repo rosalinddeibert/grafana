@@ -44,6 +44,7 @@ const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
   return <div className={cx(background, className)}>{children}</div>;
 };
 
+// Psiphon change - use psiphon logo on menu bar instead of Grafana logo
 const MenuLogo: FC<BrandComponentProps> = ({ className }) => {
   return <img className={className} src="public/img/psiphon_pde_icon.png" alt="Psiphon Data Engine" />;
 };
@@ -56,8 +57,7 @@ const LoginBoxBackground = () => {
   `;
 };
 
-// Psiphon change - remove Grafana welcome message on login page
-// Psiphon change - change app title
+// Psiphon change - remove Grafana welcome message on login page and change app title
 export class Branding {
   static LoginLogo = LoginLogo;
   static LoginBackground = LoginBackground;

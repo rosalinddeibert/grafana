@@ -82,7 +82,7 @@ public/css/*.min.css
 /devenv/docker/ha-test-unified-alerting/logs/webhook/dumps/
 /devenv/docker/ha-test-unified-alerting/logs/webhook/webhook-listener.log
 
-# Psiphon change - remove conf/custom.ini from gitignore
+# Psiphon change - remove conf/custom.ini from gitignore so custom config can be used
 /conf/provisioning/**/custom.yaml
 /conf/provisioning/**/dev.yaml
 /conf/ldap_dev.toml

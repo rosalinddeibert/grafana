@@ -117,6 +117,7 @@ func (hs *HTTPServer) setIndexViewData(c *contextmodel.ReqContext) (*dtos.IndexV
 				IntercomIdentifier: c.SignedInUser.Analytics.IntercomIdentifier,
 			},
 		},
+		// Psiphon change - change icons to Psiphon logo and update AppTitle to Psiphon
 		Settings:                            settings,
 		Theme:                               prefs.Theme,
 		AppUrl:                              appURL,

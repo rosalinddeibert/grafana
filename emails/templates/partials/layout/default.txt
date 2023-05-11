@@ -1,3 +1,2 @@
 {{> body }}
-<!-- Psiphon change - replace Grafana content with Psiphon content -->
 Sent by PDE v9.5.1 (c) 2023 Psiphon Inc.

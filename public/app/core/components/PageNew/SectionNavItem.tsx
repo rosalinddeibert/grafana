@@ -81,7 +81,7 @@ const getStyles = (theme: GrafanaTheme2) => {
         z-index: 1;
       }
     `,
-    // Add Psiphon orange color to active tab
+    // Psiphon change - change active highlight color to Psiphon orange
     activeStyle: css`
       label: activeTabStyle;
       color: ${theme.colors.text.primary};
