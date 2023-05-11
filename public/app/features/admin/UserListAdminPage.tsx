@@ -108,6 +108,7 @@ const UserListAdminPageUnConnected = ({
       {isLoading ? (
         <PageLoader />
       ) : (
+        // Psiphon change - in "Time since user" message, change "Grafana" to "Psix"
         <>
           <div className={cx(styles.table, 'admin-list-table')}>
             <table className="filter-table form-inline filter-table--hover">
@@ -146,7 +147,7 @@ const UserListAdminPageUnConnected = ({
                   )}
                   <th>
                     Last active&nbsp;
-                    <Tooltip placement="top" content="Time since user was seen using Grafana">
+                    <Tooltip placement="top" content="Time since user was seen using Psix">
                       <Icon name="question-circle" />
                     </Tooltip>
                   </th>
@@ -189,6 +190,7 @@ const UserListItem = memo(({ user, showLicensedRole }: UserListItemProps) => {
   const styles = useStyles2(getStyles);
   const editUrl = `admin/users/edit/${user.id}`;
 
+  // Psiphon change - change "Grafana Admin" to "Admin"
   return (
     <tr key={user.id}>
       <td className="width-4 text-center link-td">
@@ -223,7 +225,7 @@ const UserListItem = memo(({ user, showLicensedRole }: UserListItemProps) => {
         <OrgUnits units={user.orgs} icon={'building'} />
         {user.isAdmin && (
           <a href={editUrl} aria-label={getUsersAriaLabel(user.name)}>
-            <Tooltip placement="top" content="Grafana Admin">
+            <Tooltip placement="top" content="Admin">
               <Icon name="shield" />
             </Tooltip>
           </a>

@@ -57,6 +57,7 @@ const LoginBoxBackground = () => {
 };
 
 // Psiphon change - remove Grafana welcome message on login page
+// Psiphon change - change app title
 export class Branding {
   static LoginLogo = LoginLogo;
   static LoginBackground = LoginBackground;
