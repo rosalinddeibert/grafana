@@ -3,6 +3,7 @@
   {{ if .ImageURL }}
 </mj-raw>
 <mj-section padding="0">
+  <!-- Psiphon change - change colors to match light theme -->
   <mj-column border-bottom="1px solid #e0e0e0">
     <mj-image href="{{ .ImageURL }}" src="{{ .ImageURL }}" padding="0" />
   </mj-column>
@@ -15,6 +16,7 @@
 <mj-raw>
   {{ if .EmbeddedImage }}
 </mj-raw>
+<!-- Psiphon change - change colors to match light theme -->
 <mj-section padding="0">
   <mj-column border-bottom="1px solid #e0e0e0">
     <mj-image src="cid:{{ .EmbeddedImage }}" padding="0" />
@@ -74,6 +76,7 @@
   </mj-column>
 </mj-section>
 <mj-section padding="0 25px" text-align="left">
+  <!-- Psiphon change - change colors to match light theme -->
   <mj-column padding="10px" background-color="#FEFEFE" border="1px solid #e0e0e0">
     <mj-text>
       <mj-raw>
@@ -101,6 +104,7 @@
       <strong>Labels</strong>
     </mj-text>
 
+    <!-- Psiphon change - change colors to match light theme -->
     <mj-table color="black">
       <mj-raw>
         {{ range .Labels.SortedPairs }}
@@ -130,6 +134,7 @@
       <strong>Annotations</strong>
     </mj-text>
 
+    <!-- Psiphon change - change colors to match light theme -->
     <mj-table color="black">
       <mj-raw>
         {{ range .Annotations.SortedPairs }}
@@ -186,6 +191,7 @@
 </mj-section>
 
 <!-- Observed -->
+<!-- Psiphon change - change colors to match light theme -->
 <mj-section border-top="1px solid #e0e0e0" padding="5px 0">
   <mj-column>
     <mj-text color="#91929e">

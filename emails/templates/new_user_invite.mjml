@@ -11,6 +11,7 @@
     <mj-section>
       <mj-include path="./partials/layout/header.mjml" />
     </mj-section>
+    <!-- Psiphon change - change colors to match light theme -->
     <mj-section background-color="#FEFEFE" border="1px solid #e0e0e0">
       <mj-column>
         <mj-text>

@@ -20,6 +20,7 @@
     <mj-raw>
       {{ if .Message }}
     </mj-raw>
+    <!-- Psiphon change - change colors to match light theme -->
     <mj-wrapper background-color="#FEFEFE" border="1px solid #e0e0e0" padding="0">
       <mj-section padding="0">
         <mj-column>
@@ -61,6 +62,7 @@
     <mj-raw>
       {{ range .Alerts.Firing }}
     </mj-raw>
+    <!-- Psiphon change - change colors to match light theme -->
     <mj-wrapper background-color="#FEFEFE" border="1px solid #e0e0e0" padding="0">
       <mj-include path="./partials/alerting/firing_instance.mjml" />
       <mj-include path="./partials/alerting/instance_details.mjml" />
@@ -94,6 +96,7 @@
     <mj-raw>
       {{ range .Alerts.Resolved }}
     </mj-raw>
+    <!-- Psiphon change - change colors to match light theme -->
     <mj-wrapper background-color="#FEFEFE" border="1px solid #e0e0e0" padding="0">
       <mj-include path="./partials/alerting/resolved_instance.mjml" />
       <mj-include path="./partials/alerting/instance_details.mjml" />
