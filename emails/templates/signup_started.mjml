@@ -11,7 +11,7 @@
     <mj-section>
       <mj-include path="./partials/layout/header.mjml" />
     </mj-section>
-    <mj-section background-color="#22252b" border="1px solid #2f3037">
+    <mj-section background-color="#FEFEFE" border="1px solid #e0e0e0">
       <mj-column>
         <mj-text>
           <h2>Complete the signup</h2>

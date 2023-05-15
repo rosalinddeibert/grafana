@@ -20,7 +20,7 @@
     <mj-raw>
       {{ if .Message }}
     </mj-raw>
-    <mj-wrapper background-color="#22252b" border="1px solid #2f3037" padding="0">
+    <mj-wrapper background-color="#FEFEFE" border="1px solid #e0e0e0" padding="0">
       <mj-section padding="0">
         <mj-column>
           <mj-text align="left">
@@ -61,7 +61,7 @@
     <mj-raw>
       {{ range .Alerts.Firing }}
     </mj-raw>
-    <mj-wrapper background-color="#22252b" border="1px solid #2f3037" padding="0">
+    <mj-wrapper background-color="#FEFEFE" border="1px solid #e0e0e0" padding="0">
       <mj-include path="./partials/alerting/firing_instance.mjml" />
       <mj-include path="./partials/alerting/instance_details.mjml" />
     </mj-wrapper>
@@ -94,7 +94,7 @@
     <mj-raw>
       {{ range .Alerts.Resolved }}
     </mj-raw>
-    <mj-wrapper background-color="#22252b" border="1px solid #2f3037" padding="0">
+    <mj-wrapper background-color="#FEFEFE" border="1px solid #e0e0e0" padding="0">
       <mj-include path="./partials/alerting/resolved_instance.mjml" />
       <mj-include path="./partials/alerting/instance_details.mjml" />
     </mj-wrapper>
