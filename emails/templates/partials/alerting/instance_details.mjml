@@ -159,6 +159,7 @@
 </mj-section>
 
 <!-- actions -->
+<!-- Psiphon change - change colors to match light theme -->
 <mj-section text-align="left" border-top="1px solid #e0e0e0" padding="15px 0px">
   <mj-raw>{{ if .SilenceURL }}</mj-raw>
   <mj-column>
