@@ -179,8 +179,9 @@ class LightColors implements ThemeColorsBase<Partial<ThemeRichColor>> {
   blackBase = '36, 41, 46';
 
   primary = {
-    main: palette.blueLightMain,
-    border: palette.blueLightText,
+    // Psiphon change - use Psiphon orange colors for primary
+    main: psiphonTheme.psiphonOrangeDark,
+    border: psiphonTheme.psiphonOrangeLight,
     text: palette.blueLightText,
   };
 
