@@ -262,8 +262,9 @@ const getLabelStyles = (theme: GrafanaTheme2) => {
       align-items: center;
       white-space: nowrap;
     `,
+    // Psiphon change - use Psiphon orange for UTC label
     utc: css`
-      color: ${theme.v1.palette.orange};
+      color: ${theme.colors.psiphon.psiphonOrangeLight};
       font-size: ${theme.typography.size.sm};
       padding-left: 6px;
       line-height: 28px;
