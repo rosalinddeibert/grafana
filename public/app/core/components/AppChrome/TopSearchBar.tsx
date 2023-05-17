@@ -32,11 +32,12 @@ export const TopSearchBar = React.memo(function TopSearchBar() {
     homeUrl = textUtil.sanitizeUrl(locationUtil.getUrlForPartial(location, { forceLogin: 'true' }));
   }
 
+  // Psiphon change - apply custom logo sizing class to menu logo
   return (
     <div className={styles.layout}>
       <TopSearchBarSection>
         <a className={styles.logo} href={homeUrl} title="Go to home">
-          <Branding.MenuLogo className={styles.img} />
+          <Branding.MenuLogo className={styles.imgLogo} />
         </a>
         <OrganizationSwitcher />
       </TopSearchBarSection>
@@ -87,7 +88,11 @@ const getStyles = (theme: GrafanaTheme2) => ({
     },
   }),
   img: css({
-    // Psiphon change - resize logo spacing to fit aspect ratio of PDE logo
+    height: theme.spacing(3),
+    width: theme.spacing(3),
+  }),
+  // Psiphon change - add logo sizing class to fit aspect ratio of PDE logo
+  imgLogo: css({
     height: theme.spacing(2),
     width: theme.spacing(32.27),
   }),
