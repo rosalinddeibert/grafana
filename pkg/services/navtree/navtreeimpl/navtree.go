@@ -163,7 +163,8 @@ func (s *ServiceImpl) GetNavTree(c *contextmodel.ReqContext, hasEditPerm bool, p
 		treeRoot.AddSection(serverAdminNode)
 	}
 
-	s.addHelpLinks(treeRoot, c)
+	// Psiphon change - comment out help links in nav tree
+	//s.addHelpLinks(treeRoot, c)
 
 	if err := s.addAppLinks(treeRoot, c); err != nil {
 		return nil, err
