@@ -10,7 +10,8 @@ import { useSelector } from 'app/types';
 
 import { Branding } from '../Branding/Branding';
 
-import { NewsContainer } from './News/NewsContainer';
+// Psiphon change - remove news button
+// import { NewsContainer } from './News/NewsContainer';
 import { OrganizationSwitcher } from './Organization/OrganizationSwitcher';
 import { QuickAdd } from './QuickAdd/QuickAdd';
 import { SignInLink } from './TopBar/SignInLink';
@@ -53,7 +54,10 @@ export const TopSearchBar = React.memo(function TopSearchBar() {
             <ToolbarButton iconOnly icon="question-circle" aria-label="Help" />
           </Dropdown>
         )}
-        <NewsContainer className={styles.newsButton} />
+        {
+          // Psiphon change - remove news button
+          /* <NewsContainer className={styles.newsButton} /> */
+        }
         {!contextSrv.user.isSignedIn && <SignInLink />}
         {profileNode && (
           <Dropdown overlay={() => <TopNavBarMenu node={profileNode} />} placement="bottom-end">
