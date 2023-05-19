@@ -38,6 +38,7 @@ This is a summary of the Psiphon specific content changes.
 - Change App Title on login page to 'Psiphon Data Engine' instead of Grafana.
 - Remove footer links from login page.
 - Remove overlay box that doesn't work with light background to look better with our custom content.
+- Shift login box higher up on page so it looks better with background image.
 
 ## Change website functionality for our requirements
 
@@ -45,4 +46,6 @@ This is a summary of the Psiphon specific content changes.
 - Limit access to "Dashboards" option in menu to admins and editors only.
 - Remove "Help" links in nav for all users.
 - Remove "news/blog/rss" button in nav for all users.
+- Hide menu toggle option for users that are not admin or editor.
+- Hide search bar for users that are not admin or editor.
 - Update home.json file to our custom home.json file.
