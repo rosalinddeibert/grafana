@@ -73,6 +73,7 @@ export const getLoginStyles = (theme: GrafanaTheme2) => {
       alignItems: 'center',
       justifyContent: 'center',
     }),
+    // Psiphon change - shift login box up a bit to look better with custom background image
     loginAnim: css`
       &:before {
         opacity: 1;
@@ -80,6 +81,7 @@ export const getLoginStyles = (theme: GrafanaTheme2) => {
 
       .login-content-box {
         opacity: 1;
+        margin-top: -10em;
       }
     `,
     submitButton: css`
