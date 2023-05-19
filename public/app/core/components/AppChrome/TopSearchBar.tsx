@@ -6,7 +6,8 @@ import { GrafanaTheme2, locationUtil, textUtil } from '@grafana/data';
 import { Dropdown, ToolbarButton, useStyles2 } from '@grafana/ui';
 import { config } from 'app/core/config';
 import { contextSrv } from 'app/core/core';
-import { useSelector } from 'app/types';
+// Psiphon change - import AccessControlAction needed for permissions information
+import { AccessControlAction, useSelector } from 'app/types';
 
 import { Branding } from '../Branding/Branding';
 
@@ -24,6 +25,9 @@ export const TopSearchBar = React.memo(function TopSearchBar() {
   const styles = useStyles2(getStyles);
   const navIndex = useSelector((state) => state.navIndex);
   const location = useLocation();
+  // Psiphon change - check if user can create Dashboards. If yes, the user is an Admin or
+  // Editor. Search bar should only be available to Admin or Editor users.
+  const hasSearch = contextSrv.hasPermission(AccessControlAction.DashboardsCreate);
 
   const helpNode = navIndex['help'];
   const profileNode = navIndex['profile'];
@@ -44,7 +48,10 @@ export const TopSearchBar = React.memo(function TopSearchBar() {
       </TopSearchBarSection>
 
       <TopSearchBarSection>
-        <TopSearchBarCommandPaletteTrigger />
+        {hasSearch && (
+          // Psiphon change - hide search bar for non admin/editor users
+          <TopSearchBarCommandPaletteTrigger />
+        )}
       </TopSearchBarSection>
 
       <TopSearchBarSection align="right">
