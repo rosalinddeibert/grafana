@@ -31,11 +31,6 @@ Annotations:
 {{ range .Annotations.SortedPairs }}
 {{ .Name }} = {{ .Value }}
 {{ end }}
-{{ end }}View your Alert rule:
+{{ end }}Check your Dashboards:
 {{.RuleUrl}}
-
-Go to the Alerts page:
-{{.AlertPageUrl}}
-
-
-Sent by Grafana v{{.BuildVersion}} (c) {{now | date "2006"}} Grafana Labs
+Sent by PDE v9.5.1 (c) 2023 Psiphon Inc.
