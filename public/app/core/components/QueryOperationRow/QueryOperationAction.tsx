@@ -35,6 +35,7 @@ QueryOperationAction.displayName = 'QueryOperationAction';
 
 const getStyles = (theme: GrafanaTheme2) => {
   return {
+    // Psiphon change - change active highlight color to Psiphon orange
     icon: css`
       display: flex;
       position: relative;
@@ -50,7 +51,7 @@ const getStyles = (theme: GrafanaTheme2) => {
         height: 3px;
         border-radius: ${theme.shape.radius.default};
         bottom: -8px;
-        background-image: ${theme.colors.gradients.brandHorizontal} !important;
+        background: ${theme.colors.psiphon.psiphonOrangeLight};
       }
     `,
   };
