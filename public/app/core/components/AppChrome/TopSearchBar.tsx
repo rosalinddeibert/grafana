@@ -6,11 +6,13 @@ import { GrafanaTheme2, locationUtil, textUtil } from '@grafana/data';
 import { Dropdown, ToolbarButton, useStyles2 } from '@grafana/ui';
 import { config } from 'app/core/config';
 import { contextSrv } from 'app/core/core';
-import { useSelector } from 'app/types';
+// Psiphon change - import AccessControlAction needed for permissions information
+import { AccessControlAction, useSelector } from 'app/types';
 
 import { Branding } from '../Branding/Branding';
 
-import { NewsContainer } from './News/NewsContainer';
+// Psiphon change - remove news button
+// import { NewsContainer } from './News/NewsContainer';
 import { OrganizationSwitcher } from './Organization/OrganizationSwitcher';
 import { QuickAdd } from './QuickAdd/QuickAdd';
 import { SignInLink } from './TopBar/SignInLink';
@@ -23,6 +25,9 @@ export const TopSearchBar = React.memo(function TopSearchBar() {
   const styles = useStyles2(getStyles);
   const navIndex = useSelector((state) => state.navIndex);
   const location = useLocation();
+  // Psiphon change - check if user can create Dashboards. If yes, the user is an Admin or
+  // Editor. Search bar should only be available to Admin or Editor users.
+  const hasSearch = contextSrv.hasPermission(AccessControlAction.DashboardsCreate);
 
   const helpNode = navIndex['help'];
   const profileNode = navIndex['profile'];
@@ -32,17 +37,21 @@ export const TopSearchBar = React.memo(function TopSearchBar() {
     homeUrl = textUtil.sanitizeUrl(locationUtil.getUrlForPartial(location, { forceLogin: 'true' }));
   }
 
+  // Psiphon change - apply custom logo sizing class to menu logo
   return (
     <div className={styles.layout}>
       <TopSearchBarSection>
         <a className={styles.logo} href={homeUrl} title="Go to home">
-          <Branding.MenuLogo className={styles.img} />
+          <Branding.MenuLogo className={styles.imgLogo} />
         </a>
         <OrganizationSwitcher />
       </TopSearchBarSection>
 
       <TopSearchBarSection>
-        <TopSearchBarCommandPaletteTrigger />
+        {hasSearch && (
+          // Psiphon change - hide search bar for non admin/editor users
+          <TopSearchBarCommandPaletteTrigger />
+        )}
       </TopSearchBarSection>
 
       <TopSearchBarSection align="right">
@@ -52,7 +61,10 @@ export const TopSearchBar = React.memo(function TopSearchBar() {
             <ToolbarButton iconOnly icon="question-circle" aria-label="Help" />
           </Dropdown>
         )}
-        <NewsContainer className={styles.newsButton} />
+        {
+          // Psiphon change - remove news button
+          /* <NewsContainer className={styles.newsButton} /> */
+        }
         {!contextSrv.user.isSignedIn && <SignInLink />}
         {profileNode && (
           <Dropdown overlay={() => <TopNavBarMenu node={profileNode} />} placement="bottom-end">
@@ -89,6 +101,11 @@ const getStyles = (theme: GrafanaTheme2) => ({
   img: css({
     height: theme.spacing(3),
     width: theme.spacing(3),
+  }),
+  // Psiphon change - add logo sizing class to fit aspect ratio of PDE logo
+  imgLogo: css({
+    height: theme.spacing(2),
+    width: theme.spacing(32.27),
   }),
   logo: css({
     display: 'flex',
