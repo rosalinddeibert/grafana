@@ -2,7 +2,8 @@
   <mj-head>
     <!-- ⬇ Don't forget to specifify an email subject below! ⬇ -->
     <mj-title>
-      {{ Subject .Subject .TemplateData "{{ .InvitedBy }} has invited you to join Grafana" }}
+      <!-- Psiphon change - change organization name information in email subject -->
+      {{ Subject .Subject .TemplateData "{{ .InvitedBy }} has invited you to join the Psiphon Data Engine" }}
     </mj-title>
     <mj-include path="./partials/layout/head.mjml" />
   </mj-head>
@@ -10,7 +11,8 @@
     <mj-section>
       <mj-include path="./partials/layout/header.mjml" />
     </mj-section>
-    <mj-section background-color="#22252b" border="1px solid #2f3037">
+    <!-- Psiphon change - change colors to match light theme -->
+    <mj-section background-color="#FEFEFE" border="1px solid #e0e0e0">
       <mj-column>
         <mj-text>
           <h2>You're invited to join {{ .OrgName }}</h2>
