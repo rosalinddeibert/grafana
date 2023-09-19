@@ -1,15 +1,17 @@
 # Psiphon Changes
 
+## List of Changes
+
 This is a summary of the Psiphon specific content changes.
 
-## Change default theme from dark to light
+### Change default theme from dark to light
 
 - Remove conf/custom.ini from the .gitignore because we need the custom config to be used for changing the default theme from dark to light.
 - Add a conf/custom.ini which sets the default theme to light.
 - Remove theme change radio buttons from user preferences form.
 - Remove theme change option from nav menu.
 
-## Add custom Psiphon content, and set color to match light theme, for email templates
+### Add custom Psiphon content, and set color to match light theme, for email templates
 
 - Set the background color of all email template mjml files to a light theme color.
 - Remove "Grafana" specific content from email mjml and txt template files.
@@ -17,7 +19,7 @@ This is a summary of the Psiphon specific content changes.
 - Replace Grafana logo with Psiphon logo in email header.
 - Generate corresponding new emails.
 
-## Add Psiphon colors and branding to website
+### Add Psiphon colors and branding to website
 
 - Add Psiphon theme colors to a custom color file.
 - Import custom Psiphon orange colors into color palette files.
@@ -30,7 +32,7 @@ This is a summary of the Psiphon specific content changes.
 - Change content that refers to the application as "Grafana" to "Psiphon" or "PDE".
 - Add generated scss file.
 
-## Add Psiphon branding to login page
+### Add Psiphon branding to login page
 
 - Use Psiphon logo on login page instead of Grafana logo .
 - Use custom background image on login page.
@@ -40,7 +42,7 @@ This is a summary of the Psiphon specific content changes.
 - Remove overlay box that doesn't work with light background to look better with our custom content.
 - Shift login box higher up on page so it looks better with background image.
 
-## Change website functionality for our requirements
+### Change website functionality for our requirements
 
 - Remove time range options that we don't want available.
 - Limit access to "Dashboards" option in menu to admins and editors only.
