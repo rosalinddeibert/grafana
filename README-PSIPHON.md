@@ -11,9 +11,8 @@ This is a summary of the Psiphon specific content changes.
 - Remove theme change radio buttons from user preferences form.
 - Remove theme change option from nav menu.
 
-### Add custom Psiphon content, and set color to match light theme, for email templates
+### Add custom Psiphon content to email templates
 
-- Set the background color of all email template mjml files to a light theme color.
 - Remove "Grafana" specific content from email mjml and txt template files.
 - Add Psiphon/PDE specific content to email mjml and txt template files.
 - Replace Grafana logo with Psiphon logo in email header.
