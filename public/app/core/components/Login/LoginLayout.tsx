@@ -28,14 +28,12 @@ export const LoginLayout = ({ children, branding, isChangingPassword }: React.Pr
   const [startAnim, setStartAnim] = useState(false);
   const subTitle = branding?.loginSubtitle ?? Branding.GetLoginSubTitle();
   const loginLogo = branding?.loginLogo;
-  const hideEdition = branding?.hideEdition ?? Branding.HideEdition;
-  // Psiphon change - set hideFooter to true by default
-  branding.hideFooter = true;
+  // Psiphon change - remove unused const
 
   useEffect(() => setStartAnim(true), []);
 
   // Psiphon changes - remove loginboxbackground styling because it looks bad with custom
-  // image, remove 'Welcome to Grafana' message
+  // image, remove 'Welcome to Grafana' message. Remove footer.
   return (
     <Branding.LoginBackground
       className={cx(loginStyles.container, startAnim && loginStyles.loginAnim, branding?.loginBackground)}
@@ -55,7 +53,6 @@ export const LoginLayout = ({ children, branding, isChangingPassword }: React.Pr
           <div className={loginStyles.loginOuterBox}>{children}</div>
         </div>
       </div>
-      {branding?.hideFooter ? <></> : <Footer hideEdition={hideEdition} customLinks={branding?.footerLinks} />}
     </Branding.LoginBackground>
   );
 };
